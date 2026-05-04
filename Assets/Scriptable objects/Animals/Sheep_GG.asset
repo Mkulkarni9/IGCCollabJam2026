@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Sheep_GG
   m_EditorClassIdentifier: Assembly-CSharp::AnimalSO
   animalType: 4
-  speed: 0.75
+  speed: 1.2
+  boostSpeedProportion: 4
+  boostDuration: 0.2
+  chanceToBoostSpeed: 1

@@ -73,6 +73,7 @@ public class PointerGrabber : MonoBehaviour
             canGrabAnimal = true;
             grabbableAnimal = animal;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+            grabbableAnimal.SpeedUpAnimal();
             //Debug.Log("Can grab animal: " + grabbableAnimal.name);
         }
 
@@ -97,6 +98,12 @@ public class PointerGrabber : MonoBehaviour
         {
             canGrabAnimal = false;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
+
+            if(grabbableAnimal!=null)
+            {
+                grabbableAnimal.ResetSpeedUpStatus();
+            }
+            
             grabbableAnimal = null;
         }
 

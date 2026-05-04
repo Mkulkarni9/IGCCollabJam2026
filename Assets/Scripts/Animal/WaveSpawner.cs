@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -12,6 +14,9 @@ public class WaveSpawner : MonoBehaviour
         Sequential,
         Random
     }
+
+
+    public static event Action<GameObject> OnEntitySpawned; 
     [SerializeField] List<WaveSO> entityWaves = new List<WaveSO>();
     [SerializeField] List<Transform> entitySpawnPoints = new List<Transform>();
     [SerializeField] SpawnMode spawnMode;
@@ -20,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
     int currentWaveIndex;
     int currentSpawnPositionIndex;
     int entitiesSpawnedInCurrentWave;
+    List<Transform> shuffledEntitySpawnPoints = new List<Transform>();
 
     Coroutine waveSpawnRoutine;
 
@@ -27,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
     {
         currentWaveIndex = 0;
         currentWave = entityWaves[currentWaveIndex];
+        shuffledEntitySpawnPoints = entitySpawnPoints.OrderBy(x => UnityEngine.Random.value).ToList();
         SpawnEntities();
     }
 
@@ -55,8 +62,10 @@ public class WaveSpawner : MonoBehaviour
             int randomEntityIndex = UnityEngine.Random.Range(0, currentWave.entitiesInWave.Count);
             int spawnPointIndex = GetSpawnPointIndex();
 
-            GameObject entitySpawned = Instantiate(currentWave.entitiesInWave[randomEntityIndex], entitySpawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
+            GameObject entitySpawned = Instantiate(currentWave.entitiesInWave[randomEntityIndex], shuffledEntitySpawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
             entitySpawned.transform.SetParent(this.transform);
+
+            OnEntitySpawned?.Invoke(entitySpawned);
 
             yield return new WaitForSeconds(currentWave.intervalBetweenSpawns);
         }
@@ -80,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
                 int spawnPositionIndex = currentSpawnPositionIndex;
                 currentSpawnPositionIndex++;
 
-                if(spawnPositionIndex >= entitySpawnPoints.Count-1)
+                if(spawnPositionIndex >= shuffledEntitySpawnPoints.Count-1)
                 {
                     currentSpawnPositionIndex = 0;
                 }

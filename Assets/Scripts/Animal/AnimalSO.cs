@@ -16,4 +16,7 @@ public class AnimalSO : ScriptableObject
 
     public AnimalType animalType;
     public float speed;
+    public float boostSpeedProportion;
+    public float boostDuration;
+    public float chanceToBoostSpeed;
 }

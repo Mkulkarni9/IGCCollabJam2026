@@ -18,6 +18,17 @@ public class Cage : MonoBehaviour
     {
         CagePosition = transform.position;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Cage cage = collision.GetComponent<Cage>();
+
+        if(cage!=null)
+        {
+            Destroy(cage.gameObject);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         Animal grabbedAnimalInPointer = collision.GetComponent<Animal>();
@@ -53,7 +64,8 @@ public class Cage : MonoBehaviour
         //animal.ToggleAnimalMovement(false);
 
         animal.GetComponent<BoxCollider2D>().enabled = false;
-        //Destroy(animal.gameObject);
+        
+        Destroy(this.gameObject);
     }
 
 
