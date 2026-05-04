@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Dog
   m_EditorClassIdentifier: Assembly-CSharp::AnimalSO
   animalType: 1
+  speed: 0.75

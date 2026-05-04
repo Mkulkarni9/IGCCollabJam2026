@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb21297d53b0cd4c9c36b8e5d3c5099, type: 3}
+  m_Name: Animal wave 1
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalWaveSO
+  entitiesInWave:
+  - {fileID: 7606578773500941633, guid: 0ee4a6f8c65ac4746a9bd46c89fabc6b, type: 3}
+  numberOfEntitiesInWave: 5
+  intervalBetweenSpawns: 3

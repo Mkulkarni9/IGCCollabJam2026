@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3381413100053184718}
   - component: {fileID: 7360040287781367274}
   - component: {fileID: 4784383354449670269}
-  m_Layer: 0
+  - component: {fileID: -7822496718685554300}
+  m_Layer: 3
   m_Name: Animal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,3 +181,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animal
   animalSO: {fileID: 11400000, guid: 198e6c61f7148aa428863a6bcc2ad95c, type: 2}
+--- !u!95 &-7822496718685554300
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820850115147263211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

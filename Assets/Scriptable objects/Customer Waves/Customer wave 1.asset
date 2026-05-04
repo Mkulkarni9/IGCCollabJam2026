@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649e02b6377363841914d6ef1a13b9ed, type: 3}
+  m_Name: Customer wave 1
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerWaveSO
+  entitiesInWave:
+  - {fileID: 3192043346080442348, guid: a1666740f0000a442b52b30fe2828f21, type: 3}
+  - {fileID: 3192043346080442348, guid: 880612c8cf91d4f4fbda80a3c3541bb0, type: 3}
+  - {fileID: 3192043346080442348, guid: 43e3fd55f536baa48a18401d45f4c49d, type: 3}
+  numberOfEntitiesInWave: 5
+  intervalBetweenSpawns: 10

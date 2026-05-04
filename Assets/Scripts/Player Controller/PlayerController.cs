@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if(frameInput.Grab)
         {
             pointerGrabber.GrabAnimal();
+            pointerGrabber.GrabCage();
         }
     }
 
@@ -46,6 +47,8 @@ public class PlayerController : MonoBehaviour
         if (frameInput.Release)
         {
             pointerGrabber.ReleaseAnimal();
+            pointerGrabber.ReleaseCage();
+
         }
     }
 

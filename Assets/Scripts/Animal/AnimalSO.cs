@@ -9,8 +9,11 @@ public class AnimalSO : ScriptableObject
     {
         Cat,
         Dog,
-        Bird
+        Sheep_G,
+        Sheep_O,
+        Sheep_GG
     }
 
     public AnimalType animalType;
+    public float speed;
 }

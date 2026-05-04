@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Animal : MonoBehaviour
@@ -8,11 +9,25 @@ public class Animal : MonoBehaviour
 
 
     bool canBeCapturedInCage;
-    bool isInCage;
+    bool canMove;
     public Vector2 PickupPosition { get; private set; }
+    public bool IsInCage { get; private set; }
 
     Cage targetCage;
 
+    private void Start()
+    {
+        canMove = true;
+    }
+
+    private void Update()
+    {
+        if (canMove)
+        {
+            transform.Translate(Vector2.up * animalSO.speed * Time.deltaTime);
+        }
+
+    }
 
     public void SetCaptureStatus(bool status)
     {
@@ -26,15 +41,21 @@ public class Animal : MonoBehaviour
             if(targetCage.CageSO.animalCageType == animalSO.animalType)
             {
                 Debug.Log("Animal put in cage: " + name);
-                isInCage = true;
+                IsInCage = true;
                 targetCage.CaptureAnimal(this);
             }
             else
             {
                 this.transform.position = PickupPosition;
+                ToggleAnimalMovement(true);
                 Debug.Log("Animal cannot be put in cage: " + name + " because cage type is " + targetCage.CageSO.animalCageType + " and animal type is " + animalSO.animalType);
             }
                 
+        }
+        else
+        {
+            ToggleAnimalMovement(true);
+            Debug.Log("Animal can be put in cage: "+ canBeCapturedInCage);
         }
         
     }
@@ -48,5 +69,11 @@ public class Animal : MonoBehaviour
     {
         PickupPosition = position;
     }
+
+    public void ToggleAnimalMovement(bool status)
+    {
+        canMove = status;
+    }
+
 
 }

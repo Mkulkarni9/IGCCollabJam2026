@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Cat
   m_EditorClassIdentifier: Assembly-CSharp::AnimalSO
   animalType: 0
+  speed: 0.5
