@@ -395,7 +395,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_12
+      name: sheep head
       rect:
         serializedVersion: 2
         x: 13
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_13
+      name: cage_R_2
       rect:
         serializedVersion: 2
         x: 34
@@ -439,7 +439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_14
+      name: cage_R_3
       rect:
         serializedVersion: 2
         x: 42
@@ -527,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_18
+      name: cage_B_2
       rect:
         serializedVersion: 2
         x: 34
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_19
+      name: cage_B_3
       rect:
         serializedVersion: 2
         x: 42
@@ -571,7 +571,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_20
+      name: cage_G_2
       rect:
         serializedVersion: 2
         x: 34
@@ -593,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_21
+      name: cage_G_3
       rect:
         serializedVersion: 2
         x: 42
@@ -672,21 +672,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      cage_B_2: -700603494
+      cage_B_3: -760238176
+      cage_G_2: 1205916683
+      cage_G_3: 242360549
+      cage_R_2: -937152258
+      cage_R_3: -822286402
       sheep and holes_0: -7189693782253287950
       sheep and holes_1: 6982194485802740595
       sheep and holes_10: 1275913254
       sheep and holes_11: -132797221
-      sheep and holes_12: 1004320162
-      sheep and holes_13: -937152258
-      sheep and holes_14: -822286402
       sheep and holes_15: -1725183167
       sheep and holes_16: -120904861
       sheep and holes_17: -1985575447
-      sheep and holes_18: -700603494
-      sheep and holes_19: -760238176
       sheep and holes_2: -4956758530983268240
-      sheep and holes_20: 1205916683
-      sheep and holes_21: 242360549
       sheep and holes_22: 1810487895
       sheep and holes_23: -2061532310
       sheep and holes_3: -4674689817730965508
@@ -696,6 +695,7 @@ TextureImporter:
       sheep and holes_7: -2047076772
       sheep and holes_8: 137643990
       sheep and holes_9: -743195561
+      sheep head: 1004320162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

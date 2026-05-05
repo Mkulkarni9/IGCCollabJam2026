@@ -17,10 +17,14 @@ public class Cage : MonoBehaviour
 
     Customer targetCustomer;
 
+    int OPEN_HASH = Animator.StringToHash("Cage_open");
 
     private void Start()
     {
         CagePosition = transform.position;
+
+        Debug.Log("Playing: " + OPEN_HASH);
+        GetComponent<Animator>().Play(OPEN_HASH);
     }
 
     

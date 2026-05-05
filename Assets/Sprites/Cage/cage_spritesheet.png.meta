@@ -1,0 +1,1124 @@
+fileFormatVersion: 2
+guid: 0d30bb7ac13a4e040b9bbe24a54f8d68
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2060385868221277802
+    second: cage_spritesheet_0
+  - first:
+      213: 7785868450775694131
+    second: cage_spritesheet_1
+  - first:
+      213: 2826365850520078597
+    second: cage_spritesheet_2
+  - first:
+      213: -1173713947096087994
+    second: cage_spritesheet_3
+  - first:
+      213: 1698683638308047520
+    second: cage_spritesheet_4
+  - first:
+      213: -760988828725502278
+    second: cage_spritesheet_5
+  - first:
+      213: 3612958915753007332
+    second: cage_spritesheet_6
+  - first:
+      213: -1732725724219128943
+    second: cage_spritesheet_7
+  - first:
+      213: 3662561142724631548
+    second: cage_spritesheet_8
+  - first:
+      213: -3922782366948840552
+    second: cage_spritesheet_9
+  - first:
+      213: 8326203511865684473
+    second: cage_spritesheet_10
+  - first:
+      213: 4533461768803567546
+    second: cage_spritesheet_11
+  - first:
+      213: -5372469882934701151
+    second: cage_spritesheet_12
+  - first:
+      213: 7676293778297889838
+    second: cage_spritesheet_13
+  - first:
+      213: 4577957063673333410
+    second: cage_spritesheet_14
+  - first:
+      213: 4598205609967928717
+    second: cage_spritesheet_15
+  - first:
+      213: 2601631724912914739
+    second: cage_spritesheet_16
+  - first:
+      213: -303054083402248347
+    second: cage_spritesheet_17
+  - first:
+      213: 7434593470551138725
+    second: cage_spritesheet_18
+  - first:
+      213: 6346042312266994447
+    second: cage_spritesheet_19
+  - first:
+      213: -6009916748016339627
+    second: cage_spritesheet_20
+  - first:
+      213: 7365276427253808418
+    second: cage_spritesheet_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cage_open_R
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 73
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6999f6028f90863e0800000000000000
+      internalID: -2060385868221277802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_R
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 73
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bf76cca16fc0c60800000000000000
+      internalID: 7785868450775694131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RR
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 73
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5094b8d24c4493720800000000000000
+      internalID: 2826365850520078597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RR
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 73
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa8e1fd4cfe29710800000000000000
+      internalID: 1698683638308047520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RRR
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 73
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8d989ddfec32230800000000000000
+      internalID: 3612958915753007332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RRR
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 73
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b29d6983a7f89c0800000000000000
+      internalID: -3922782366948840552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_B
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a351352b172175b0800000000000000
+      internalID: -5372469882934701151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_B
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24acf6458ca78a60800000000000000
+      internalID: 7676293778297889838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_BB
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a64d31c1bb288f30800000000000000
+      internalID: 4577957063673333410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_BB
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 65
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33132df054ada1420800000000000000
+      internalID: 2601631724912914739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_BBB
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 65
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1a3ad0f5bfc2760800000000000000
+      internalID: 7434593470551138725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_BBB
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 65
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d750f33e7b63660800000000000000
+      internalID: 7365276427253808418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_G
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 57
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d74550842ae1df48a967c4dfe391a64
+      internalID: -1506636282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_G
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 57
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388403208458d314fa9199dee3894abc
+      internalID: -1719572446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_GG
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 57
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02f1ad765ce46342814298ebd6930c9
+      internalID: 1721123712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_GG
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 57
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df953145ae38e54b951141d9756baf0
+      internalID: -1722827903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_GGG
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 57
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1718ac7e8f15d0f4dbc24652c8b29c4e
+      internalID: 201511040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_GGG
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 57
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae827cca51dfa24787c49a827001e73
+      internalID: -689102188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RB
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 49
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338442fe980f5724db4e19737fbd1bc2
+      internalID: -948429304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RB
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 49
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d879f86a1ed0daf4f9b9ef9fc9fdb9b5
+      internalID: -96145705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RRB
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 49
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9600a4e291d03043abb6105479b84c3
+      internalID: -1482517771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RRB
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 49
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996183e12d5a9dd46b49749374e93dc4
+      internalID: -1047156418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RG
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 41
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77dd260b631cc7e4aa86f59d4f7af110
+      internalID: -1536603805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RG
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 41
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c774bf5490eb91d4e8c2452ab1ebeb44
+      internalID: 536724440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RRG
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 41
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e50ae4d482863d4aad8f26278ee3111
+      internalID: 1912133211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RRG
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 41
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e3a2908be953a428b997ca3a547f05
+      internalID: -1594517116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_GB
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 33
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc3b6820f5650c49850242362e26449
+      internalID: 959454970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_BG
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c95f3082ce2f3d4caa49d9bb512afe7
+      internalID: 708808415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_BBR
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 33
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ff5f2819dc33340b6bab900f945c16
+      internalID: 2108546237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_BBR
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 33
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5448c926dd5b874ea5553328b6177cb
+      internalID: -873434777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_GGR
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 25
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4acca4e521b9445a7be121f11e62c8
+      internalID: 1720434440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_GGR
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 25
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65f0376ff7b91748ad9526a24e0e486
+      internalID: -1362648842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_RGB
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 17
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d675bba649e3214a95bb9cb0cd13da5
+      internalID: 275010875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_RGB
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 17
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f83e71c861b80f4f852f5fd83eaf648
+      internalID: 803028404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_BBG
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 9
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe87f00aff1e974f9f7f829f45c6fb2
+      internalID: -2135218743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_BBG
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 9
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5c807b293ba1248ba640116a4b483a
+      internalID: 1893817658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_open_GGB
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18008d7ccf0f91640b8aaa7bbab3746f
+      internalID: 155258498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cage_closed_GGB
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca84d789de1a0543b12fcf63e0ce90f
+      internalID: 1462459214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 444cc1c8268128940846815a2dbaed79
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":8.0,"y":8.0},"gridSpriteOffset":{"x":1.0,"y":1.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      cage_closed_B: 7676293778297889838
+      cage_closed_BB: 2601631724912914739
+      cage_closed_BBB: 7365276427253808418
+      cage_closed_BBG: 1893817658
+      cage_closed_BBR: -873434777
+      cage_closed_BG: 708808415
+      cage_closed_G: -1719572446
+      cage_closed_GG: -1722827903
+      cage_closed_GGB: 1462459214
+      cage_closed_GGG: -689102188
+      cage_closed_GGR: -1362648842
+      cage_closed_R: 7785868450775694131
+      cage_closed_RB: -96145705
+      cage_closed_RG: 536724440
+      cage_closed_RGB: 803028404
+      cage_closed_RR: 1698683638308047520
+      cage_closed_RRB: -1047156418
+      cage_closed_RRG: -1594517116
+      cage_closed_RRR: -3922782366948840552
+      cage_open_B: -5372469882934701151
+      cage_open_BB: 4577957063673333410
+      cage_open_BBB: 7434593470551138725
+      cage_open_BBG: -2135218743
+      cage_open_BBR: 2108546237
+      cage_open_G: -1506636282
+      cage_open_GB: 959454970
+      cage_open_GG: 1721123712
+      cage_open_GGB: 155258498
+      cage_open_GGG: 201511040
+      cage_open_GGR: 1720434440
+      cage_open_R: -2060385868221277802
+      cage_open_RB: -948429304
+      cage_open_RG: -1536603805
+      cage_open_RGB: 275010875
+      cage_open_RR: 2826365850520078597
+      cage_open_RRB: -1482517771
+      cage_open_RRG: 1912133211
+      cage_open_RRR: 3612958915753007332
+      cage_spritesheet_10: 8326203511865684473
+      cage_spritesheet_11: 4533461768803567546
+      cage_spritesheet_15: 4598205609967928717
+      cage_spritesheet_17: -303054083402248347
+      cage_spritesheet_19: 6346042312266994447
+      cage_spritesheet_20: -6009916748016339627
+      cage_spritesheet_22: 1208675950
+      cage_spritesheet_23: -1020264593
+      cage_spritesheet_27: -1993985087
+      cage_spritesheet_29: 1976730146
+      cage_spritesheet_3: -1173713947096087994
+      cage_spritesheet_31: -150881845
+      cage_spritesheet_32: 1808922134
+      cage_spritesheet_34: -1363588425
+      cage_spritesheet_35: -856605830
+      cage_spritesheet_37: 366685107
+      cage_spritesheet_39: 803773162
+      cage_spritesheet_41: 1119488578
+      cage_spritesheet_42: -2061013000
+      cage_spritesheet_44: -169221987
+      cage_spritesheet_45: 809525374
+      cage_spritesheet_47: -1084943039
+      cage_spritesheet_49: 1699012663
+      cage_spritesheet_5: -760988828725502278
+      cage_spritesheet_51: -1240313702
+      cage_spritesheet_52: 651284422
+      cage_spritesheet_54: -769152189
+      cage_spritesheet_55: -2119854701
+      cage_spritesheet_57: 940454037
+      cage_spritesheet_59: -670047137
+      cage_spritesheet_61: 1253716220
+      cage_spritesheet_62: 498229543
+      cage_spritesheet_64: -755761380
+      cage_spritesheet_65: -146113731
+      cage_spritesheet_67: 801888122
+      cage_spritesheet_68: -1566034737
+      cage_spritesheet_7: -1732725724219128943
+      cage_spritesheet_70: 461335346
+      cage_spritesheet_71: -719867326
+      cage_spritesheet_73: -1762202867
+      cage_spritesheet_74: 1077329655
+      cage_spritesheet_76: 529824389
+      cage_spritesheet_77: 1177603574
+      cage_spritesheet_79: 1024233299
+      cage_spritesheet_8: 3662561142724631548
+      cage_spritesheet_80: -1194259107
+      cage_spritesheet_82: 959820413
+      cage_spritesheet_83: 1249771691
+      cage_spritesheet_85: -903102794
+      cage_spritesheet_86: 348527402
+      cage_spritesheet_88: 1614461209
+      cage_spritesheet_89: -1239844580
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

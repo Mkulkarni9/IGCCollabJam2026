@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CageB_override controller
+  m_Controller: {fileID: 9100000, guid: 02afe4bcc4f266843a483e5cf0c76951, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 30843860dd45bfa4a89334d5b52c99a7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fcaf8b31efb345f4499e12ded676e9ae, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b95f70cdab62c234f91e7669ffdbc9b7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1d167b817d5e253408b66e5dd246fcce, type: 2}
