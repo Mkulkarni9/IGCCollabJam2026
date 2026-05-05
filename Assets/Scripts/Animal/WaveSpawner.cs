@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -15,16 +14,26 @@ public class WaveSpawner : MonoBehaviour
         Random
     }
 
+    [Serializable]
+    public enum TypeOfEntity
+    {
+        Animal,
+        Cage
+    }
+
 
     public static event Action<GameObject> OnEntitySpawned; 
+
     [SerializeField] List<WaveSO> entityWaves = new List<WaveSO>();
     [SerializeField] List<Transform> entitySpawnPoints = new List<Transform>();
+    [SerializeField] TypeOfEntity typeOfEntity;
     [SerializeField] SpawnMode spawnMode;
 
     WaveSO currentWave;
     int currentWaveIndex;
     int currentSpawnPositionIndex;
     int entitiesSpawnedInCurrentWave;
+    float intervalBetweenSpawns;
     List<Transform> shuffledEntitySpawnPoints = new List<Transform>();
 
     Coroutine waveSpawnRoutine;
@@ -34,17 +43,45 @@ public class WaveSpawner : MonoBehaviour
         currentWaveIndex = 0;
         currentWave = entityWaves[currentWaveIndex];
         shuffledEntitySpawnPoints = entitySpawnPoints.OrderBy(x => UnityEngine.Random.value).ToList();
-        SpawnEntities();
+
+
+        SpawnEntities(0);
+    }
+
+    private void OnEnable()
+    {
+        LevelManager.OnLevelComplete += SpawnEntities;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.OnLevelComplete -= SpawnEntities;
+
     }
 
 
 
-    void SpawnEntities()
+    void SpawnEntities(int levelIndex)
     {
         if(waveSpawnRoutine !=null)
         {
             StopCoroutine(waveSpawnRoutine);
         }
+
+        switch (typeOfEntity)
+        {
+            case TypeOfEntity.Animal:
+                intervalBetweenSpawns = currentWave.intervalBetweenAnimalSpawns;
+                break;
+            case TypeOfEntity.Cage:
+                intervalBetweenSpawns = currentWave.intervalBetweenCageSpawns;
+                break;
+            default:
+                break;
+        }
+
+        Debug.Log("Starting wave: " + currentWaveIndex);
+
 
         waveSpawnRoutine = StartCoroutine(SpawnEntitiesRoutine());
     }
@@ -56,25 +93,29 @@ public class WaveSpawner : MonoBehaviour
 
 
 
-        while (entitiesSpawnedInCurrentWave < currentWave.numberOfEntitiesInWave)
+        while (entitiesSpawnedInCurrentWave < currentWave.animalTypes.Count)
         {
-            entitiesSpawnedInCurrentWave++;
-            int randomEntityIndex = UnityEngine.Random.Range(0, currentWave.entitiesInWave.Count);
+            
+            //int randomEntityIndex = UnityEngine.Random.Range(0, currentWave.entitiesInWave.Count);
             int spawnPointIndex = GetSpawnPointIndex();
 
-            GameObject entitySpawned = Instantiate(currentWave.entitiesInWave[randomEntityIndex], shuffledEntitySpawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
+            GameObject entityToBeSpawned = GetMatchingGameObject(currentWave.animalTypes[entitiesSpawnedInCurrentWave]);
+
+            GameObject entitySpawned = Instantiate(entityToBeSpawned, shuffledEntitySpawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
             entitySpawned.transform.SetParent(this.transform);
 
+            entitiesSpawnedInCurrentWave++;
             OnEntitySpawned?.Invoke(entitySpawned);
 
-            yield return new WaitForSeconds(currentWave.intervalBetweenSpawns);
+            yield return new WaitForSeconds(intervalBetweenSpawns);
         }
 
         if(currentWaveIndex < entityWaves.Count - 1)
         {
             currentWaveIndex++;
             currentWave = entityWaves[currentWaveIndex];
-            SpawnEntities();
+
+
         }
 
     }
@@ -104,4 +145,40 @@ public class WaveSpawner : MonoBehaviour
                 return 0;
         }
     }
+
+    GameObject GetMatchingGameObject(AnimalSO.AnimalType animalType)
+    {
+        
+        switch(typeOfEntity)
+        {
+            case TypeOfEntity.Animal:
+                foreach (GameObject entity in currentWave.animalsInWave)
+                {
+                    if (entity.GetComponent<Animal>().AnimalSO.animalType == animalType)
+                    {
+                        return entity;
+                    }
+                }
+                break;
+            case TypeOfEntity.Cage:
+                foreach (GameObject entity in currentWave.cagesInWave)
+                {
+                    if (entity.GetComponent<Cage>().CageSO.animalCageType == animalType)
+                    {
+                        return entity;
+                    }
+                }
+                break;
+            default:
+                Debug.Log("No matching entity");
+                break;
+        }
+
+        
+
+        Debug.Log("No matching entity found");
+
+        return null;
+    }
+    
 }

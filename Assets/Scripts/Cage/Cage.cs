@@ -1,7 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Cage : MonoBehaviour
 {
+
+    public static event Action<Animal, Cage> OnAnimalCapturedInCorrectCage;
+    public static event Action<Animal, Cage> OnAnimalCapturedInWrongCage;
     [SerializeField] CageSO cageSO;
 
 
@@ -19,15 +23,7 @@ public class Cage : MonoBehaviour
         CagePosition = transform.position;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Cage cage = collision.GetComponent<Cage>();
-
-        if(cage!=null)
-        {
-            Destroy(cage.gameObject);
-        }
-    }
+    
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -64,8 +60,22 @@ public class Cage : MonoBehaviour
         //animal.ToggleAnimalMovement(false);
 
         animal.GetComponent<BoxCollider2D>().enabled = false;
-        
+
+        OnAnimalCapturedInCorrectCage?.Invoke(animal, this);
+
         Destroy(this.gameObject);
+    }
+
+
+    public void DestroyAnimal(Animal animal)
+    {
+        
+        Debug.Log("Destroying animal after putting in wrong cage: " + animal.name);
+
+        OnAnimalCapturedInWrongCage?.Invoke(animal,this);
+
+
+        Destroy(animal.gameObject);
     }
 
 

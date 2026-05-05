@@ -127,7 +127,7 @@ public class PointerGrabber : MonoBehaviour
         if(canGrabAnimal && !grabbableAnimal.IsInCage)
         {            
             Rigidbody2D rb = grabbableAnimal.GetComponent<Rigidbody2D>();
-            Debug.Log("Rigid body of grabbed animal: "+ grabbableAnimal.AnimalSO.animalType + " = " + rb);
+            //Debug.Log("Rigid body of grabbed animal: "+ grabbableAnimal.AnimalSO.animalType + " = " + rb);
             if (rb != null)
             {
                 // Grab the object by making it a child of the pointer
@@ -138,7 +138,7 @@ public class PointerGrabber : MonoBehaviour
                 IsGrabbingAnimal = true;
                 grabbedAnimal.ToggleAnimalMovement(false);
                 grabbedAnimal.SetPickupPosition(transform.position);
-                Debug.Log("Grabbed: " + grabbedAnimal.AnimalSO.animalType);
+                //Debug.Log("Grabbed: " + grabbedAnimal.AnimalSO.animalType);
             }
             
         }
@@ -161,7 +161,7 @@ public class PointerGrabber : MonoBehaviour
                 grabbedCage = grabbableCage;
                 IsGrabbingCage = true;
                 //grabbedCage.SetCagePosition(transform.position);
-                Debug.Log("Grabbed: " + grabbedCage.CageSO.animalCageType);
+                //Debug.Log("Grabbed: " + grabbedCage.CageSO.animalCageType);
             }
         }
     }
@@ -192,7 +192,7 @@ public class PointerGrabber : MonoBehaviour
             if (rb != null)
             {
                 rb.transform.SetParent(null);
-                Debug.Log("Released: " + grabbedCage.CageSO.animalCageType);
+                //Debug.Log("Released: " + grabbedCage.CageSO.animalCageType);
 
                 grabbedCage.DeliverCageToCustomer();
                 IsGrabbingCage = false;

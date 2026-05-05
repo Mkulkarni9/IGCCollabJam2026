@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb21297d53b0cd4c9c36b8e5d3c5099, type: 3}
+  m_Name: Wave 4
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalWaveSO
+  animalsInWave:
+  - {fileID: 7606578773500941633, guid: 5daba363419baa5499e7ed3d8ee54ae6, type: 3}
+  - {fileID: 7606578773500941633, guid: 242a48206f43b294abf4947bff415239, type: 3}
+  - {fileID: 7606578773500941633, guid: c2f1bfc595f11c44d813e56e7c830d2e, type: 3}
+  - {fileID: 7606578773500941633, guid: b9c381690a5f24e4cb80ea87de8f01a4, type: 3}
+  - {fileID: 7606578773500941633, guid: c02e5a8ad5878684a89bd216b3425d44, type: 3}
+  - {fileID: 7606578773500941633, guid: e5b2e016d11fe7b40b5b65992aeba34d, type: 3}
+  cagesInWave:
+  - {fileID: 673616528075109529, guid: 3f658c51a2b92624480d29e57250bcf3, type: 3}
+  - {fileID: 673616528075109529, guid: 4b608c6aa90e58a4a8aaae2cfbfcf3f0, type: 3}
+  - {fileID: 673616528075109529, guid: 147a7c690c6788846b2df03412fc4335, type: 3}
+  - {fileID: 673616528075109529, guid: e4abf8de4f712d44e804ad56dec2faeb, type: 3}
+  - {fileID: 673616528075109529, guid: c18209f2253b4ec48ad9c8178510d401, type: 3}
+  - {fileID: 673616528075109529, guid: d92b57c9b8872694f94a5b8ec4b43f96, type: 3}
+  animalTypes: 03000000040000000500000006000000080000000700000003000000070000000600000004000000030000000800000006000000050000000800000003000000
+  intervalBetweenAnimalSpawns: 1.5
+  intervalBetweenCageSpawns: 0.25
+  totalWaveDuration: 45

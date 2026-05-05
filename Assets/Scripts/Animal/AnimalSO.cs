@@ -7,11 +7,26 @@ public class AnimalSO : ScriptableObject
     [Serializable]
     public enum AnimalType
     {
-        Cat,
-        Dog,
+        Sheep_R,
         Sheep_G,
-        Sheep_O,
-        Sheep_GG
+        Sheep_B,
+        Sheep_RR,
+        Sheep_GG,
+        Sheep_BB,
+        Sheep_RG,
+        Sheep_GB,
+        Sheep_RB,
+        Sheep_RRR,
+        Sheep_GGG,
+        Sheep_BBB,
+        Sheep_RRG,
+        Sheep_RRB,
+        Sheep_GGR,
+        Sheep_GGB,
+        Sheep_BBR,
+        Sheep_BBG,
+        Sheep_RGB,
+
     }
 
     public AnimalType animalType;

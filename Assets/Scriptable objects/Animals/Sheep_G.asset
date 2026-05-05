@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abafa9fa88b5b0c40ad53a204b6a2f39, type: 3}
   m_Name: Sheep_G
   m_EditorClassIdentifier: Assembly-CSharp::AnimalSO
-  animalType: 2
-  speed: 1.2
-  boostSpeedProportion: 4
+  animalType: 1
+  speed: 1
+  boostSpeedProportion: 2
   boostDuration: 0.2
-  chanceToBoostSpeed: 1
+  chanceToBoostSpeed: 0.25

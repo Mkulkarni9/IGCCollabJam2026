@@ -91,6 +91,9 @@ public class Animal : MonoBehaviour
 
     }
 
+
+    #region movement variations
+
     public void SpeedUpAnimal()
     {
         if(canSpeedUpAnimal)
@@ -113,10 +116,6 @@ public class Animal : MonoBehaviour
 
     }
 
-    public void ResetSpeedUpStatus()
-    {
-        canSpeedUpAnimal = true;
-    }
 
     IEnumerator BoostSpeedRoutine()
     {
@@ -124,6 +123,14 @@ public class Animal : MonoBehaviour
         movementSpeed = animalSO.speed;
     }
 
+
+    public void ResetSpeedUpStatus()
+    {
+        canSpeedUpAnimal = true;
+    }
+
+
+    #endregion
 
     #region Animal capture and cage related methods
     public void SetCaptureStatus(bool status)
@@ -137,15 +144,16 @@ public class Animal : MonoBehaviour
         {
             if(targetCage.CageSO.animalCageType == animalSO.animalType)
             {
-                Debug.Log("Animal put in cage: " + name);
+                Debug.Log("Animal put in correct cage: " + name);
                 IsInCage = true;
                 targetCage.CaptureAnimal(this);
             }
             else
             {
-                this.transform.position = PickupPosition;
-                ToggleAnimalMovement(true);
-                Debug.Log("Animal cannot be put in cage: " + name + " because cage type is " + targetCage.CageSO.animalCageType + " and animal type is " + animalSO.animalType);
+                Debug.Log("Animal put in wrong cage: " + name);
+                IsInCage = true;
+                targetCage.DestroyAnimal(this);
+                
             }
                 
         }

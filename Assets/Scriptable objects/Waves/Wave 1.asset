@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb21297d53b0cd4c9c36b8e5d3c5099, type: 3}
+  m_Name: Wave 1
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalWaveSO
+  animalsInWave:
+  - {fileID: 7606578773500941633, guid: 01d43840014c7ab4ea23b4e15609df2c, type: 3}
+  - {fileID: 7606578773500941633, guid: 0ee4a6f8c65ac4746a9bd46c89fabc6b, type: 3}
+  cagesInWave:
+  - {fileID: 673616528075109529, guid: ada755d2e2e332f4ba1c622d0ee23224, type: 3}
+  - {fileID: 673616528075109529, guid: 8500cf99028ee834f8274dccc7ce456d, type: 3}
+  animalTypes: 01000000010000000000000000000000010000000100000000000000000000000100000000000000
+  intervalBetweenAnimalSpawns: 2
+  intervalBetweenCageSpawns: 0.25
+  totalWaveDuration: 30
