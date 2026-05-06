@@ -16,6 +16,9 @@ public class AnimalManager : MonoBehaviour
     [SerializeField] float gridSize;
     [SerializeField] Vector2 gridOrigin;
 
+    [SerializeField] CageManager cageManager;
+    [SerializeField] ObstacleManager obstacleManager;
+
     Grid<PathNode> pathFindingGrid;
     Pathfinding pathfinding;
 
@@ -24,16 +27,20 @@ public class AnimalManager : MonoBehaviour
         pathFindingGrid = new Grid<PathNode>(gridLength, gridHeight, gridSize, gridOrigin, (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y));
         pathfinding = new Pathfinding(pathFindingGrid);
 
-        for (int i = 0; i < pathFindingGrid.GetWidth(); i++)
+        /*for (int i = 0; i < pathFindingGrid.GetWidth(); i++)
         {
             for (int j = 0; j < pathFindingGrid.GetHeight(); j++)
             {
                 PathNode node = pathFindingGrid.GetGridObject(i, j);
                 node.SetWalkable(walkableLayer.GetTile(walkableLayer.WorldToCell(pathFindingGrid.GetWorldPosition(i, j))) != null);
             }
-        }
+        }*/
 
 
+        ResetWalkableLayers(0);
+
+        cageManager.AssignPathfindingGrid(pathFindingGrid, pathfinding);
+        obstacleManager.AssignPathfindingGrid(pathFindingGrid, pathfinding);
 
     }
 
@@ -41,12 +48,15 @@ public class AnimalManager : MonoBehaviour
     private void OnEnable()
     {
         WaveSpawner.OnEntitySpawned += SetPathfinding;
+        LevelManager.OnLevelComplete += ResetWalkableLayers;
 
     }
 
     private void OnDisable()
     {
         WaveSpawner.OnEntitySpawned -= SetPathfinding;
+        LevelManager.OnLevelComplete -= ResetWalkableLayers;
+
 
     }
 
@@ -83,7 +93,23 @@ public class AnimalManager : MonoBehaviour
 
     }
 
+    void ResetWalkableLayers(int levelIndex)
+    {
 
+        Debug.Log("Resetting walkable layers");
+
+        for (int i = 0; i < pathFindingGrid.GetWidth(); i++)
+        {
+            for (int j = 0; j < pathFindingGrid.GetHeight(); j++)
+            {
+                PathNode node = pathFindingGrid.GetGridObject(i, j);
+                node.SetWalkable(walkableLayer.GetTile(walkableLayer.WorldToCell(pathFindingGrid.GetWorldPosition(i, j))) != null);
+
+
+            }
+        }
+
+    }
 
 
 }

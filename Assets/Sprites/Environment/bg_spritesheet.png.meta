@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_spritesheet_0
+      name: fence_end left
       rect:
         serializedVersion: 2
         x: 0
@@ -135,7 +135,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bg_spritesheet_1
+      name: fence_middle
       rect:
         serializedVersion: 2
         x: 8
@@ -157,7 +157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bg_spritesheet_2
+      name: fence_end right
       rect:
         serializedVersion: 2
         x: 16
@@ -326,15 +326,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":8.0,"y":8.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      bg_spritesheet_0: -7466555125596336743
-      bg_spritesheet_1: 1804284353
-      bg_spritesheet_2: -1198174167
       bg_spritesheet_3: -1344953572
       bg_spritesheet_4: 2020565331
       bg_spritesheet_5: -1998764880
       bg_spritesheet_6: 743679295
       bg_spritesheet_7: 386045780
       bg_spritesheet_8: -87100336
+      fence_end left: -7466555125596336743
+      fence_end right: -1198174167
+      fence_middle: 1804284353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

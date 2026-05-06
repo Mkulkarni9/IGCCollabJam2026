@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Unity.VectorGraphics;
 using UnityEngine;
 
 public class Cage : MonoBehaviour
@@ -17,16 +19,30 @@ public class Cage : MonoBehaviour
 
     Customer targetCustomer;
 
-    int OPEN_HASH = Animator.StringToHash("Cage_open");
+    Grid<PathNode> pathFindingGrid;
+    Pathfinding pathfinding;
 
     private void Start()
     {
         CagePosition = transform.position;
+        UpdateWalkableTile();
 
-        Debug.Log("Playing: " + OPEN_HASH);
-        GetComponent<Animator>().Play(OPEN_HASH);
+
     }
 
+    public void SetPathfindingVariablesToCage(Grid<PathNode> pathFindingGrid, Pathfinding pathfinding)
+    {
+        this.pathFindingGrid = pathFindingGrid;
+        this.pathfinding = pathfinding;
+    }
+
+
+    void UpdateWalkableTile()
+    {
+        PathNode currentNode = pathFindingGrid.GetGridObject(this.transform.position);
+        Debug.Log("Cage node for cage: "+this.cageSO.animalCageType +": "+ currentNode);
+        currentNode.SetWalkable(false);
+    }
     
 
     private void OnTriggerStay2D(Collider2D collision)

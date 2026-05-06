@@ -45,17 +45,17 @@ public class WaveSpawner : MonoBehaviour
         shuffledEntitySpawnPoints = entitySpawnPoints.OrderBy(x => UnityEngine.Random.value).ToList();
 
 
-        SpawnEntities(0);
+        //SpawnEntities(0);
     }
 
     private void OnEnable()
     {
-        LevelManager.OnLevelComplete += SpawnEntities;
+        LevelManager.OnNewLevelStart += SpawnEntities;
     }
 
     private void OnDisable()
     {
-        LevelManager.OnLevelComplete -= SpawnEntities;
+        LevelManager.OnNewLevelStart -= SpawnEntities;
 
     }
 
