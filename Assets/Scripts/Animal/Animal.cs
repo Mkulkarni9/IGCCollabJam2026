@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Animal : NPC
@@ -8,6 +9,9 @@ public class Animal : NPC
     public static event Action OnEatenByWolf;
 
     [SerializeField] AnimalSO animalSO;
+
+    [SerializeField] Material baseMaterial;
+    [SerializeField] Material grabbedMaterial;
 
     public AnimalSO AnimalSO => animalSO;
 
@@ -19,7 +23,8 @@ public class Animal : NPC
     public bool IsGrabbed { get; private set; }
     Cage targetCage;
 
-
+    Animator[] animators;
+    SpriteRenderer[] spriteRenderers;
    
 
 
@@ -34,6 +39,9 @@ public class Animal : NPC
 
         movementSpeed = animalSO.speed;
         lastPosition = transform.position;
+
+        animators = GetComponentsInChildren<Animator>().Where(c => c.gameObject != gameObject).ToArray();
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>().Where(c => c.gameObject != gameObject).ToArray();
 
     }
 
@@ -130,6 +138,31 @@ public class Animal : NPC
     public void SetGrabbedStatus(bool status)
     {
         IsGrabbed = status;
+
+        foreach (Animator animator in animators)
+        {
+            if(animator.gameObject.activeSelf)
+            {
+                animator.SetBool("IsGrabbed", status);
+            }
+            
+        }
+
+        //Setting material after changing grab status
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        {
+            if(status)
+            {
+                spriteRenderer.material = grabbedMaterial;
+            }
+            else
+            {
+                spriteRenderer.material = baseMaterial;
+            }
+            
+        }
+
+
     }
 
 

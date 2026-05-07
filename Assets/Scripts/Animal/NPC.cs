@@ -71,6 +71,7 @@ public class NPC : MonoBehaviour
             }
         }
 
+
         FlipGameObjectBasedOnMovement();
 
 

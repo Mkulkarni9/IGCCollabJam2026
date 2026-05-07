@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animal
   animalSO: {fileID: 11400000, guid: 198e6c61f7148aa428863a6bcc2ad95c, type: 2}
+  baseMaterial: {fileID: 2100000, guid: 05e82284a6894fd49b04bdabf7a03ec8, type: 2}
+  grabbedMaterial: {fileID: 2100000, guid: a709e7d1302440f428eff7d56df75928, type: 2}
 --- !u!95 &-7822496718685554300
 Animator:
   serializedVersion: 7
