@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: e1fdbd87849c0d343a2ce6aa8ab1f050
+guid: 92a7ae2b939d97c478323a8a470771f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1797377285043806228
-    second: Dog walk_placeholder_0
-  - first:
-      213: 5398703348477636410
-    second: Dog walk_placeholder_1
-  - first:
-      213: -8058763671986901857
-    second: Dog walk_placeholder_2
-  - first:
-      213: 4586934502915887993
-    second: Dog walk_placeholder_3
-  - first:
-      213: -5994039381018142968
-    second: Dog walk_placeholder_4
-  - first:
-      213: -2545138687687900430
-    second: Dog walk_placeholder_5
+      213: -2341807999280410684
+    second: Button4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 42, y: 12, z: 42, w: 12}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -128,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dog walk_placeholder_0
+      name: Button4_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 42
+        width: 90
         height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -143,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 410646a2e1191f810800000000000000
-      internalID: 1797377285043806228
+      spriteID: 4cf09b6380a308fd0800000000000000
+      internalID: -2341807999280410684
       vertices: []
       indices: 
       edges: []
@@ -154,7 +139,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -163,12 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dog walk_placeholder_0: 1797377285043806228
-      Dog walk_placeholder_1: 5398703348477636410
-      Dog walk_placeholder_2: -8058763671986901857
-      Dog walk_placeholder_3: 4586934502915887993
-      Dog walk_placeholder_4: -5994039381018142968
-      Dog walk_placeholder_5: -2545138687687900430
+      Button4_0: -2341807999280410684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

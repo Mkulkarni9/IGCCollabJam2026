@@ -40,7 +40,7 @@ public class Cage : MonoBehaviour
     void UpdateWalkableTile()
     {
         PathNode currentNode = pathFindingGrid.GetGridObject(this.transform.position);
-        Debug.Log("Cage node for cage: "+this.cageSO.animalCageType +": "+ currentNode);
+        //Debug.Log("Cage node for cage: "+this.cageSO.animalCageType +": "+ currentNode);
         currentNode.SetWalkable(false);
     }
     

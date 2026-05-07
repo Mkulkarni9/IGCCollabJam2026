@@ -26,7 +26,7 @@ public class Obstacle : MonoBehaviour
         this.pathFindingGrid = pathFindingGrid;
 
         PathNode currentNode = pathFindingGrid.GetGridObject(this.transform.position);
-        Debug.Log("Obstacle node for obstacle: " + currentNode);
+        //Debug.Log("Obstacle node for obstacle: " + currentNode);
         currentNode.SetWalkable(false);
     }
 }

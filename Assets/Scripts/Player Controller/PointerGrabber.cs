@@ -137,6 +137,7 @@ public class PointerGrabber : MonoBehaviour
                 grabbedAnimal = grabbableAnimal;
                 IsGrabbingAnimal = true;
                 grabbedAnimal.ToggleAnimalMovement(false);
+                grabbedAnimal.SetGrabbedStatus(true);
                 grabbedAnimal.SetPickupPosition(transform.position);
                 //Debug.Log("Grabbed: " + grabbedAnimal.AnimalSO.animalType);
             }

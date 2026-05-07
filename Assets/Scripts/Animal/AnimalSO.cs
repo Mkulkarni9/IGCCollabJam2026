@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AnimalSO", menuName = "Scriptable Objects/AnimalSO")]
-public class AnimalSO : ScriptableObject
+public class AnimalSO : NPCSO
 {
     [Serializable]
     public enum AnimalType

@@ -18,6 +18,7 @@ public class AnimalManager : MonoBehaviour
 
     [SerializeField] CageManager cageManager;
     [SerializeField] ObstacleManager obstacleManager;
+    [SerializeField] WolfSpawner wolfManager;
 
     Grid<PathNode> pathFindingGrid;
     Pathfinding pathfinding;
@@ -41,6 +42,7 @@ public class AnimalManager : MonoBehaviour
 
         cageManager.AssignPathfindingGrid(pathFindingGrid, pathfinding);
         obstacleManager.AssignPathfindingGrid(pathFindingGrid, pathfinding);
+        wolfManager.AssignPathfindingGrid(pathFindingGrid, pathfinding);
 
     }
 

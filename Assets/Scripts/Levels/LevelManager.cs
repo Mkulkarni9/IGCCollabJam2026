@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public static event Action<int> OnLevelComplete;
     public static event Action<int> OnNewLevelStart;
+    public static event Action<float> OnNewLevelTimerUpdate;
 
 
     [SerializeField] List<LevelSO> levels = new List<LevelSO>();
@@ -42,6 +43,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < levels.Count; i++)
         {
             Debug.Log("Starting level: " + i);
+            OnNewLevelTimerUpdate?.Invoke(levels[i].levelDuration);
             OnNewLevelStart?.Invoke(i);
             yield return new WaitForSeconds(levels[i].levelDuration);
 

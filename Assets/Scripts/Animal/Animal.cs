@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Animal : MonoBehaviour
+public class Animal : NPC
 {
     [SerializeField] AnimalSO animalSO;
 
@@ -11,83 +10,27 @@ public class Animal : MonoBehaviour
 
     //Animal capture and cage related variables
     bool canBeCapturedInCage;
-    bool canMove;
     public Vector2 PickupPosition { get; private set; }
     public bool IsInCage { get; private set; }
+
+    public bool IsGrabbed { get; private set; }
     Cage targetCage;
 
 
-    //Pathfinding vaiables
-    Rigidbody2D rb;
-    List<Vector3> movementPath;
-    int currentPathIndex;
-    int currentMapPositionIndex;
+   
 
-    Grid<PathNode> pathFindingGridNPC;
-    Pathfinding pathfindingNPC;
-    List<Transform> mapPositionsNPC = new List<Transform>();
-    float movementSpeed;
+
+    //movement modification variables
     bool canSpeedUpAnimal = true;
-
     Coroutine boostCoroutine;
 
+
     private void Awake()
-    {
-
-        rb = GetComponent<Rigidbody2D>();
-
-    }
-
-    private void Start()
     {
         canMove = true;
 
         movementSpeed = animalSO.speed;
-
-        currentMapPositionIndex = 0;
-        //PathNode startNode = pathfindingNPC.grid.GetGridObject(mapPositionsNPC[currentMapPositionIndex].position);
-        PathNode startNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
-        PathNode endNode = pathfindingNPC.grid.GetGridObject(mapPositionsNPC[currentMapPositionIndex + 1].position);
-
-
-        //this.transform.position = mapPositionsNPC[currentMapPositionIndex].position;
-
-        /*Debug.Log("Start Node: " + startNode.x + ", " + startNode.y);
-        Debug.Log("End Node: " + endNode.x + ", " + endNode.y);*/
-        SetMovementPath(pathfindingNPC.GetPath(startNode.x, startNode.y, endNode.x, endNode.y));
-    }
-
-    private void Update()
-    {
-        if (canMove)
-        {
-            //transform.Translate(Vector2.up * animalSO.speed * Time.deltaTime);
-
-            Vector3 offset = new Vector3(pathFindingGridNPC.GetCellSize(), pathFindingGridNPC.GetCellSize()) * 0.5f;
-            Vector3 targetWorldPosition = pathFindingGridNPC.GetWorldPosition((int)movementPath[currentPathIndex].x, (int)movementPath[currentPathIndex].y) + offset;
-
-
-            transform.position = Vector2.MoveTowards(this.transform.position, targetWorldPosition, movementSpeed * Time.deltaTime);
-
-            if (this.transform.position == targetWorldPosition && currentPathIndex < movementPath.Count - 1)
-            {
-                currentPathIndex++;
-            }
-            else if (this.transform.position == targetWorldPosition && currentPathIndex == movementPath.Count - 1)
-            {
-                currentMapPositionIndex++;
-
-                if (currentMapPositionIndex == mapPositionsNPC.Count)
-                {
-                    currentMapPositionIndex = 0;
-                }
-
-                PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
-                PathNode newEndNode = pathfindingNPC.grid.GetGridObject(mapPositionsNPC[currentMapPositionIndex + 1 == mapPositionsNPC.Count ? 0 : currentMapPositionIndex + 1].position);
-
-                SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
-            }
-        }
+        lastPosition = transform.position;
 
     }
 
@@ -160,6 +103,7 @@ public class Animal : MonoBehaviour
         else
         {
             ToggleAnimalMovement(true);
+            SetGrabbedStatus(false);
             Debug.Log("Animal can be put in cage: "+ canBeCapturedInCage);
         }
         
@@ -179,33 +123,19 @@ public class Animal : MonoBehaviour
     {
         canMove = status;
     }
-    #endregion
 
-    # region Pathfinding
-    public void SetPathfindingVariables(Grid<PathNode> pathFindingGrid, Pathfinding pathfinding, List<Transform> mapPositions)
+    public void SetGrabbedStatus(bool status)
     {
-        pathFindingGridNPC = pathFindingGrid;
-        pathfindingNPC = pathfinding;
-        mapPositionsNPC = mapPositions;
+        IsGrabbed = status;
     }
 
 
-    public void SetMovementPath(List<PathNode> movementPathNodes)
+    public void GetEatenByWolf()
     {
-
-        currentPathIndex = 0;
-        movementPath = new List<Vector3>();
-
-
-        for (int i = 0; i < movementPathNodes.Count; i++)
-        {
-            movementPath.Add(new Vector3(movementPathNodes[i].x, movementPathNodes[i].y));
-
-            //Debug.Log("Path Node: " + movementPath[i]);
-        }
-
-        //Debug.Log("Count of path nodes: " + movementPath.Count);
+        Destroy(this.gameObject);
     }
 
     #endregion
+
+    
 }

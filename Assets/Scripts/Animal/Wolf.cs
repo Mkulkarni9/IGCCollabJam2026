@@ -1,0 +1,164 @@
+using System.Collections;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
+
+public class Wolf : NPC
+{
+    [SerializeField] float wolfSpeed;
+
+    [SerializeField] float timeIntervalToSearchClosestSheep;
+
+    Animal closestSheep;
+
+    AnimalManager animalManager;
+
+    private void Awake()
+    {
+        canMove = true;
+        movementSpeed = wolfSpeed;
+
+        animalManager = FindAnyObjectByType<AnimalManager>();
+
+        lastPosition = transform.position;
+    }
+
+    private void OnEnable()
+    {
+        LevelManager.OnLevelComplete += DestroyWolf;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.OnLevelComplete -= DestroyWolf;
+
+
+    }
+
+    protected override void Start()
+    {
+        StartCoroutine(FindClosestSheepRoutine());
+        
+        PathNode startNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
+        PathNode endNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
+
+
+        Debug.Log("Start Node: " + startNode.x + ", " + startNode.y);
+        Debug.Log("End Node: " + endNode.x + ", " + endNode.y);
+
+        SetMovementPath(pathfindingNPC.GetPath(startNode.x, startNode.y, endNode.x, endNode.y));
+
+
+    }
+
+    protected override void Update()
+    {
+        if (closestSheep == null) return;
+
+
+        if (canMove)
+        {
+            
+
+            Vector3 offset = new Vector3(pathFindingGridNPC.GetCellSize(), pathFindingGridNPC.GetCellSize()) * 0.5f;
+            Vector3 targetWorldPosition = pathFindingGridNPC.GetWorldPosition((int)movementPath[currentPathIndex].x, (int)movementPath[currentPathIndex].y) + offset;
+
+            /*Debug.Log("current position: "+ this.transform.position);
+            Debug.Log("target position: "+ targetWorldPosition);*/
+
+            transform.position = Vector2.MoveTowards(this.transform.position, targetWorldPosition, movementSpeed * Time.deltaTime);
+
+            if (this.transform.position == targetWorldPosition && currentPathIndex < movementPath.Count - 1)
+            {
+                currentPathIndex++;
+            }
+            else if (this.transform.position == targetWorldPosition && currentPathIndex == movementPath.Count - 1)
+            {
+
+                PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
+                PathNode newEndNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
+
+                SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
+            }
+        }
+
+
+        FlipGameObjectBasedOnMovement();
+
+    }
+
+
+
+    IEnumerator FindClosestSheepRoutine()
+    {
+
+        while(true)
+        {
+            Animal[] animals = animalManager.GetComponentsInChildren<Animal>();
+
+            Debug.Log("Animals: "+ animals.Length);
+
+            float minDistance = float.MaxValue;
+            int minDistanceIndex = 0;
+            
+            for (int i = 0; i < animals.Length; i++)
+            {
+                if (!animals[i].IsGrabbed)
+                {
+                    float squaredDistance = 0f;
+                    squaredDistance = Mathf.Pow((animals[i].gameObject.transform.position.x - this.transform.position.x), 2) + Mathf.Pow((animals[i].gameObject.transform.position.y - this.transform.position.y), 2);
+                    Debug.Log("Squared distance: " + squaredDistance);
+
+                    if (squaredDistance < minDistance)
+                    {
+                        minDistance = squaredDistance;
+                        minDistanceIndex = i;
+                    }
+                }
+                
+            }
+
+            if(animals.Length > 0)
+            {
+                closestSheep = animals[minDistanceIndex];
+
+                Debug.Log("Min distance: " + minDistance + " || min distance Index: " + minDistanceIndex);
+                Debug.Log("Position of closest sheep: " + closestSheep.transform.position);
+            }
+            else
+            {
+                closestSheep = null;
+
+                Debug.Log("No closest sheep found");
+            }
+
+
+            
+
+
+            yield return new WaitForSeconds(timeIntervalToSearchClosestSheep);
+        }
+        
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Animal animal = collision.GetComponent<Animal>();
+
+
+        if (animal != null)
+        {
+            Debug.Log("Eating sheep");
+            animal.GetEatenByWolf();
+        }
+    }
+
+
+    void DestroyWolf(int levelIndex)
+    {
+        Destroy(gameObject);
+    }
+
+
+}

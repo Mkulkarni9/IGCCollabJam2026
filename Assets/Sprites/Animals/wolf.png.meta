@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: e1fdbd87849c0d343a2ce6aa8ab1f050
+guid: 1598f209916c0f9419c24f0403f32f4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1797377285043806228
-    second: Dog walk_placeholder_0
+      213: 7444046612802208997
+    second: wolf_0
   - first:
-      213: 5398703348477636410
-    second: Dog walk_placeholder_1
+      213: -6836296053957781073
+    second: wolf_1
   - first:
-      213: -8058763671986901857
-    second: Dog walk_placeholder_2
-  - first:
-      213: 4586934502915887993
-    second: Dog walk_placeholder_3
-  - first:
-      213: -5994039381018142968
-    second: Dog walk_placeholder_4
-  - first:
-      213: -2545138687687900430
-    second: Dog walk_placeholder_5
+      213: 8955941877185701628
+    second: wolf_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,23 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dog walk_placeholder_0
+      name: wolf_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 42
-        height: 28
+        x: 0
+        y: 3
+        width: 14
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 410646a2e1191f810800000000000000
-      internalID: 1797377285043806228
+      spriteID: 5e4868f34f09e4760800000000000000
+      internalID: 7444046612802208997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9117c85f89021a0800000000000000
+      internalID: -6836296053957781073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 3
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6e2bacfa5e94c70800000000000000
+      internalID: 8955941877185701628
       vertices: []
       indices: 
       edges: []
@@ -163,12 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dog walk_placeholder_0: 1797377285043806228
-      Dog walk_placeholder_1: 5398703348477636410
-      Dog walk_placeholder_2: -8058763671986901857
-      Dog walk_placeholder_3: 4586934502915887993
-      Dog walk_placeholder_4: -5994039381018142968
-      Dog walk_placeholder_5: -2545138687687900430
+      wolf_0: 7444046612802208997
+      wolf_1: -6836296053957781073
+      wolf_2: 8955941877185701628
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
