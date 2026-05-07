@@ -42,9 +42,15 @@ public class ObstacleManager : MonoBehaviour
             obstacleContainers[i].gameObject.SetActive(false);
         }
 
-        obstacleContainers[levelIndex].SetActive(true);
 
-        OnObstacleReveal?.Invoke(obstacleContainers[levelIndex]);
+        if(levelIndex< obstacleContainers.Count)
+        {
+            obstacleContainers[levelIndex].SetActive(true);
+            OnObstacleReveal?.Invoke(obstacleContainers[levelIndex]);
+        }
+        
+
+        
 
     }
 

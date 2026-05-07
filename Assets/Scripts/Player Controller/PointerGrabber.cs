@@ -3,13 +3,15 @@ using UnityEngine.InputSystem;
 
 public class PointerGrabber : MonoBehaviour
 {
-
+    [SerializeField] Sprite pickupSprite;
+    [SerializeField] Sprite hammerSprite;
     public bool IsGrabbingAnimal { get; private set; }
     public bool IsGrabbingCage { get; private set; }
 
 
     bool canGrabAnimal;
     bool canGrabCage;
+    bool canHitWolf;
 
 
     Vector2 mousePos;
@@ -21,7 +23,9 @@ public class PointerGrabber : MonoBehaviour
     Animal grabbableAnimal;
     Cage grabbableCage;
     Cage grabbedCage;
+    Wolf hittableWolf;
     SpriteRenderer spriteRenderer;
+    AnimalManager animalManager;
 
     CircleCollider2D pointerCollider;
     Vector3 pointerOffset;
@@ -35,6 +39,7 @@ public class PointerGrabber : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         pointerCollider = GetComponent<CircleCollider2D>();
         pointerOffset = pointerCollider.offset;
+        animalManager = FindAnyObjectByType<AnimalManager>();
     }
 
     private void Update()
@@ -72,12 +77,13 @@ public class PointerGrabber : MonoBehaviour
         {
             canGrabAnimal = true;
             grabbableAnimal = animal;
+            spriteRenderer.sprite = pickupSprite;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
             grabbableAnimal.SpeedUpAnimal();
             //Debug.Log("Can grab animal: " + grabbableAnimal.name);
         }
 
-        Cage cage = collision.GetComponent<Cage>();
+        /*Cage cage = collision.GetComponent<Cage>();
 
         if (cage != null)
         {
@@ -85,6 +91,20 @@ public class PointerGrabber : MonoBehaviour
             grabbableCage = cage;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
             //Debug.Log("Can grab cage: " + cage.CageSO.animalCageType);
+        }*/
+
+        Wolf wolf = collision.GetComponent<Wolf>();
+
+        if (wolf != null && !IsGrabbingAnimal)
+        {
+            if (wolf.CanBeStunned)
+            {
+                canHitWolf = true;
+                hittableWolf = wolf;
+                spriteRenderer.sprite = hammerSprite;
+                spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+            }
+
         }
 
 
@@ -97,7 +117,8 @@ public class PointerGrabber : MonoBehaviour
         if (animal != null)
         {
             canGrabAnimal = false;
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
+            spriteRenderer.sprite = null;
+            //spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
 
             if(grabbableAnimal!=null)
             {
@@ -107,7 +128,7 @@ public class PointerGrabber : MonoBehaviour
             grabbableAnimal = null;
         }
 
-        Cage cage = collision.GetComponent<Cage>();
+        /*Cage cage = collision.GetComponent<Cage>();
 
 
         if (cage != null)
@@ -115,6 +136,18 @@ public class PointerGrabber : MonoBehaviour
             canGrabCage = false;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
             grabbableCage = null;
+        }*/
+
+        Wolf wolf = collision.GetComponent<Wolf>();
+
+        if (wolf != null)
+        {
+            
+            canHitWolf = false;
+            spriteRenderer.sprite = null;
+            hittableWolf = null;
+            //spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
+
         }
 
 
@@ -149,6 +182,14 @@ public class PointerGrabber : MonoBehaviour
 
     }
 
+    public void HitWolf()
+    {
+        if (canHitWolf)
+        {
+            hittableWolf.StunWolf();
+        }
+    }
+
     public void GrabCage()
     {
         if (canGrabCage)
@@ -174,7 +215,7 @@ public class PointerGrabber : MonoBehaviour
             Rigidbody2D rb = grabbedAnimal.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.transform.SetParent(null);
+                rb.transform.SetParent(animalManager.transform);
                 Debug.Log("Released: " + grabbedAnimal.AnimalSO.animalType);
 
                 grabbedAnimal.PutAnimalInCage();

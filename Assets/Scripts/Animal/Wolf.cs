@@ -6,13 +6,18 @@ using UnityEngine;
 public class Wolf : NPC
 {
     [SerializeField] float wolfSpeed;
+    [SerializeField] float wolfStunDuration;
 
     [SerializeField] float timeIntervalToSearchClosestSheep;
+
+    public bool CanBeStunned { get; private set; } = true;
 
     Animal closestSheep;
 
     AnimalManager animalManager;
 
+
+    Coroutine wolfStunRoutine;
     private void Awake()
     {
         canMove = true;
@@ -152,6 +157,27 @@ public class Wolf : NPC
             Debug.Log("Eating sheep");
             animal.GetEatenByWolf();
         }
+    }
+
+    public void StunWolf()
+    {
+        if (wolfStunRoutine != null)
+        {
+            StopCoroutine(wolfStunRoutine);
+        }
+
+        wolfStunRoutine = StartCoroutine(StunWolfRoutine());
+    }
+
+    IEnumerator StunWolfRoutine()
+    {
+        CanBeStunned = false;
+        canMove = false;
+        Debug.Log("Wolf stunned: canMove is "+canMove);
+        yield return new WaitForSeconds(wolfStunDuration);
+        
+        canMove = true;
+        CanBeStunned = true;
     }
 
 

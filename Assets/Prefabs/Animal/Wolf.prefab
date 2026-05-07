@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wolf
   wolfSpeed: 2
+  wolfStunDuration: 2
   timeIntervalToSearchClosestSheep: 3

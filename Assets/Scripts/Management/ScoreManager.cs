@@ -26,8 +26,11 @@ public class ScoreManager : MonoBehaviour
     {
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
         LevelManager.OnNewLevelStart += HideLevelScorePanel;
+
         Cage.OnAnimalCapturedInCorrectCage += UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage += UpdateScoreAfterAnimalCapture;
+        Animal.OnEatenByWolf += UpdateScoreAfterWolfEat;
+
         LevelManager.OnLevelComplete += DisplayLevelScorePanel;
         LevelManager.OnLevelComplete += UpdateLevelScoreEmojis;
         LevelManager.OnLevelComplete += ResetLevelScore;
@@ -37,8 +40,11 @@ public class ScoreManager : MonoBehaviour
     {
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
         LevelManager.OnNewLevelStart -= HideLevelScorePanel;
+
         Cage.OnAnimalCapturedInCorrectCage -= UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage -= UpdateScoreAfterAnimalCapture;
+        Animal.OnEatenByWolf -= UpdateScoreAfterWolfEat;
+
         LevelManager.OnLevelComplete -= DisplayLevelScorePanel;
         LevelManager.OnLevelComplete -= UpdateLevelScoreEmojis;
         LevelManager.OnLevelComplete -= ResetLevelScore;
@@ -114,7 +120,11 @@ public class ScoreManager : MonoBehaviour
 
     void SetMaxLevelScore(int levelIndex)
     {
-        maxLevelScore = maxLevelScores[levelIndex];
+        if(levelIndex< maxLevelScores.Count)
+        {
+            maxLevelScore = maxLevelScores[levelIndex];
+        }
+        
     }
 
     void SelectScoreEmoji(float proportionOfTotal)

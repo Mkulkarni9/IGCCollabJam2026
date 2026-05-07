@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Animal : NPC
 {
+    public static event Action OnEatenByWolf;
+
     [SerializeField] AnimalSO animalSO;
 
     public AnimalSO AnimalSO => animalSO;
@@ -43,7 +46,7 @@ public class Animal : NPC
         {
             Debug.Log("Speeding up animal: " + name);
             canSpeedUpAnimal = false;
-            float randomValue = Random.Range(0f, 1f);
+            float randomValue = UnityEngine.Random.Range(0f, 1f);
             if (randomValue <= animalSO.chanceToBoostSpeed)
             {
                 movementSpeed = animalSO.speed * (1 + animalSO.boostSpeedProportion);
@@ -132,6 +135,7 @@ public class Animal : NPC
 
     public void GetEatenByWolf()
     {
+        OnEatenByWolf?.Invoke();
         Destroy(this.gameObject);
     }
 

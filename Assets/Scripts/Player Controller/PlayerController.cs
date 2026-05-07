@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if(frameInput.Grab)
         {
             pointerGrabber.GrabAnimal();
+            pointerGrabber.HitWolf();
             //pointerGrabber.GrabCage();
         }
     }
