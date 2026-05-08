@@ -48,8 +48,8 @@ public class Wolf : NPC
         PathNode endNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
 
 
-        Debug.Log("Start Node: " + startNode.x + ", " + startNode.y);
-        Debug.Log("End Node: " + endNode.x + ", " + endNode.y);
+        /*Debug.Log("Start Node: " + startNode.x + ", " + startNode.y);
+        Debug.Log("End Node: " + endNode.x + ", " + endNode.y);*/
 
         SetMovementPath(pathfindingNPC.GetPath(startNode.x, startNode.y, endNode.x, endNode.y));
 
@@ -101,7 +101,7 @@ public class Wolf : NPC
         {
             Animal[] animals = animalManager.GetComponentsInChildren<Animal>();
 
-            Debug.Log("Animals: "+ animals.Length);
+            //Debug.Log("Animals: "+ animals.Length);
 
             float minDistance = float.MaxValue;
             int minDistanceIndex = 0;
@@ -112,7 +112,7 @@ public class Wolf : NPC
                 {
                     float squaredDistance = 0f;
                     squaredDistance = Mathf.Pow((animals[i].gameObject.transform.position.x - this.transform.position.x), 2) + Mathf.Pow((animals[i].gameObject.transform.position.y - this.transform.position.y), 2);
-                    Debug.Log("Squared distance: " + squaredDistance);
+                    //Debug.Log("Squared distance: " + squaredDistance);
 
                     if (squaredDistance < minDistance)
                     {
@@ -127,14 +127,14 @@ public class Wolf : NPC
             {
                 closestSheep = animals[minDistanceIndex];
 
-                Debug.Log("Min distance: " + minDistance + " || min distance Index: " + minDistanceIndex);
-                Debug.Log("Position of closest sheep: " + closestSheep.transform.position);
+                /*Debug.Log("Min distance: " + minDistance + " || min distance Index: " + minDistanceIndex);
+                Debug.Log("Position of closest sheep: " + closestSheep.transform.position);*/
             }
             else
             {
                 closestSheep = null;
 
-                Debug.Log("No closest sheep found");
+                //Debug.Log("No closest sheep found");
             }
 
 
@@ -154,8 +154,12 @@ public class Wolf : NPC
 
         if (animal != null)
         {
-            Debug.Log("Eating sheep");
-            animal.GetEatenByWolf();
+            if(!animal.IsGrabbed)
+            {
+                Debug.Log("Eating sheep");
+                animal.GetEatenByWolf();
+            }
+            
         }
     }
 

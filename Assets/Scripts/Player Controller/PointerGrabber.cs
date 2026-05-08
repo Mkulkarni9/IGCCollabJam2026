@@ -30,6 +30,8 @@ public class PointerGrabber : MonoBehaviour
     CircleCollider2D pointerCollider;
     Vector3 pointerOffset;
 
+    Animator animator;
+
 
     private void Awake()
     {
@@ -40,6 +42,7 @@ public class PointerGrabber : MonoBehaviour
         pointerCollider = GetComponent<CircleCollider2D>();
         pointerOffset = pointerCollider.offset;
         animalManager = FindAnyObjectByType<AnimalManager>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -75,12 +78,18 @@ public class PointerGrabber : MonoBehaviour
         Animal animal = collision.GetComponent<Animal>();
         if (animal != null)
         {
-            canGrabAnimal = true;
-            grabbableAnimal = animal;
-            spriteRenderer.sprite = pickupSprite;
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
-            grabbableAnimal.SpeedUpAnimal();
-            //Debug.Log("Can grab animal: " + grabbableAnimal.name);
+            if(!IsGrabbingAnimal)
+            {
+                canGrabAnimal = true;
+                grabbableAnimal = animal;
+                spriteRenderer.sprite = pickupSprite;
+                spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+                grabbableAnimal.SpeedUpAnimal();
+
+
+                //Debug.Log("Can grab animal: " + grabbableAnimal.name);
+            }
+
         }
 
         /*Cage cage = collision.GetComponent<Cage>();
@@ -123,8 +132,10 @@ public class PointerGrabber : MonoBehaviour
             if(grabbableAnimal!=null)
             {
                 grabbableAnimal.ResetSpeedUpStatus();
+                
+
             }
-            
+
             grabbableAnimal = null;
         }
 
@@ -172,9 +183,12 @@ public class PointerGrabber : MonoBehaviour
                 grabbedAnimal.ToggleAnimalMovement(false);
                 grabbedAnimal.SetGrabbedStatus(true);
                 grabbedAnimal.SetPickupPosition(transform.position);
+                grabbedAnimal.GetComponentInChildren<SheepHoverHighlight>().ToggleHighlight(false);
+                grabbedAnimal.GetComponentInChildren<AnimalShadow>().ToggleHighlight(false);
+
                 //Debug.Log("Grabbed: " + grabbedAnimal.AnimalSO.animalType);
             }
-            
+
         }
         
 
@@ -217,6 +231,7 @@ public class PointerGrabber : MonoBehaviour
             {
                 rb.transform.SetParent(animalManager.transform);
                 Debug.Log("Released: " + grabbedAnimal.AnimalSO.animalType);
+                grabbedAnimal.GetComponentInChildren<AnimalShadow>().ToggleHighlight(true);
 
                 grabbedAnimal.PutAnimalInCage();
                 IsGrabbingAnimal = false;

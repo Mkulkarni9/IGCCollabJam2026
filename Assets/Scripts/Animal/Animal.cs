@@ -13,6 +13,9 @@ public class Animal : NPC
     [SerializeField] Material baseMaterial;
     [SerializeField] Material grabbedMaterial;
 
+    [SerializeField] GameObject hoverHighlight;
+    [SerializeField] GameObject animalShadow;
+
     public AnimalSO AnimalSO => animalSO;
 
     //Animal capture and cage related variables
@@ -174,5 +177,10 @@ public class Animal : NPC
 
     #endregion
 
-    
+
+    #region effects
+
+
+    #endregion
+
 }

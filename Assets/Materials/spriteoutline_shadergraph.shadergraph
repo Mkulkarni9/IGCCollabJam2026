@@ -1477,10 +1477,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2099.362060546875,
-            "y": 506.8381042480469,
-            "width": 0.0,
-            "height": 0.0
+            "x": -2125.0,
+            "y": 552.0,
+            "width": 178.0,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -4624,8 +4624,8 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "x": 0.029999999329447748,
-        "y": 0.029999999329447748,
+        "x": 0.0625,
+        "y": 0.0625,
         "z": 0.0,
         "w": 0.0
     }

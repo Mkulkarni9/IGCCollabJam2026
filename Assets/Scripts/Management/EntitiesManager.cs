@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EntitiesManager : MonoBehaviour
 {
+    [SerializeField] PointerGrabber pointerGrabber;
+
 
     List<GameObject> entitiesSpawnedThisLevel = new List<GameObject>();
 
@@ -10,12 +12,14 @@ public class EntitiesManager : MonoBehaviour
     private void OnEnable()
     {
         WaveSpawner.OnEntitySpawned += AddEntityToLevelCagesList;
+        LevelManager.OnLevelComplete += ReleaseGrabbedAnimals;
         LevelManager.OnLevelComplete += DestroyAllRemainingEntities;
     }
 
     private void OnDisable()
     {
         WaveSpawner.OnEntitySpawned -= AddEntityToLevelCagesList;
+        LevelManager.OnLevelComplete -= ReleaseGrabbedAnimals;
         LevelManager.OnLevelComplete -= DestroyAllRemainingEntities;
 
 
@@ -23,6 +27,11 @@ public class EntitiesManager : MonoBehaviour
     void AddEntityToLevelCagesList(GameObject entitySpawned)
     {
         entitiesSpawnedThisLevel.Add(entitySpawned);
+    }
+
+    void ReleaseGrabbedAnimals(int levelIndex)
+    {
+        pointerGrabber.ReleaseAnimal();
     }
 
 
