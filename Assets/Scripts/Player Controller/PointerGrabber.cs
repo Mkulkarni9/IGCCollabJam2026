@@ -1,8 +1,12 @@
 using UnityEngine;
+using Unity.Cinemachine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PointerGrabber : MonoBehaviour
 {
+
+    public static event Action<bool> OnGrabbedSheep;
     [SerializeField] Sprite pickupSprite;
     [SerializeField] Sprite hammerSprite;
     public bool IsGrabbingAnimal { get; private set; }
@@ -31,6 +35,7 @@ public class PointerGrabber : MonoBehaviour
     Vector3 pointerOffset;
 
     Animator animator;
+    CinemachineImpulseSource cinemachineImpulseSource;
 
 
     private void Awake()
@@ -43,6 +48,7 @@ public class PointerGrabber : MonoBehaviour
         pointerOffset = pointerCollider.offset;
         animalManager = FindAnyObjectByType<AnimalManager>();
         animator = GetComponent<Animator>();
+        cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     private void Update()
@@ -185,6 +191,10 @@ public class PointerGrabber : MonoBehaviour
                 grabbedAnimal.SetPickupPosition(transform.position);
                 grabbedAnimal.GetComponentInChildren<SheepHoverHighlight>().ToggleHighlight(false);
                 grabbedAnimal.GetComponentInChildren<AnimalShadow>().ToggleHighlight(false);
+                grabbedAnimal.PlaySheepGrabVFX();
+                cinemachineImpulseSource.GenerateImpulse(0.8f);
+
+                OnGrabbedSheep?.Invoke(true);
 
                 //Debug.Log("Grabbed: " + grabbedAnimal.AnimalSO.animalType);
             }
@@ -237,6 +247,8 @@ public class PointerGrabber : MonoBehaviour
                 IsGrabbingAnimal = false;
 
                 grabbedAnimal = null;
+                OnGrabbedSheep?.Invoke(false);
+
             }
         }
     }

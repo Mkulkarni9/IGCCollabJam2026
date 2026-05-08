@@ -15,6 +15,7 @@ public class Animal : NPC
 
     [SerializeField] GameObject hoverHighlight;
     [SerializeField] GameObject animalShadow;
+    [SerializeField] ParticleSystem sheepGrabVFX;
 
     public AnimalSO AnimalSO => animalSO;
 
@@ -180,6 +181,10 @@ public class Animal : NPC
 
     #region effects
 
+    public void PlaySheepGrabVFX()
+    {
+        sheepGrabVFX.Play();
+    }
 
     #endregion
 

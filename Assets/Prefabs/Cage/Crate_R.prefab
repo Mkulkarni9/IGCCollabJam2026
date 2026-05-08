@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6557777502766011974}
   - component: {fileID: 2362908675497203092}
   - component: {fileID: 3052017471385393774}
+  - component: {fileID: -2296510986670319494}
   m_Layer: 0
   m_Name: Crate_R
   m_TagString: Untagged
@@ -30,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 75394342924184475}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2362908675497203092
@@ -114,3 +116,87 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-2296510986670319494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882604180194660870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b72641f16497c44f878a8d1f41657d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CageComponent
+  holeGlowEffect: {fileID: 4998042636034700380}
+--- !u!1001 &181869199015426545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6557777502766011974}
+    m_Modifications:
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177657813664320941, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_Name
+      value: hole glow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177657813664320941, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+--- !u!4 &75394342924184475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 256137640959005290, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+  m_PrefabInstance: {fileID: 181869199015426545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4998042636034700380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5177657813664320941, guid: 3b3845f162368654d94fae8586ac6b68, type: 3}
+  m_PrefabInstance: {fileID: 181869199015426545}
+  m_PrefabAsset: {fileID: 0}

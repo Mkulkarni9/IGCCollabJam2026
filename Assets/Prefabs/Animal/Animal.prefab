@@ -291,6 +291,7 @@ Transform:
   m_Children:
   - {fileID: 6172917656137431092}
   - {fileID: 840594611129327693}
+  - {fileID: 1912727536989323162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3425084941433771573
@@ -442,6 +443,7 @@ MonoBehaviour:
   grabbedMaterial: {fileID: 2100000, guid: a709e7d1302440f428eff7d56df75928, type: 2}
   hoverHighlight: {fileID: 5619786075504191080}
   animalShadow: {fileID: 6636345111291702199}
+  sheepGrabVFX: {fileID: 2609853593513998934}
 --- !u!95 &-7822496718685554300
 Animator:
   serializedVersion: 7
@@ -464,3 +466,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &5759428984731342808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7176138200660974070}
+    m_Modifications:
+    - target: {fileID: 2740700837711821921, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_Name
+      value: wool splatter on grab vfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14475568e944de047b99ace669510447, type: 3}
+--- !u!4 &1912727536989323162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6153823274957219906, guid: 14475568e944de047b99ace669510447, type: 3}
+  m_PrefabInstance: {fileID: 5759428984731342808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2609853593513998934 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7770268609073229198, guid: 14475568e944de047b99ace669510447, type: 3}
+  m_PrefabInstance: {fileID: 5759428984731342808}
+  m_PrefabAsset: {fileID: 0}
