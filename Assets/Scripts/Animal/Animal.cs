@@ -7,6 +7,7 @@ using UnityEngine;
 public class Animal : NPC
 {
     public static event Action OnEatenByWolf;
+    public static event Action OnHoverPointer;
 
     [SerializeField] AnimalSO animalSO;
 
@@ -56,7 +57,7 @@ public class Animal : NPC
     {
         if(canSpeedUpAnimal)
         {
-            Debug.Log("Speeding up animal: " + name);
+            //Debug.Log("Speeding up animal: " + name);
             canSpeedUpAnimal = false;
             float randomValue = UnityEngine.Random.Range(0f, 1f);
             if (randomValue <= animalSO.chanceToBoostSpeed)
@@ -70,6 +71,8 @@ public class Animal : NPC
 
                 boostCoroutine = StartCoroutine(BoostSpeedRoutine());
             }
+
+            OnHoverPointer?.Invoke();
         }
 
     }

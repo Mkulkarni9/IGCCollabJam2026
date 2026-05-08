@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using Unity.VectorGraphics;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class Cage : MonoBehaviour
     public static event Action<Animal, Cage> OnAnimalCapturedInCorrectCage;
     public static event Action<Animal, Cage> OnAnimalCapturedInWrongCage;
     [SerializeField] CageSO cageSO;
+
+    [SerializeField] Material cageBaseMaterial;
+    [SerializeField] Material cageHoverMaterial;
+    [SerializeField] ParticleSystem wrongCageVFX;
 
 
     public CageSO CageSO => cageSO;
@@ -22,11 +27,21 @@ public class Cage : MonoBehaviour
     Grid<PathNode> pathFindingGrid;
     Pathfinding pathfinding;
 
+
+    SpriteRenderer[] spriteRenderers;
+    Animator[] animators;
+    CageComponent[] cageComponents;
+    CinemachineImpulseSource cinemachineImpulseSource;
+
     private void Start()
     {
         CagePosition = transform.position;
         UpdateWalkableTile();
 
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        animators = GetComponentsInChildren<Animator>();
+        cageComponents = GetComponentsInChildren<CageComponent>();
+        cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
 
     }
 
@@ -56,6 +71,12 @@ public class Cage : MonoBehaviour
             grabbedAnimalInPointer.SetCaptureStatus(true);
             grabbedAnimalInPointer.SetTargetCage(this);
 
+
+            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+            {
+                spriteRenderer.material = cageHoverMaterial;
+            }
+
         }
     }
 
@@ -68,6 +89,11 @@ public class Cage : MonoBehaviour
             //Debug.Log("Grabbed animal in pointer exited cage area: " + grabbedAnimalInPointer.AnimalSO.animalType);
             grabbedAnimalInPointer.SetCaptureStatus(false);
             grabbedAnimalInPointer.SetTargetCage(null);
+
+            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+            {
+                spriteRenderer.material = cageBaseMaterial;
+            }
         }
     }
 
@@ -80,18 +106,37 @@ public class Cage : MonoBehaviour
         //animal.ToggleAnimalMovement(false);
 
         animal.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
 
         OnAnimalCapturedInCorrectCage?.Invoke(animal, this);
 
+        foreach (CageComponent cageComponent in cageComponents)
+        {
+            cageComponent.PlayCorrectCageVFX();
+        }
+
+        Destroy(animal.gameObject);
+
+        foreach (Animator animator in animators)
+        {
+            animator.SetBool("IsClosing", true);
+        }
+
+    }
+
+    public void DestroyCage()
+    {
         Destroy(this.gameObject);
     }
 
 
     public void DestroyAnimal(Animal animal)
     {
-        
-        Debug.Log("Destroying animal after putting in wrong cage: " + animal.name);
 
+        //Debug.Log("Destroying animal after putting in wrong cage: " + animal.name);
+
+        wrongCageVFX.Play();
+        cinemachineImpulseSource.GenerateImpulse(1f);
         OnAnimalCapturedInWrongCage?.Invoke(animal,this);
 
 

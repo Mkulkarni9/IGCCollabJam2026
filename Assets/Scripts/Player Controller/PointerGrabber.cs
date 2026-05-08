@@ -219,7 +219,7 @@ public class PointerGrabber : MonoBehaviour
         if (canGrabCage)
         {
             Rigidbody2D rb = grabbableCage.GetComponent<Rigidbody2D>();
-            Debug.Log("Rigid body of grabbed cage: " + grabbableCage.CageSO.animalCageType + " = " + rb);
+            //Debug.Log("Rigid body of grabbed cage: " + grabbableCage.CageSO.animalCageType + " = " + rb);
             if (rb != null)
             {
                 rb.transform.SetParent(transform);
@@ -240,7 +240,7 @@ public class PointerGrabber : MonoBehaviour
             if (rb != null)
             {
                 rb.transform.SetParent(animalManager.transform);
-                Debug.Log("Released: " + grabbedAnimal.AnimalSO.animalType);
+                //Debug.Log("Released: " + grabbedAnimal.AnimalSO.animalType);
                 grabbedAnimal.GetComponentInChildren<AnimalShadow>().ToggleHighlight(true);
 
                 grabbedAnimal.PutAnimalInCage();

@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7109958799871544163}
+  - {fileID: 217760945995842640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2362908675497203092
@@ -129,6 +130,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CageComponent
   holeGlowEffect: {fileID: 2809369105814688932}
+  correctCageVFX: {fileID: 5415969918713168639}
+--- !u!1001 &4661102190323231744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6557777502766011974}
+    m_Modifications:
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742096750381312586, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+      propertyPath: m_Name
+      value: correctCageVFX_G
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+--- !u!4 &217760945995842640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4875757728129869904, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+  m_PrefabInstance: {fileID: 4661102190323231744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5415969918713168639 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 830610997610508031, guid: 79160cf4b7c7cce4dab9396fc42c0e7b, type: 3}
+  m_PrefabInstance: {fileID: 4661102190323231744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7000386061209065737
 PrefabInstance:
   m_ObjectHideFlags: 0
