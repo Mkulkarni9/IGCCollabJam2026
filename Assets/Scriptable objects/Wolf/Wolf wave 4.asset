@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wolf wave 4
   m_EditorClassIdentifier: Assembly-CSharp::WolfWaveSO
   wolfPrefab: {fileID: 7636039997238626170, guid: e55d11347b540914693e5c37ef11d51e, type: 3}
-  numberOfWolves: 2
+  numberOfWolves: 0
   intervalBetweenWolfSpawns: 12

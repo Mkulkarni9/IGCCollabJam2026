@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: Assembly-CSharp::AnimalWaveSO
   animalsInWave:
-  - {fileID: 7606578773500941633, guid: 01d43840014c7ab4ea23b4e15609df2c, type: 3}
   - {fileID: 7606578773500941633, guid: 0ee4a6f8c65ac4746a9bd46c89fabc6b, type: 3}
   cagesInWave:
-  - {fileID: 673616528075109529, guid: ada755d2e2e332f4ba1c622d0ee23224, type: 3}
   - {fileID: 673616528075109529, guid: 8500cf99028ee834f8274dccc7ce456d, type: 3}
-  animalTypes: 01000000010000000000000000000000010000000100000000000000000000000100000000000000
+  animalTypes: 00000000
   intervalBetweenAnimalSpawns: 1.7
   intervalBetweenCageSpawns: 0.25
   totalWaveDuration: 30

@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
-using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class AnimalManager : MonoBehaviour
 {
+    public static event Action OnZeroSheepOnMap;
+
+
     [SerializeField] List<Transform> mapPositions = new List<Transform>();
     [SerializeField] Tilemap walkableLayer;
     [SerializeField] int minMapPositionsForEachAnimal;
@@ -22,6 +25,9 @@ public class AnimalManager : MonoBehaviour
 
     Grid<PathNode> pathFindingGrid;
     Pathfinding pathfinding;
+
+    int maxAnimalsInLevel;
+    int currentAnimalsInLevel;
 
     private void Awake()
     {
@@ -51,6 +57,9 @@ public class AnimalManager : MonoBehaviour
     {
         WaveSpawner.OnEntitySpawned += SetPathfinding;
         LevelManager.OnLevelComplete += ResetWalkableLayers;
+        LevelManager.OnNewLevelStart += SetNumberOfAnimalsInLevel;
+        Animal.OnEatenByWolf += UpdateCurrentAnimalsInLevel;
+        Cage.OnAnimalCapturedInCorrectCage += UpdateCurrentAnimalsInLevel;
 
     }
 
@@ -58,6 +67,9 @@ public class AnimalManager : MonoBehaviour
     {
         WaveSpawner.OnEntitySpawned -= SetPathfinding;
         LevelManager.OnLevelComplete -= ResetWalkableLayers;
+        LevelManager.OnNewLevelStart -= SetNumberOfAnimalsInLevel;
+        Animal.OnEatenByWolf -= UpdateCurrentAnimalsInLevel;
+        Cage.OnAnimalCapturedInCorrectCage -= UpdateCurrentAnimalsInLevel;
 
 
     }
@@ -76,11 +88,11 @@ public class AnimalManager : MonoBehaviour
             mapPositionsCopy.Add(mapPositions[i]);
         }
 
-        int randomNumberOfMapPositions = Random.Range(minMapPositionsForEachAnimal, maxMapPositionsForEachAnimal);
+        int randomNumberOfMapPositions = UnityEngine.Random.Range(minMapPositionsForEachAnimal, maxMapPositionsForEachAnimal);
 
         for (int i = 0; i < randomNumberOfMapPositions; i++)
         {
-            int indexSelected = Random.Range(0, mapPositionsCopy.Count);
+            int indexSelected = UnityEngine.Random.Range(0, mapPositionsCopy.Count);
 
             mapPositionSelected.Add(mapPositionsCopy[indexSelected]);
             mapPositionsCopy.RemoveAt(indexSelected);
@@ -113,5 +125,40 @@ public class AnimalManager : MonoBehaviour
 
     }
 
+    void SetNumberOfAnimalsInLevel(int levelIndex)
+    {
+        maxAnimalsInLevel = GetComponent<WaveSpawner>().entityWaves[levelIndex].animalTypes.Count;
+        Debug.Log("Total sheep in current wave: "+ maxAnimalsInLevel);
+        currentAnimalsInLevel = maxAnimalsInLevel;
+    }
+
+    void UpdateCurrentAnimalsInLevel(Animal animal, Cage cage)
+    {
+        UpdateCurrentAnimalsInLevel();
+    }
+
+
+
+    void UpdateCurrentAnimalsInLevel()
+    {
+        currentAnimalsInLevel--;
+
+        Debug.Log("Sheep count: "+ currentAnimalsInLevel);
+
+        if(CheckIfAnimalCountIsZero())
+        {
+            OnZeroSheepOnMap?.Invoke();
+        }
+    }
+
+    bool CheckIfAnimalCountIsZero()
+    {
+        if(currentAnimalsInLevel == 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
 
 }

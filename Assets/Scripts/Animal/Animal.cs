@@ -112,9 +112,12 @@ public class Animal : NPC
             else
             {
                 Debug.Log("Animal put in wrong cage: " + name);
-                IsInCage = true;
+                IsInCage = false;
                 targetCage.DestroyAnimal(this);
-                
+
+                ToggleAnimalMovement(true);
+                SetGrabbedStatus(false);
+
             }
                 
         }
@@ -175,8 +178,8 @@ public class Animal : NPC
 
     public void GetEatenByWolf()
     {
-        OnEatenByWolf?.Invoke();
         Destroy(this.gameObject);
+        OnEatenByWolf?.Invoke();
     }
 
     #endregion

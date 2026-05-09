@@ -12,48 +12,77 @@ public class LevelManager : MonoBehaviour
 
 
     [SerializeField] List<LevelSO> levels = new List<LevelSO>();
-    [SerializeField] float intervalBetweenLevels;
+    //[SerializeField] float intervalBetweenLevels;
 
-
+    int currentLevelIndex;
 
     Coroutine levelRoutine;
 
-    
+    private void OnEnable()
+    {
+        AnimalManager.OnZeroSheepOnMap += EndCurrentLevel;
+    }
+
+    private void OnDisable()
+    {
+        AnimalManager.OnZeroSheepOnMap -= EndCurrentLevel;
+
+    }
 
     private void Start()
     {
-        StartLevels();
+        StartLevels(0);
     }
 
 
-    void StartLevels()
+    void StartLevels(int levelIndex)
     {
         if(levelRoutine!=null)
         {
             StopCoroutine(levelRoutine);
         }
 
-        levelRoutine = StartCoroutine(LevelRoutine());
+        levelRoutine = StartCoroutine(LevelRoutine(levelIndex));
     }
 
 
-    IEnumerator LevelRoutine()
+    IEnumerator LevelRoutine(int levelIndex)
     {
 
-        for (int i = 0; i < levels.Count; i++)
-        {
-            Debug.Log("Starting level: " + i);
-            OnNewLevelTimerUpdate?.Invoke(levels[i].levelDuration);
-            OnNewLevelStart?.Invoke(i);
-            yield return new WaitForSeconds(levels[i].levelDuration);
+        Debug.Log("Starting level: " + levelIndex);
+        OnNewLevelTimerUpdate?.Invoke(levels[levelIndex].levelDuration);
+        OnNewLevelStart?.Invoke(levelIndex);
+        yield return new WaitForSeconds(levels[levelIndex].levelDuration);
 
-            OnLevelComplete?.Invoke(i);
-            yield return new WaitForSeconds(intervalBetweenLevels);
+        OnLevelComplete?.Invoke(levelIndex);
+        currentLevelIndex++;
+        /*yield return new WaitForSeconds(intervalBetweenLevels);*/
+
+
+
+    }
+
+
+    //After pressing next level button on level menu
+    public void StartNextLevel()
+    {
+        Debug.Log($"{currentLevelIndex} Level");
+        StartLevels(currentLevelIndex);
+    }
+
+    public void EndCurrentLevel()
+    {
+        OnLevelComplete?.Invoke(currentLevelIndex);
+
+        if (levelRoutine != null)
+        {
+            StopCoroutine(levelRoutine);
 
         }
 
-
+        currentLevelIndex++;
 
     }
+
 
 }

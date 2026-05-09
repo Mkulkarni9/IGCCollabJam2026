@@ -108,7 +108,6 @@ public class Cage : MonoBehaviour
         animal.GetComponent<BoxCollider2D>().enabled = false;
         this.GetComponent<BoxCollider2D>().enabled = false;
 
-        OnAnimalCapturedInCorrectCage?.Invoke(animal, this);
 
         foreach (CageComponent cageComponent in cageComponents)
         {
@@ -117,6 +116,8 @@ public class Cage : MonoBehaviour
         }
 
         Destroy(animal.gameObject);
+
+        OnAnimalCapturedInCorrectCage?.Invoke(animal, this);
 
         /*foreach (Animator animator in animators)
         {
@@ -141,7 +142,7 @@ public class Cage : MonoBehaviour
         OnAnimalCapturedInWrongCage?.Invoke(animal,this);
 
 
-        Destroy(animal.gameObject);
+        //Destroy(animal.gameObject);
     }
 
 

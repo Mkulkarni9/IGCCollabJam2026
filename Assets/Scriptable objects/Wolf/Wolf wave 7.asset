@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5578974afa378e4fb2b79833b81abc0, type: 3}
-  m_Name: Wolf wave 5
+  m_Name: Wolf wave 7
   m_EditorClassIdentifier: Assembly-CSharp::WolfWaveSO
   wolfPrefab: {fileID: 7636039997238626170, guid: e55d11347b540914693e5c37ef11d51e, type: 3}
-  numberOfWolves: 1
+  numberOfWolves: 3
   intervalBetweenWolfSpawns: 10

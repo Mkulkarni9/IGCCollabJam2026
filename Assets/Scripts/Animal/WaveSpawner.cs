@@ -24,7 +24,7 @@ public class WaveSpawner : MonoBehaviour
 
     public static event Action<GameObject> OnEntitySpawned; 
 
-    [SerializeField] List<WaveSO> entityWaves = new List<WaveSO>();
+    public List<WaveSO> entityWaves = new List<WaveSO>();
     [SerializeField] List<Transform> entitySpawnPoints = new List<Transform>();
     [SerializeField] TypeOfEntity typeOfEntity;
     [SerializeField] SpawnMode spawnMode;
@@ -120,7 +120,10 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
-
+    public WaveSO GetCurrentWave()
+    {
+        return currentWave;
+    }
     public int GetSpawnPointIndex()
     {
         switch (spawnMode)
