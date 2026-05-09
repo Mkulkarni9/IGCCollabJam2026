@@ -12,6 +12,7 @@ public class Wolf : NPC
 
     public bool CanBeStunned { get; private set; } = true;
 
+    Animal previousClosestSheep;
     Animal closestSheep;
 
     AnimalManager animalManager;
@@ -26,6 +27,7 @@ public class Wolf : NPC
         animalManager = FindAnyObjectByType<AnimalManager>();
 
         lastPosition = transform.position;
+        previousClosestSheep = null;
     }
 
     private void OnEnable()
@@ -59,7 +61,7 @@ public class Wolf : NPC
     protected override void Update()
     {
         if (closestSheep == null) return;
-
+        if (movementPath == null || movementPath.Count==0) return;
 
         if (canMove)
         {
@@ -129,6 +131,12 @@ public class Wolf : NPC
 
                 /*Debug.Log("Min distance: " + minDistance + " || min distance Index: " + minDistanceIndex);
                 Debug.Log("Position of closest sheep: " + closestSheep.transform.position);*/
+
+
+                PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
+                PathNode newEndNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
+
+                SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
             }
             else
             {
@@ -137,7 +145,7 @@ public class Wolf : NPC
                 //Debug.Log("No closest sheep found");
             }
 
-
+            
             
 
 

@@ -138,7 +138,7 @@ public class Cage : MonoBehaviour
         //Debug.Log("Destroying animal after putting in wrong cage: " + animal.name);
 
         wrongCageVFX.Play();
-        cinemachineImpulseSource.GenerateImpulse(1f);
+        cinemachineImpulseSource.GenerateImpulse(0.2f);
         OnAnimalCapturedInWrongCage?.Invoke(animal,this);
 
 
