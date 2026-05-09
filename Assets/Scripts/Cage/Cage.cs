@@ -29,7 +29,7 @@ public class Cage : MonoBehaviour
 
 
     SpriteRenderer[] spriteRenderers;
-    Animator[] animators;
+    //Animator[] animators;
     CageComponent[] cageComponents;
     CinemachineImpulseSource cinemachineImpulseSource;
 
@@ -39,7 +39,7 @@ public class Cage : MonoBehaviour
         UpdateWalkableTile();
 
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        animators = GetComponentsInChildren<Animator>();
+        //animators = GetComponentsInChildren<Animator>();
         cageComponents = GetComponentsInChildren<CageComponent>();
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
 
@@ -113,14 +113,15 @@ public class Cage : MonoBehaviour
         foreach (CageComponent cageComponent in cageComponents)
         {
             cageComponent.PlayCorrectCageVFX();
+            cageComponent.GetComponent<Animator>().SetBool("IsClosing", true);
         }
 
         Destroy(animal.gameObject);
 
-        foreach (Animator animator in animators)
+        /*foreach (Animator animator in animators)
         {
             animator.SetBool("IsClosing", true);
-        }
+        }*/
 
     }
 

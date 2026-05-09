@@ -1,9 +1,18 @@
+using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    [SerializeField] GameObject obstacleCollisionVFX;
 
     Grid<PathNode> pathFindingGrid;
+    CinemachineImpulseSource cinemachineImpulseSource;
+
+    private void Awake()
+    {
+        cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,7 +23,11 @@ public class Obstacle : MonoBehaviour
         {
             if(pointerGrabber.IsGrabbingAnimal)
             {
-                Debug.Log("Dropping grabbed animal");
+                //Debug.Log("Dropping grabbed animal");
+                Instantiate(obstacleCollisionVFX, pointerGrabber.transform.position,Quaternion.identity);
+                cinemachineImpulseSource.GenerateImpulse(0.1f);
+                
+                
                 pointerGrabber.ReleaseAnimal();
             }
         }

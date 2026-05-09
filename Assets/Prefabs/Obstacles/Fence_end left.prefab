@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_end left
       objectReference: {fileID: 0}
+    - target: {fileID: 7097381202830499626, guid: 09c4eb65c518b9344ac5bf2b4a431cb8, type: 3}
+      propertyPath: obstacleCollisionVFX
+      value: 
+      objectReference: {fileID: 4443373272478220954, guid: 2c165d6a67b414f41b89660eda8f7fbf, type: 3}
     - target: {fileID: 7591331176373354524, guid: 09c4eb65c518b9344ac5bf2b4a431cb8, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

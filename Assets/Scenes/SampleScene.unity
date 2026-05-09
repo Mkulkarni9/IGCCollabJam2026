@@ -6978,6 +6978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PointerGrabber
   pickupSprite: {fileID: 2253667392417952349, guid: 79584ad2058bd47438af80eac2715422, type: 3}
   hammerSprite: {fileID: 21300000, guid: ffca3ee2145744f8aab7f3b427b1a652, type: 3}
+  pickupTexture: {fileID: 2800000, guid: 40924a71c2e42544eb194a5eab11a8a8, type: 3}
 --- !u!212 &317897683
 SpriteRenderer:
   serializedVersion: 2

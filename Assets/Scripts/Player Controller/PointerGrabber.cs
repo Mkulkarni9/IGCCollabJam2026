@@ -9,6 +9,9 @@ public class PointerGrabber : MonoBehaviour
     public static event Action<bool> OnGrabbedSheep;
     [SerializeField] Sprite pickupSprite;
     [SerializeField] Sprite hammerSprite;
+
+    [SerializeField] Texture2D pickupTexture;
+
     public bool IsGrabbingAnimal { get; private set; }
     public bool IsGrabbingCage { get; private set; }
 
@@ -92,6 +95,7 @@ public class PointerGrabber : MonoBehaviour
                 spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
                 grabbableAnimal.SpeedUpAnimal();
 
+                //Cursor.SetCursor(pickupTexture, new Vector2(16f,16f) , CursorMode.Auto);
 
                 //Debug.Log("Can grab animal: " + grabbableAnimal.name);
             }

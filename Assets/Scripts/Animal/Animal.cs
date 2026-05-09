@@ -122,7 +122,7 @@ public class Animal : NPC
         {
             ToggleAnimalMovement(true);
             SetGrabbedStatus(false);
-            Debug.Log("Animal can be put in cage: "+ canBeCapturedInCage);
+            //Debug.Log("Animal can be put in cage: "+ canBeCapturedInCage);
         }
         
     }

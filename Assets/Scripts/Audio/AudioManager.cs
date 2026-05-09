@@ -10,6 +10,12 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Clips")]
     [SerializeField] AudioSO hoverOnSheep;
     [SerializeField] AudioSO grabSheep;
+    [SerializeField] AudioSO hoverOnHole;
+    [SerializeField] AudioSO dropSheepInCorrectHole;
+    [SerializeField] AudioSO dropSheepInWrongHole;
+    [SerializeField] AudioSO hitFence;
+    [SerializeField] AudioSO stunWolf;
+    [SerializeField] AudioSO wolfEatSheep;
 
 
 
@@ -24,6 +30,9 @@ public class AudioManager : MonoBehaviour
 
     public float MusicVolume { get; private set; }
 
+
+
+    #region Unity methods
     void OnEnable()
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated += GetAudioPool;
@@ -49,8 +58,10 @@ public class AudioManager : MonoBehaviour
 
 
     }
+    #endregion
 
 
+    #region setup audio methods
     void GetAudioPool()
     {
         audioPool = ObjectPoolingManager.Instance.GetPool(audioPrefab.gameObject.GetInstanceID(), audioPrefab);
@@ -100,7 +111,7 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    
+    #endregion
 
     #region Play SFX clips
 
@@ -117,9 +128,35 @@ public class AudioManager : MonoBehaviour
         }
         
     }
-    
+    public void PlayHoverOnHoleSFX()
+    {
+        PlaySound(hoverOnHole);
+    }
 
+    public void PlayDropSheepInCorrectHoleSFX()
+    {
+        PlaySound(dropSheepInCorrectHole);
+    }
 
+    public void PlayDropSheepInWrongHoleSFX()
+    {
+        PlaySound(dropSheepInWrongHole);
+    }
+
+    public void PlayHitFenceSFX()
+    {
+        PlaySound(hitFence);
+    }
+
+    public void PlayStunWolfSFX()
+    {
+        PlaySound(stunWolf);
+    }
+
+    public void PlayWolfEatSheepSFX()
+    {
+        PlaySound(wolfEatSheep);
+    }
 
 
     #endregion

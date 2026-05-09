@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,6 @@ public class ScreenFlash : MonoBehaviour
 
     Image image;
 
-
     private void Start()
     {
         image = GetComponent<Image>();
@@ -30,8 +30,10 @@ public class ScreenFlash : MonoBehaviour
     {
         Cage.OnAnimalCapturedInWrongCage -= FlashRedScreen;
 
+
     }
 
+    
 
     void FlashRedScreen(Animal animal, Cage cage)
     {
