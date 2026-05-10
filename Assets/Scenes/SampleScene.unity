@@ -12342,8 +12342,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef6a70e39567a0d439e39a12ee6c1a34, type: 2}
   - {fileID: 11400000, guid: 48c31d5dd2552f244a7c358f59c7a869, type: 2}
   - {fileID: 11400000, guid: cc1384573982e044ba9e82d69ac69c79, type: 2}
-  - {fileID: 11400000, guid: 9f5bbd18888f7544ca2b7d28455cc56a, type: 2}
-  - {fileID: 11400000, guid: d922bcb245cdcc54d864cfb251167222, type: 2}
+  - {fileID: 11400000, guid: a35c46fd2eafd5c4794dfc9e97bd0549, type: 2}
+  - {fileID: 11400000, guid: dc5a8de6040593846997b74fd5654de9, type: 2}
   entitySpawnPoints:
   - {fileID: 705655944}
   typeOfEntity: 0
@@ -14790,8 +14790,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef6a70e39567a0d439e39a12ee6c1a34, type: 2}
   - {fileID: 11400000, guid: 48c31d5dd2552f244a7c358f59c7a869, type: 2}
   - {fileID: 11400000, guid: cc1384573982e044ba9e82d69ac69c79, type: 2}
-  - {fileID: 11400000, guid: 9f5bbd18888f7544ca2b7d28455cc56a, type: 2}
-  - {fileID: 11400000, guid: d922bcb245cdcc54d864cfb251167222, type: 2}
+  - {fileID: 11400000, guid: a35c46fd2eafd5c4794dfc9e97bd0549, type: 2}
+  - {fileID: 11400000, guid: dc5a8de6040593846997b74fd5654de9, type: 2}
   entitySpawnPoints:
   - {fileID: 1833807997}
   - {fileID: 747380879}

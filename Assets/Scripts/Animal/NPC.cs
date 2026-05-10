@@ -69,10 +69,12 @@ public class NPC : MonoBehaviour
 
                 SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
             }
+
+            FlipGameObjectBasedOnMovement();
+
         }
 
 
-        FlipGameObjectBasedOnMovement();
 
 
     }
@@ -119,6 +121,14 @@ public class NPC : MonoBehaviour
         }
 
         //Debug.Log("Count of path nodes: " + movementPath.Count);
+    }
+
+    protected void ResetPath()
+    {
+        PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
+        PathNode newEndNode = pathfindingNPC.grid.GetGridObject(mapPositionsNPC[currentMapPositionIndex + 1 == mapPositionsNPC.Count ? 0 : currentMapPositionIndex + 1].position);
+
+        SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
     }
 
     #endregion

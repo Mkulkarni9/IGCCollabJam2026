@@ -67,15 +67,19 @@ public class Cage : MonoBehaviour
 
         if (grabbedAnimalInPointer != null)
         {
-            //Debug.Log("Grabbed animal in pointer entered cage area: " + grabbedAnimalInPointer.AnimalSO.animalType);
-            grabbedAnimalInPointer.SetCaptureStatus(true);
-            grabbedAnimalInPointer.SetTargetCage(this);
-
-
-            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+            if(grabbedAnimalInPointer.IsGrabbed)
             {
-                spriteRenderer.material = cageHoverMaterial;
+                //Debug.Log("Grabbed animal in pointer entered cage area: " + grabbedAnimalInPointer.AnimalSO.animalType);
+                grabbedAnimalInPointer.SetCaptureStatus(true);
+                grabbedAnimalInPointer.SetTargetCage(this);
+
+
+                foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+                {
+                    spriteRenderer.material = cageHoverMaterial;
+                }
             }
+            
 
         }
     }
@@ -94,6 +98,7 @@ public class Cage : MonoBehaviour
             {
                 spriteRenderer.material = cageBaseMaterial;
             }
+
         }
     }
 

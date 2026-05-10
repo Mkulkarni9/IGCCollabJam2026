@@ -87,10 +87,12 @@ public class Wolf : NPC
 
                 SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
             }
+
+            FlipGameObjectBasedOnMovement();
+
         }
 
 
-        FlipGameObjectBasedOnMovement();
 
     }
 
@@ -132,11 +134,14 @@ public class Wolf : NPC
                 /*Debug.Log("Min distance: " + minDistance + " || min distance Index: " + minDistanceIndex);
                 Debug.Log("Position of closest sheep: " + closestSheep.transform.position);*/
 
+                if(closestSheep!=null)
+                {
+                    PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
+                    PathNode newEndNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
 
-                PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
-                PathNode newEndNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
-
-                SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
+                    SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
+                }
+                
             }
             else
             {

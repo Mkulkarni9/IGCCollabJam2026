@@ -117,6 +117,7 @@ public class Animal : NPC
 
                 ToggleAnimalMovement(true);
                 SetGrabbedStatus(false);
+                ResetPath();
 
             }
                 
@@ -125,9 +126,10 @@ public class Animal : NPC
         {
             ToggleAnimalMovement(true);
             SetGrabbedStatus(false);
+            ResetPath();
             //Debug.Log("Animal can be put in cage: "+ canBeCapturedInCage);
         }
-        
+
     }
 
     public void SetTargetCage(Cage cage)
@@ -183,6 +185,7 @@ public class Animal : NPC
     }
 
     #endregion
+
 
 
     #region effects
