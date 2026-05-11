@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,13 +12,14 @@ public class Wolf : NPC
 
     [SerializeField] float timeIntervalToSearchClosestSheep;
 
+    [SerializeField] ParticleSystem wolfStunVFX;
+
     public bool CanBeStunned { get; private set; } = true;
 
-    Animal previousClosestSheep;
     Animal closestSheep;
 
     AnimalManager animalManager;
-
+    CinemachineImpulseSource cinemachineImpulseSource;
 
     Coroutine wolfStunRoutine;
     private void Awake()
@@ -25,9 +28,9 @@ public class Wolf : NPC
         movementSpeed = wolfSpeed;
 
         animalManager = FindAnyObjectByType<AnimalManager>();
+        cinemachineImpulseSource =GetComponent<CinemachineImpulseSource>();
 
         lastPosition = transform.position;
-        previousClosestSheep = null;
     }
 
     private void OnEnable()
@@ -85,7 +88,13 @@ public class Wolf : NPC
                 PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
                 PathNode newEndNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
 
-                SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
+                List<PathNode> newMovementPath = pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y);
+
+                if (newMovementPath != null && newMovementPath.Count > 0)
+                {
+                    SetMovementPath(newMovementPath);
+                }
+                
             }
 
             FlipGameObjectBasedOnMovement();
@@ -139,7 +148,16 @@ public class Wolf : NPC
                     PathNode newStartNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
                     PathNode newEndNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
 
-                    SetMovementPath(pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y));
+
+                    List<PathNode> newMovementPath = pathfindingNPC.GetPath(newStartNode.x, newStartNode.y, newEndNode.x, newEndNode.y);
+
+                    if(newMovementPath!=null && newMovementPath.Count>0)
+                    {
+                        SetMovementPath(newMovementPath);
+                    }
+                        
+
+                    
                 }
                 
             }
@@ -170,6 +188,7 @@ public class Wolf : NPC
             if(!animal.IsGrabbed)
             {
                 Debug.Log("Eating sheep");
+                cinemachineImpulseSource.GenerateImpulse(0.5f);
                 animal.GetEatenByWolf();
             }
             
@@ -190,7 +209,9 @@ public class Wolf : NPC
     {
         CanBeStunned = false;
         canMove = false;
-        Debug.Log("Wolf stunned: canMove is "+canMove);
+        //Debug.Log("Wolf stunned: canMove is "+canMove);
+
+        wolfStunVFX.Play();
         yield return new WaitForSeconds(wolfStunDuration);
         
         canMove = true;

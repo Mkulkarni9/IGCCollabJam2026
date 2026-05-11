@@ -196,7 +196,7 @@ public class PointerGrabber : MonoBehaviour
                 grabbedAnimal.GetComponentInChildren<SheepHoverHighlight>().ToggleHighlight(false);
                 grabbedAnimal.GetComponentInChildren<AnimalShadow>().ToggleHighlight(false);
                 grabbedAnimal.PlaySheepGrabVFX();
-                cinemachineImpulseSource.GenerateImpulse(0.8f);
+                cinemachineImpulseSource.GenerateImpulse(0.6f);
 
                 OnGrabbedSheep?.Invoke(true);
 
@@ -212,9 +212,11 @@ public class PointerGrabber : MonoBehaviour
 
     public void HitWolf()
     {
-        if (canHitWolf)
+        if (canHitWolf && hittableWolf.CanBeStunned)
         {
             hittableWolf.StunWolf();
+            cinemachineImpulseSource.GenerateImpulse(0.8f);
+
         }
     }
 

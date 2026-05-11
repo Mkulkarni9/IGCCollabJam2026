@@ -107,7 +107,7 @@ public class Cage : MonoBehaviour
     {
         animal.transform.position = this.transform.position;
         animal.transform.SetParent(this.transform);
-        Debug.Log("Captured: " + animal.name);
+        //Debug.Log("Captured: " + animal.name);
         //animal.ToggleAnimalMovement(false);
 
         animal.GetComponent<BoxCollider2D>().enabled = false;

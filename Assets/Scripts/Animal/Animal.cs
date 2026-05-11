@@ -16,6 +16,7 @@ public class Animal : NPC
 
     [SerializeField] GameObject hoverHighlight;
     [SerializeField] GameObject animalShadow;
+    [SerializeField] GameObject sheepEatenByWolfVFX;
     [SerializeField] ParticleSystem sheepGrabVFX;
 
     public AnimalSO AnimalSO => animalSO;
@@ -105,13 +106,13 @@ public class Animal : NPC
         {
             if(targetCage.CageSO.animalCageType == animalSO.animalType)
             {
-                Debug.Log("Animal put in correct cage: " + name);
+                //Debug.Log("Animal put in correct cage: " + name);
                 IsInCage = true;
                 targetCage.CaptureAnimal(this);
             }
             else
             {
-                Debug.Log("Animal put in wrong cage: " + name);
+                //Debug.Log("Animal put in wrong cage: " + name);
                 IsInCage = false;
                 targetCage.DestroyAnimal(this);
 
@@ -180,6 +181,7 @@ public class Animal : NPC
 
     public void GetEatenByWolf()
     {
+        Instantiate(sheepEatenByWolfVFX, this.transform.position,Quaternion.identity);
         Destroy(this.gameObject);
         OnEatenByWolf?.Invoke();
     }

@@ -18,7 +18,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] List<Image> levelWiseEmojiScores;
     [SerializeField] Image levelScorePanel;
 
-    public int TotalPlayerScore { get; private set; }
     public int TotalLevelScore { get; private set; }
 
     int maxLevelScore;
@@ -57,12 +56,11 @@ public class ScoreManager : MonoBehaviour
         if (animal.AnimalSO.animalType == cage.CageSO.animalCageType)
         {
             TotalLevelScore += pointsOnCorrectCapture;
-            TotalPlayerScore += pointsOnCorrectCapture;
         }
         else
         {
             TotalLevelScore += penaltyOnWrongCapture;
-            TotalPlayerScore += penaltyOnWrongCapture;
+            TotalLevelScore = Mathf.Max(-maxLevelScore, TotalLevelScore);
         }
 
 
@@ -73,7 +71,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScoreAfterWolfEat()
     {
         TotalLevelScore += penaltyOnWolfEat;
-        TotalPlayerScore += penaltyOnWolfEat;
+        TotalLevelScore = Mathf.Max(-maxLevelScore, TotalLevelScore);
 
         UpdateScoreUI();
     }
@@ -108,7 +106,7 @@ public class ScoreManager : MonoBehaviour
 
     void ResetLevelScore(int levelIndex)
     {
-        Debug.Log("Total level score: " + TotalLevelScore + " & Total player score: " + TotalPlayerScore);
+        Debug.Log("Total level score: " + TotalLevelScore);
         TotalLevelScore = 0;
 
         UpdateScoreUI();

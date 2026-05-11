@@ -24,16 +24,26 @@ public class ScreenFlash : MonoBehaviour
     private void OnEnable()
     {
         Cage.OnAnimalCapturedInWrongCage += FlashRedScreen;
+        Animal.OnEatenByWolf += FlashRedScreen;
+
+
     }
 
     private void OnDisable()
     {
         Cage.OnAnimalCapturedInWrongCage -= FlashRedScreen;
+        Animal.OnEatenByWolf -= FlashRedScreen;
+
 
 
     }
 
-    
+
+    void FlashRedScreen()
+    {
+        FlashRedScreen(null, null);
+    }
+
 
     void FlashRedScreen(Animal animal, Cage cage)
     {

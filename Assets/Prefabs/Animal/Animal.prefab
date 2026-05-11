@@ -443,6 +443,7 @@ MonoBehaviour:
   grabbedMaterial: {fileID: 2100000, guid: a709e7d1302440f428eff7d56df75928, type: 2}
   hoverHighlight: {fileID: 5619786075504191080}
   animalShadow: {fileID: 6636345111291702199}
+  sheepEatenByWolfVFX: {fileID: 3238278450671767813, guid: 2f52a84f6d8bcf547adf1ad6e8b4aab5, type: 3}
   sheepGrabVFX: {fileID: 2609853593513998934}
 --- !u!95 &-7822496718685554300
 Animator:

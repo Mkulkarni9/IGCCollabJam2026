@@ -28,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] List<Transform> entitySpawnPoints = new List<Transform>();
     [SerializeField] TypeOfEntity typeOfEntity;
     [SerializeField] SpawnMode spawnMode;
+    [SerializeField] float spawnDelay;
 
     WaveSO currentWave;
     int currentWaveIndex;
@@ -88,6 +89,8 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEntitiesRoutine()
     {
+
+        yield return new WaitForSeconds(spawnDelay);
         entitiesSpawnedInCurrentWave = 0;
         currentSpawnPositionIndex = 0;
 
