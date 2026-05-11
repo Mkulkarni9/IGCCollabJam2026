@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -9,19 +10,35 @@ public class AudioManager : MonoBehaviour
 
     [Header("SFX Clips")]
     [SerializeField] AudioSO hoverOnSheep;
+    //[SerializeField]  List<AudioSO> sheepNoisesHoverOnSheep;
+
     [SerializeField] AudioSO grabSheep;
+    [SerializeField] List<AudioSO> sheepNoisesGrabSheep;
+
     [SerializeField] AudioSO hoverOnHole;
+
     [SerializeField] AudioSO dropSheepInCorrectHole;
+    [SerializeField] List<AudioSO> sheepNoisesDropSheepInCorrectHole;
+
     [SerializeField] AudioSO dropSheepInWrongHole;
+    [SerializeField] List<AudioSO> sheepNoisesDropSheepInWrongHole;
+
     [SerializeField] AudioSO hitFence;
+
+    [SerializeField] List<AudioSO> wolfNoisesSpawnWolf;
+
     [SerializeField] AudioSO stunWolf;
-    [SerializeField] AudioSO wolfEatSheep;
+    [SerializeField] List<AudioSO> wolfNoisesStunWolf;
+
+
+    [SerializeField] List<AudioSO> wolfNoisesEatSheep;
 
 
 
 
     [Header("Music Clips")]
     [SerializeField] AudioSO titleMusic;
+    [SerializeField] AudioSO ambientMusic;
 
 
 
@@ -33,9 +50,14 @@ public class AudioManager : MonoBehaviour
 
 
     #region Unity methods
+
+    
+
+
     void OnEnable()
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated += GetAudioPool;
+
 
         Animal.OnHoverPointer += PlayHoverOnSheepSFX;
         PointerGrabber.OnGrabbedSheep += PlayGrabSheepSFX;
@@ -57,6 +79,12 @@ public class AudioManager : MonoBehaviour
 
 
 
+    }
+
+    private void Start()
+    {
+        PlayTitleMusic();
+        PlayAmbientMusic();
     }
     #endregion
 
@@ -118,6 +146,11 @@ public class AudioManager : MonoBehaviour
     public void PlayHoverOnSheepSFX()
     {
         PlaySound(hoverOnSheep);
+
+
+        /*int randomIndex = Random.Range(0,sheepNoisesHoverOnSheep.Count);
+
+        PlaySound(sheepNoisesHoverOnSheep[randomIndex]);*/
     }
 
     public void PlayGrabSheepSFX(bool status)
@@ -125,8 +158,12 @@ public class AudioManager : MonoBehaviour
         if(status)
         {
             PlaySound(grabSheep);
+
+            int randomIndex = Random.Range(0, sheepNoisesGrabSheep.Count);
+
+            PlaySound(sheepNoisesGrabSheep[randomIndex]);
         }
-        
+
     }
     public void PlayHoverOnHoleSFX()
     {
@@ -136,26 +173,55 @@ public class AudioManager : MonoBehaviour
     public void PlayDropSheepInCorrectHoleSFX()
     {
         PlaySound(dropSheepInCorrectHole);
+
+        int randomIndex = Random.Range(0, sheepNoisesDropSheepInCorrectHole.Count);
+
+        PlaySound(sheepNoisesDropSheepInCorrectHole[randomIndex]);
     }
 
     public void PlayDropSheepInWrongHoleSFX()
     {
         PlaySound(dropSheepInWrongHole);
+
+        int randomIndex = Random.Range(0, sheepNoisesDropSheepInWrongHole.Count);
+
+        PlaySound(sheepNoisesDropSheepInWrongHole[randomIndex]);
+
     }
 
     public void PlayHitFenceSFX()
     {
         PlaySound(hitFence);
+
+        int randomIndex = Random.Range(0, sheepNoisesDropSheepInWrongHole.Count);
+
+        PlaySound(sheepNoisesDropSheepInWrongHole[randomIndex]);
+    }
+
+    public void PlaySpawnWolfSFX()
+    {
+        int randomIndex = Random.Range(0, wolfNoisesSpawnWolf.Count);
+
+        PlaySound(wolfNoisesSpawnWolf[randomIndex]);
+
+
     }
 
     public void PlayStunWolfSFX()
     {
         PlaySound(stunWolf);
+
+        int randomIndex = Random.Range(0, wolfNoisesStunWolf.Count);
+
+        PlaySound(wolfNoisesStunWolf[randomIndex]);
     }
 
     public void PlayWolfEatSheepSFX()
     {
-        PlaySound(wolfEatSheep);
+
+        int randomIndex = Random.Range(0, wolfNoisesEatSheep.Count);
+
+        PlaySound(wolfNoisesEatSheep[randomIndex]);
     }
 
 
@@ -167,7 +233,10 @@ public class AudioManager : MonoBehaviour
     {
         PlayMusic(titleMusic);
     }
-
+    public void PlayAmbientMusic()
+    {
+        //PlayMusic(ambientMusic);
+    }
 
 
     #endregion
