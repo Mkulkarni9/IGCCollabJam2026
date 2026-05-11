@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VectorGraphics;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class WolfSpawner : MonoBehaviour
 {
+    public static event Action OnWolfSpawned;
 
     [SerializeField] List<WolfWaveSO> wolfWaves = new List<WolfWaveSO>();
     [SerializeField] List<Transform> wolfSpawnPositions = new List<Transform>();
@@ -52,11 +54,13 @@ public class WolfSpawner : MonoBehaviour
         for (int i = 0; i < wolfWaves[levelIndex].numberOfWolves; i++)
         {
 
-            int randomWolfSpawnPointIndex = Random.Range(0, wolfSpawnPositions.Count);
+            int randomWolfSpawnPointIndex = UnityEngine.Random.Range(0, wolfSpawnPositions.Count);
 
             GameObject wolfSpawned = Instantiate(wolfWaves[levelIndex].wolfPrefab, wolfSpawnPositions[randomWolfSpawnPointIndex].position, Quaternion.identity);
             wolfSpawned.GetComponent<Wolf>().SetPathfindingVariables(pathFindingGrid, pathfinding);
             wolfSpawned.transform.SetParent(this.transform);
+
+            OnWolfSpawned?.Invoke();
 
             yield return new WaitForSeconds(wolfWaves[levelIndex].intervalBetweenWolfSpawns);
             

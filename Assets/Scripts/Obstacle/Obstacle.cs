@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+
+    public static event Action OnHitFence;
     [SerializeField] GameObject obstacleCollisionVFX;
 
     Grid<PathNode> pathFindingGrid;
@@ -26,8 +28,8 @@ public class Obstacle : MonoBehaviour
                 //Debug.Log("Dropping grabbed animal");
                 Instantiate(obstacleCollisionVFX, pointerGrabber.transform.position,Quaternion.identity);
                 cinemachineImpulseSource.GenerateImpulse(0.1f);
-                
-                
+
+                OnHitFence?.Invoke();
                 pointerGrabber.ReleaseAnimal();
             }
         }

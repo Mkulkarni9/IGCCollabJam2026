@@ -9,13 +9,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject audioPrefab;
 
     [Header("SFX Clips")]
+    [SerializeField] AudioSO sheepCountDown;
+
+    [SerializeField] AudioSO holeSpawn;
     [SerializeField] AudioSO hoverOnSheep;
     //[SerializeField]  List<AudioSO> sheepNoisesHoverOnSheep;
 
     [SerializeField] AudioSO grabSheep;
     [SerializeField] List<AudioSO> sheepNoisesGrabSheep;
-
-    [SerializeField] AudioSO hoverOnHole;
 
     [SerializeField] AudioSO dropSheepInCorrectHole;
     [SerializeField] List<AudioSO> sheepNoisesDropSheepInCorrectHole;
@@ -58,12 +59,16 @@ public class AudioManager : MonoBehaviour
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated += GetAudioPool;
 
-
+        LevelManager.OnLevelCountDownStart += PlayLevelCountdownSFX;
+        WaveSpawner.OnEntitySpawned += PlayHoleSpawnSFX;
         Animal.OnHoverPointer += PlayHoverOnSheepSFX;
         PointerGrabber.OnGrabbedSheep += PlayGrabSheepSFX;
-
-
-
+        Cage.OnAnimalCapturedInCorrectCage += PlayDropSheepInCorrectHoleSFX;
+        Cage.OnAnimalCapturedInWrongCage += PlayDropSheepInWrongHoleSFX;
+        Obstacle.OnHitFence += PlayHitFenceSFX;
+        WolfSpawner.OnWolfSpawned += PlaySpawnWolfSFX;
+        Wolf.OnWolfStunned += PlayStunWolfSFX;
+        Animal.OnEatenByWolf += PlayWolfEatSheepSFX;
     }
 
 
@@ -72,12 +77,16 @@ public class AudioManager : MonoBehaviour
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated -= GetAudioPool;
 
+        LevelManager.OnLevelCountDownStart -= PlayLevelCountdownSFX;
+        WaveSpawner.OnEntitySpawned -= PlayHoleSpawnSFX;
         Animal.OnHoverPointer -= PlayHoverOnSheepSFX;
         PointerGrabber.OnGrabbedSheep -= PlayGrabSheepSFX;
-
-
-
-
+        Cage.OnAnimalCapturedInCorrectCage -= PlayDropSheepInCorrectHoleSFX;
+        Cage.OnAnimalCapturedInWrongCage -= PlayDropSheepInWrongHoleSFX;
+        Obstacle.OnHitFence -= PlayHitFenceSFX;
+        WolfSpawner.OnWolfSpawned -= PlaySpawnWolfSFX;
+        Wolf.OnWolfStunned -= PlayStunWolfSFX;
+        Animal.OnEatenByWolf -= PlayWolfEatSheepSFX;
 
     }
 
@@ -143,6 +152,28 @@ public class AudioManager : MonoBehaviour
 
     #region Play SFX clips
 
+
+    public void PlayLevelCountdownSFX()
+    {
+        PlaySound(sheepCountDown);
+
+    }
+
+
+    public void PlayHoleSpawnSFX(GameObject entitySpawned)
+    {
+        Cage cage = entitySpawned.GetComponent<Cage>();
+
+        if(cage!=null)
+        {
+            PlaySound(holeSpawn);
+        }
+
+        
+
+    }
+
+
     public void PlayHoverOnSheepSFX()
     {
         PlaySound(hoverOnSheep);
@@ -165,12 +196,9 @@ public class AudioManager : MonoBehaviour
         }
 
     }
-    public void PlayHoverOnHoleSFX()
-    {
-        PlaySound(hoverOnHole);
-    }
+    
 
-    public void PlayDropSheepInCorrectHoleSFX()
+    public void PlayDropSheepInCorrectHoleSFX(Animal animal, Cage cage)
     {
         PlaySound(dropSheepInCorrectHole);
 
@@ -179,7 +207,7 @@ public class AudioManager : MonoBehaviour
         PlaySound(sheepNoisesDropSheepInCorrectHole[randomIndex]);
     }
 
-    public void PlayDropSheepInWrongHoleSFX()
+    public void PlayDropSheepInWrongHoleSFX(Animal animal, Cage cage)
     {
         PlaySound(dropSheepInWrongHole);
 

@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     private void OnEnable()
     {
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
-        LevelManager.OnNewLevelStart += HideLevelScorePanel;
+        LevelManager.OnLevelCountDownStart += HideLevelScorePanel;
 
         Cage.OnAnimalCapturedInCorrectCage += UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage += UpdateScoreAfterAnimalCapture;
@@ -38,7 +38,7 @@ public class ScoreManager : MonoBehaviour
     private void OnDisable()
     {
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
-        LevelManager.OnNewLevelStart -= HideLevelScorePanel;
+        LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
 
         Cage.OnAnimalCapturedInCorrectCage -= UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage -= UpdateScoreAfterAnimalCapture;
@@ -92,7 +92,7 @@ public class ScoreManager : MonoBehaviour
         levelScorePanel.gameObject.SetActive(true);
     }
 
-    void HideLevelScorePanel(int levelIndex)
+    void HideLevelScorePanel()
     {
         levelScorePanel.gameObject.SetActive(false);
 

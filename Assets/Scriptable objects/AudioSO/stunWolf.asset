@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903450df3a59c2242bfa27b830605fb9, type: 3}
   m_Name: stunWolf
   m_EditorClassIdentifier: 
-  AudioClip: {fileID: 8300000, guid: df5df1bb44150e541a677bff7a0d47f6, type: 3}
+  AudioClip: {fileID: 8300000, guid: 64fb3b79455204a42b8c9d97e1e0f67c, type: 3}
   ChangePitch: 0
   mixer: {fileID: 4358370052523021591, guid: 3bc690b2bffad31448e7570028f2ffc0, type: 2}
   loop: 0

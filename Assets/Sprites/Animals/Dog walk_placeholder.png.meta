@@ -61,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -131,10 +131,10 @@ TextureImporter:
       name: Dog walk_placeholder_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 3
         y: 0
-        width: 42
-        height: 28
+        width: 40
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,6 +145,116 @@ TextureImporter:
       bones: []
       spriteID: 410646a2e1191f810800000000000000
       internalID: 1797377285043806228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog walk_placeholder_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be75fcd042a210248bc1da31149c068b
+      internalID: 5398703348477636410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog walk_placeholder_2
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a2fb404aa624245b28da1328a12017
+      internalID: -8058763671986901857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog walk_placeholder_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7c82c81b8716446948cb1757161397
+      internalID: 4586934502915887993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog walk_placeholder_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e1ba092ca2aee41800c9efa2d6d150
+      internalID: -5994039381018142968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog walk_placeholder_5
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 0
+        width: 42
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26169fd638b923e4b991a04450ee6ed9
+      internalID: -2545138687687900430
       vertices: []
       indices: 
       edges: []
@@ -161,7 +271,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Dog walk_placeholder_0: 1797377285043806228
       Dog walk_placeholder_1: 5398703348477636410

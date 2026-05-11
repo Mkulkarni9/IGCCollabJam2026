@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,8 @@ using UnityEngine;
 
 public class Wolf : NPC
 {
+    public static event Action OnWolfStunned;
+
     [SerializeField] float wolfSpeed;
     [SerializeField] float wolfStunDuration;
 
@@ -210,6 +213,7 @@ public class Wolf : NPC
         CanBeStunned = false;
         canMove = false;
         //Debug.Log("Wolf stunned: canMove is "+canMove);
+        OnWolfStunned?.Invoke();
 
         wolfStunVFX.Play();
         yield return new WaitForSeconds(wolfStunDuration);

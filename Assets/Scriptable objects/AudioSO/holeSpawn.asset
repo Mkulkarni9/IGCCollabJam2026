@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 903450df3a59c2242bfa27b830605fb9, type: 3}
-  m_Name: wolfEatSheep
+  m_Name: holeSpawn
   m_EditorClassIdentifier: 
-  AudioClip: {fileID: 8300000, guid: df5df1bb44150e541a677bff7a0d47f6, type: 3}
+  AudioClip: {fileID: 8300000, guid: 893999516a56e8140aabc308e09d3b7a, type: 3}
   ChangePitch: 0
   mixer: {fileID: 4358370052523021591, guid: 3bc690b2bffad31448e7570028f2ffc0, type: 2}
   loop: 0

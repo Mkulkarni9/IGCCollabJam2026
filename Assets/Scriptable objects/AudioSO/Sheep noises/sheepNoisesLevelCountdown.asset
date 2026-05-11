@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 903450df3a59c2242bfa27b830605fb9, type: 3}
-  m_Name: hoverOnHole
+  m_Name: sheepNoisesLevelCountdown
   m_EditorClassIdentifier: 
-  AudioClip: {fileID: 8300000, guid: df5df1bb44150e541a677bff7a0d47f6, type: 3}
+  AudioClip: {fileID: 8300000, guid: c5226403adf5d0b4dba422445541f842, type: 3}
   ChangePitch: 0
   mixer: {fileID: 4358370052523021591, guid: 3bc690b2bffad31448e7570028f2ffc0, type: 2}
   loop: 0
-  volume: 1
+  volume: 0.7
   pitchRangeMin: 0
   pitchRangeMax: 0
