@@ -18,6 +18,7 @@ public class Wolf : NPC
     [SerializeField] ParticleSystem wolfStunVFX;
 
     public bool CanBeStunned { get; private set; } = true;
+    public bool IsStunned { get; private set; } = false;
 
     Animal closestSheep;
 
@@ -188,7 +189,7 @@ public class Wolf : NPC
 
         if (animal != null)
         {
-            if(!animal.IsGrabbed)
+            if(!animal.IsGrabbed && !IsStunned)
             {
                 Debug.Log("Eating sheep");
                 cinemachineImpulseSource.GenerateImpulse(0.5f);
@@ -212,6 +213,7 @@ public class Wolf : NPC
     {
         CanBeStunned = false;
         canMove = false;
+        IsStunned = true;
         //Debug.Log("Wolf stunned: canMove is "+canMove);
         OnWolfStunned?.Invoke();
 
@@ -220,6 +222,7 @@ public class Wolf : NPC
         
         canMove = true;
         CanBeStunned = true;
+        IsStunned = false;
     }
 
 

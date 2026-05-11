@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Image titleScreen;
     [SerializeField] Image currentCountDownImage;
     [SerializeField] List<Sprite> countDownSprites;
+    [SerializeField] List<Button> levelButtons;
+    [SerializeField] GameObject timerPanel;
 
     int currentLevelIndex = 0;
 
@@ -35,6 +37,10 @@ public class LevelManager : MonoBehaviour
         GameManager.OnStartGame += HideTitleScreen;
         GameManager.OnStartGame += LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap += EndCurrentLevel;
+        OnLevelComplete += UnlockLevelButtons;
+        OnNewLevelStart += DisplayInGameUI;
+        OnLevelComplete += HideInGameUI;
+            
     }
 
     private void OnDisable()
@@ -42,6 +48,9 @@ public class LevelManager : MonoBehaviour
         GameManager.OnStartGame -= HideTitleScreen;
         GameManager.OnStartGame -= LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap -= EndCurrentLevel;
+        OnLevelComplete -= UnlockLevelButtons;
+        OnNewLevelStart -= DisplayInGameUI;
+        OnLevelComplete -= HideInGameUI;
 
     }
 
@@ -71,7 +80,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(levels[levelIndex].levelDuration);
 
         OnLevelComplete?.Invoke(levelIndex);
-        currentLevelIndex++;
+        //currentLevelIndex++;
         /*yield return new WaitForSeconds(intervalBetweenLevels);*/
 
 
@@ -79,14 +88,24 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    public void StartNextLevel()
+    public void StartLevel(int levelIndex)
     {
+        currentLevelIndex = levelIndex;
+
         Debug.Log($"{currentLevelIndex} Level");
         StartLevels(currentLevelIndex);
     }
 
     public void EndCurrentLevel()
     {
+        StartCoroutine(EndCurrentLevelRoutine());
+
+
+    }
+
+    IEnumerator EndCurrentLevelRoutine()
+    {
+        yield return null;
         OnLevelComplete?.Invoke(currentLevelIndex);
 
         if (levelRoutine != null)
@@ -94,23 +113,26 @@ public class LevelManager : MonoBehaviour
             StopCoroutine(levelRoutine);
 
         }
+    }
 
-        currentLevelIndex++;
-
+    //After game start button pressed
+    public void LevelStartCountDown()
+    {
+        LevelStartCountDown(0);
     }
 
     //After pressing next level button on level menu
-    public void LevelStartCountDown()
+    public void LevelStartCountDown(int levelIndex)
     {
         if(countDownRoutine !=null)
         {
             StopCoroutine (countDownRoutine);
         }
 
-        countDownRoutine = StartCoroutine(LevelStartCountDownRoutine());
+        countDownRoutine = StartCoroutine(LevelStartCountDownRoutine(levelIndex));
     }
 
-    IEnumerator LevelStartCountDownRoutine()
+    IEnumerator LevelStartCountDownRoutine(int levelIndex)
     {
         int currentCountDownIndex = 0;
 
@@ -130,8 +152,28 @@ public class LevelManager : MonoBehaviour
         currentCountDownImage.gameObject.SetActive(false);
 
 
-        StartNextLevel();
+        StartLevel(levelIndex);
     }
 
+
+    void UnlockLevelButtons(int levelIndex)
+    {
+        if(levelIndex < levelButtons.Count-1)
+        {
+            levelButtons[levelIndex + 1].gameObject.SetActive(true);
+        }
+        
+    }
+
+    void HideInGameUI(int levelIndex)
+    {
+        timerPanel.gameObject.SetActive(false);
+    }
+
+    void DisplayInGameUI(int levelIndex)
+    {
+        timerPanel.gameObject.SetActive(true);
+
+    }
 
 }

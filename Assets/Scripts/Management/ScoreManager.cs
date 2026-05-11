@@ -17,14 +17,18 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Slider scoreSlider;
     [SerializeField] List<Image> levelWiseEmojiScores;
     [SerializeField] Image levelScorePanel;
+    [SerializeField] GameObject inGameScorePanel;
 
     public int TotalLevelScore { get; private set; }
 
     int maxLevelScore;
     private void OnEnable()
     {
-        LevelManager.OnNewLevelStart += SetMaxLevelScore;
         LevelManager.OnLevelCountDownStart += HideLevelScorePanel;
+        LevelManager.OnLevelCountDownStart += ResetLevelScore;
+        LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
+        LevelManager.OnNewLevelStart += SetMaxLevelScore;
+        LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
 
         Cage.OnAnimalCapturedInCorrectCage += UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage += UpdateScoreAfterAnimalCapture;
@@ -32,13 +36,15 @@ public class ScoreManager : MonoBehaviour
 
         LevelManager.OnLevelComplete += DisplayLevelScorePanel;
         LevelManager.OnLevelComplete += UpdateLevelScoreEmojis;
-        LevelManager.OnLevelComplete += ResetLevelScore;
     }
 
     private void OnDisable()
     {
-        LevelManager.OnNewLevelStart -= SetMaxLevelScore;
         LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
+        LevelManager.OnLevelCountDownStart -= ResetLevelScore;
+        LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
+        LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
+        LevelManager.OnNewLevelStart -= SetMaxLevelScore;
 
         Cage.OnAnimalCapturedInCorrectCage -= UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage -= UpdateScoreAfterAnimalCapture;
@@ -46,7 +52,6 @@ public class ScoreManager : MonoBehaviour
 
         LevelManager.OnLevelComplete -= DisplayLevelScorePanel;
         LevelManager.OnLevelComplete -= UpdateLevelScoreEmojis;
-        LevelManager.OnLevelComplete -= ResetLevelScore;
 
     }
 
@@ -82,6 +87,8 @@ public class ScoreManager : MonoBehaviour
 
         scoreSlider.value = fillAmount;
 
+        Debug.Log("Total level score:" + TotalLevelScore + " / " + "max level score: " + maxLevelScore);
+
         SelectScoreEmoji(fillAmount);
     }
 
@@ -100,15 +107,29 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateLevelScoreEmojis(int levelIndex)
     {
+        UpdateScoreUI();
+        Debug.Log("Score emoji: " + scoreEmoji.sprite);
         levelWiseEmojiScores[levelIndex].gameObject.SetActive(true);
         levelWiseEmojiScores[levelIndex].sprite = scoreEmoji.sprite;
     }
 
-    void ResetLevelScore(int levelIndex)
+    
+
+    void ResetLevelScore()
     {
         Debug.Log("Total level score: " + TotalLevelScore);
         TotalLevelScore = 0;
 
+    }
+
+    void HideInGameScoreUI()
+    {
+        inGameScorePanel.gameObject.SetActive(false);
+    }
+
+    void DisplayInGameScoreUI(int levelIndex)
+    {
+        inGameScorePanel.gameObject.SetActive(true);
         UpdateScoreUI();
     }
 
@@ -122,7 +143,9 @@ public class ScoreManager : MonoBehaviour
         {
             maxLevelScore = maxLevelScores[levelIndex];
         }
-        
+
+        UpdateScoreUI();
+
     }
 
     void SelectScoreEmoji(float proportionOfTotal)
@@ -151,6 +174,8 @@ public class ScoreManager : MonoBehaviour
             scoreEmoji.sprite = scoreEmojis[0];
 
         }
+
+        Debug.Log("Score emoji : " + scoreEmoji.sprite);
     }
 
 

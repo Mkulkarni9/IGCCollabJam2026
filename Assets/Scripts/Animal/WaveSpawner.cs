@@ -64,7 +64,10 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEntities(int levelIndex)
     {
-        if(waveSpawnRoutine !=null)
+        currentWaveIndex = levelIndex;
+        currentWave = entityWaves[currentWaveIndex];
+
+        if (waveSpawnRoutine !=null)
         {
             StopCoroutine(waveSpawnRoutine);
         }
@@ -84,10 +87,10 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Starting wave: " + currentWaveIndex);
 
 
-        waveSpawnRoutine = StartCoroutine(SpawnEntitiesRoutine());
+        waveSpawnRoutine = StartCoroutine(SpawnEntitiesRoutine(levelIndex));
     }
 
-    IEnumerator SpawnEntitiesRoutine()
+    IEnumerator SpawnEntitiesRoutine(int levelIndex)
     {
 
         yield return new WaitForSeconds(spawnDelay);
@@ -113,13 +116,13 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(intervalBetweenSpawns);
         }
 
-        if(currentWaveIndex < entityWaves.Count - 1)
+        /*if(currentWaveIndex < entityWaves.Count - 1)
         {
             currentWaveIndex++;
             currentWave = entityWaves[currentWaveIndex];
 
 
-        }
+        }*/
 
     }
 
