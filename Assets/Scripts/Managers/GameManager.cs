@@ -147,10 +147,9 @@ public class GameManager : MonoBehaviour
         OnClickUIButton?.Invoke();
         TogglePause();
     }
+
+
     
-
-
-
 
     public void Exit()
     {

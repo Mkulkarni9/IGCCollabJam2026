@@ -174,12 +174,12 @@ public class LevelManager : MonoBehaviour
         {
             if (levelButtons[i].GetComponent<Button>().interactable)
             {
-                levelPointerHighlight.GetComponent<RectTransform>().position = levelButtons[i].GetComponent<RectTransform>().position + new Vector3(0f,-50f,0f);
-                levelButtons[i].GetComponent<Image>().material = null;
+                levelPointerHighlight.GetComponent<RectTransform>().position = levelButtons[i].GetComponent<RectTransform>().position + new Vector3(0f,-90f,0f);
+                levelButtons[i].GetComponent<Image>().material = buttonHighlightMaterial;
             }
             else
             {
-                levelButtons[i].GetComponent<Image>().material = buttonHighlightMaterial;
+                levelButtons[i].GetComponent<Image>().material = null;
 
             }
         }

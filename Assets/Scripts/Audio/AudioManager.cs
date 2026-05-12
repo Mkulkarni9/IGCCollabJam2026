@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject audioPrefab;
 
     [Header("UI Clips")]
+    [SerializeField] AudioSO buttonHover;
     [SerializeField] AudioSO panelMove;
 
 
@@ -64,6 +66,7 @@ public class AudioManager : MonoBehaviour
         ObjectPoolingManager.OnObjectPoolManagerCreated += GetAudioPool;
 
         UIPanelMove.OnMoveUIPanel += PlayPanelMoveSFX;
+        ButtonHoverAnimations.OnHoverEnter += PlayButtonHoverSFX;
 
         LevelManager.OnLevelCountDownStart += PlayLevelCountdownSFX;
         WaveSpawner.OnEntitySpawned += PlayHoleSpawnSFX;
@@ -84,6 +87,7 @@ public class AudioManager : MonoBehaviour
         ObjectPoolingManager.OnObjectPoolManagerCreated -= GetAudioPool;
 
         UIPanelMove.OnMoveUIPanel -= PlayPanelMoveSFX;
+        ButtonHoverAnimations.OnHoverEnter -= PlayButtonHoverSFX;
 
         LevelManager.OnLevelCountDownStart -= PlayLevelCountdownSFX;
         WaveSpawner.OnEntitySpawned -= PlayHoleSpawnSFX;
@@ -167,6 +171,13 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void PlayButtonHoverSFX()
+    {
+        PlaySound(buttonHover);
+
+    }
+
+
     #endregion
 
 
@@ -222,9 +233,9 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound(dropSheepInCorrectHole);
 
-        int randomIndex = Random.Range(0, sheepNoisesDropSheepInCorrectHole.Count);
+        /*int randomIndex = Random.Range(0, sheepNoisesDropSheepInCorrectHole.Count);
 
-        PlaySound(sheepNoisesDropSheepInCorrectHole[randomIndex]);
+        PlaySound(sheepNoisesDropSheepInCorrectHole[randomIndex]);*/
     }
 
     public void PlayDropSheepInWrongHoleSFX(Animal animal, Cage cage)
