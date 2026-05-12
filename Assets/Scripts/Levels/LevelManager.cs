@@ -25,7 +25,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Image currentCountDownImage;
     [SerializeField] List<Sprite> countDownSprites;
     [SerializeField] List<Button> levelButtons;
+    [SerializeField] GameObject levelPointerHighlight;
     [SerializeField] GameObject timerPanel;
+
+    [SerializeField] Material buttonHighlightMaterial;
+
 
     [SerializeField] Vector2 timerPanellDisplayPosition;
     [SerializeField] Vector2 timerPanelHidePosition;
@@ -163,10 +167,25 @@ public class LevelManager : MonoBehaviour
     {
         if(levelIndex < levelButtons.Count-1)
         {
-            levelButtons[levelIndex + 1].gameObject.SetActive(true);
+            levelButtons[levelIndex + 1].GetComponent<Button>().interactable = true;
         }
-        
+
+        for (int i = 0; i < levelButtons.Count; i++)
+        {
+            if (levelButtons[i].GetComponent<Button>().interactable)
+            {
+                levelPointerHighlight.GetComponent<RectTransform>().position = levelButtons[i].GetComponent<RectTransform>().position + new Vector3(0f,-50f,0f);
+                levelButtons[i].GetComponent<Image>().material = null;
+            }
+            else
+            {
+                levelButtons[i].GetComponent<Image>().material = buttonHighlightMaterial;
+
+            }
+        }
+
     }
+
 
     void HideInGameUI(int levelIndex)
     {
