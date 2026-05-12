@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2581522219059232449}
   - component: {fileID: -4301301708777719974}
   m_Layer: 3
-  m_Name: Sheep_Head
+  m_Name: Sheep_Head R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 16
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 9b311367de3a11047acf4d5c1072ab03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6834d4fc59ea5140b09ec50e91684ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 284557687779425045}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: dbcee97f6082b2d48b1b2097bd9a786f, type: 2}
+  m_Controller: {fileID: 22100000, guid: bbe7d3a23ae12f244a5b8f541a80275e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

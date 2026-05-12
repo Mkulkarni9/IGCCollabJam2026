@@ -19,6 +19,12 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Image levelScorePanel;
     [SerializeField] GameObject inGameScorePanel;
 
+    [SerializeField] Vector2 levelPanelDisplayPosition;
+    [SerializeField] Vector2 levelPanelHidePosition;
+
+    [SerializeField] Vector2 inGameScorePanellDisplayPosition;
+    [SerializeField] Vector2 inGameScorePanelHidePosition;
+
     public int TotalLevelScore { get; private set; }
 
     int maxLevelScore;
@@ -26,7 +32,7 @@ public class ScoreManager : MonoBehaviour
     {
         LevelManager.OnLevelCountDownStart += HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart += ResetLevelScore;
-        LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
+        //LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
         LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
 
@@ -42,7 +48,7 @@ public class ScoreManager : MonoBehaviour
     {
         LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart -= ResetLevelScore;
-        LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
+        //LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
         LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
 
@@ -96,12 +102,13 @@ public class ScoreManager : MonoBehaviour
     #region Level score
     void DisplayLevelScorePanel(int levelIndex)
     {
-        levelScorePanel.gameObject.SetActive(true);
+        levelScorePanel.GetComponent<UIPanelMove>().MoveImageTo(levelPanelDisplayPosition);
     }
 
     void HideLevelScorePanel()
     {
-        levelScorePanel.gameObject.SetActive(false);
+        
+        levelScorePanel.GetComponent<UIPanelMove>().MoveImageTo(levelPanelHidePosition);
 
     }
 
@@ -124,12 +131,12 @@ public class ScoreManager : MonoBehaviour
 
     void HideInGameScoreUI()
     {
-        inGameScorePanel.gameObject.SetActive(false);
+        inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanelHidePosition);
     }
 
     void DisplayInGameScoreUI(int levelIndex)
     {
-        inGameScorePanel.gameObject.SetActive(true);
+        inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanellDisplayPosition);
         UpdateScoreUI();
     }
 

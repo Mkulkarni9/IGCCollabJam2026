@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] GameObject audioPrefab;
 
+    [Header("UI Clips")]
+    [SerializeField] AudioSO panelMove;
+
+
     [Header("SFX Clips")]
     [SerializeField] AudioSO sheepCountDown;
 
@@ -59,6 +63,8 @@ public class AudioManager : MonoBehaviour
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated += GetAudioPool;
 
+        UIPanelMove.OnMoveUIPanel += PlayPanelMoveSFX;
+
         LevelManager.OnLevelCountDownStart += PlayLevelCountdownSFX;
         WaveSpawner.OnEntitySpawned += PlayHoleSpawnSFX;
         Animal.OnHoverPointer += PlayHoverOnSheepSFX;
@@ -76,6 +82,8 @@ public class AudioManager : MonoBehaviour
     void OnDisable()
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated -= GetAudioPool;
+
+        UIPanelMove.OnMoveUIPanel -= PlayPanelMoveSFX;
 
         LevelManager.OnLevelCountDownStart -= PlayLevelCountdownSFX;
         WaveSpawner.OnEntitySpawned -= PlayHoleSpawnSFX;
@@ -148,7 +156,19 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
+
     #endregion
+
+    #region Play UI clips
+
+    public void PlayPanelMoveSFX()
+    {
+        PlaySound(panelMove);
+
+    }
+
+    #endregion
+
 
     #region Play SFX clips
 

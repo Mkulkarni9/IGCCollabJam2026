@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sheep_Head_override controller
+  m_Name: Sheep_Head G_override controller
   m_Controller: {fileID: 9100000, guid: 3b27de5d24a6faa40917e90af340f9aa, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: b6b2b6e7d980655499e14113efdcb734, type: 2}

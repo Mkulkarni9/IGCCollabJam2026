@@ -27,6 +27,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] List<Button> levelButtons;
     [SerializeField] GameObject timerPanel;
 
+    [SerializeField] Vector2 timerPanellDisplayPosition;
+    [SerializeField] Vector2 timerPanelHidePosition;
+
     int currentLevelIndex = 0;
 
     Coroutine levelRoutine;
@@ -35,7 +38,7 @@ public class LevelManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnStartGame += HideTitleScreen;
-        GameManager.OnStartGame += LevelStartCountDown;
+        //GameManager.OnStartGame += LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap += EndCurrentLevel;
         OnLevelComplete += UnlockLevelButtons;
         OnNewLevelStart += DisplayInGameUI;
@@ -46,7 +49,7 @@ public class LevelManager : MonoBehaviour
     private void OnDisable()
     {
         GameManager.OnStartGame -= HideTitleScreen;
-        GameManager.OnStartGame -= LevelStartCountDown;
+        //GameManager.OnStartGame -= LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap -= EndCurrentLevel;
         OnLevelComplete -= UnlockLevelButtons;
         OnNewLevelStart -= DisplayInGameUI;
@@ -167,12 +170,12 @@ public class LevelManager : MonoBehaviour
 
     void HideInGameUI(int levelIndex)
     {
-        timerPanel.gameObject.SetActive(false);
+        timerPanel.GetComponent<UIPanelMove>().MoveImageTo(timerPanelHidePosition);
     }
 
     void DisplayInGameUI(int levelIndex)
     {
-        timerPanel.gameObject.SetActive(true);
+        timerPanel.GetComponent<UIPanelMove>().MoveImageTo(timerPanellDisplayPosition);
 
     }
 

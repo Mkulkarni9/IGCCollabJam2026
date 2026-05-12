@@ -15,7 +15,7 @@ MonoBehaviour:
   AudioClip: {fileID: 8300000, guid: f2f2e9e59816ca54d90b1a88123ca8e8, type: 3}
   ChangePitch: 0
   mixer: {fileID: -8533802529665355012, guid: 3bc690b2bffad31448e7570028f2ffc0, type: 2}
-  loop: 0
+  loop: 1
   volume: 0.5
   pitchRangeMin: 0
   pitchRangeMax: 0

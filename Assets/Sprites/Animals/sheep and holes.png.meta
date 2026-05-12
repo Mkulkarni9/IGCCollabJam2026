@@ -263,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_6
+      name: hole anim_G replaced 4
       rect:
         serializedVersion: 2
         x: 50
@@ -505,7 +505,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_17
+      name: hole anim_G replaced 1
       rect:
         serializedVersion: 2
         x: 26
@@ -615,7 +615,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_22
+      name: hole anim_G replaced 2
       rect:
         serializedVersion: 2
         x: 34
@@ -637,7 +637,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheep and holes_23
+      name: hole anim_G replaced 3
       rect:
         serializedVersion: 2
         x: 42
@@ -678,20 +678,21 @@ TextureImporter:
       cage_G_3: 242360549
       cage_R_2: -937152258
       cage_R_3: -822286402
+      hole anim_G: 1810487895
+      hole anim_G replaced 1: -1985575447
+      hole anim_G replaced 2: 1810487895
+      hole anim_G replaced 3: -2061532310
+      hole anim_G replaced 4: -4212026238715223348
       sheep and holes_0: -7189693782253287950
       sheep and holes_1: 6982194485802740595
       sheep and holes_10: 1275913254
       sheep and holes_11: -132797221
       sheep and holes_15: -1725183167
       sheep and holes_16: -120904861
-      sheep and holes_17: -1985575447
       sheep and holes_2: -4956758530983268240
-      sheep and holes_22: 1810487895
-      sheep and holes_23: -2061532310
       sheep and holes_3: -4674689817730965508
       sheep and holes_4: 6412580091027133620
       sheep and holes_5: 3160686317907862416
-      sheep and holes_6: -4212026238715223348
       sheep and holes_7: -2047076772
       sheep and holes_8: 137643990
       sheep and holes_9: -743195561

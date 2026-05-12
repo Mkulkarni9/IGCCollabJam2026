@@ -150,7 +150,7 @@ PrefabInstance:
       addedObject: {fileID: 2770773619062173110}
     - targetCorrespondingSourceObject: {fileID: 7176138200660974070, guid: 075215108bdf2114ea5d3072b150a08f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2499195503764694027}
+      addedObject: {fileID: 6481113027226007329}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075215108bdf2114ea5d3072b150a08f, type: 3}
 --- !u!4 &6102865340835176540 stripped
@@ -158,7 +158,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7176138200660974070, guid: 075215108bdf2114ea5d3072b150a08f, type: 3}
   m_PrefabInstance: {fileID: 3974277263285041578}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5027441958391171772
+--- !u!1001 &4511035862345013654
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -168,15 +168,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284557687779425045, guid: eaa4594c25d932f4f8464a652c001654, type: 3}
       propertyPath: m_Name
-      value: Sheep_Head
+      value: Sheep_Head_G
       objectReference: {fileID: 0}
     - target: {fileID: 7452299334905310903, guid: eaa4594c25d932f4f8464a652c001654, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.247
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7452299334905310903, guid: eaa4594c25d932f4f8464a652c001654, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.214
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 7452299334905310903, guid: eaa4594c25d932f4f8464a652c001654, type: 3}
       propertyPath: m_LocalPosition.z
@@ -215,8 +215,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa4594c25d932f4f8464a652c001654, type: 3}
---- !u!4 &2499195503764694027 stripped
+--- !u!4 &6481113027226007329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7452299334905310903, guid: eaa4594c25d932f4f8464a652c001654, type: 3}
-  m_PrefabInstance: {fileID: 5027441958391171772}
+  m_PrefabInstance: {fileID: 4511035862345013654}
   m_PrefabAsset: {fileID: 0}

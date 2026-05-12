@@ -8987,6 +8987,7 @@ GameObject:
   - component: {fileID: 325063675}
   - component: {fileID: 325063674}
   - component: {fileID: 325063672}
+  - component: {fileID: 325063676}
   m_Layer: 5
   m_Name: Level score panel
   m_TagString: Untagged
@@ -9051,9 +9052,55 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3699, y: -27.745293}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 938.3731, y: 177.4088}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &325063676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325063671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0503074f45841b41b7545a75605ac53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIPanelMove
+  moveDuration: 0.5
+  moveTrajectory:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.08577351
+      value: -0.0080912635
+      inSlope: 1.933165
+      outSlope: 1.933165
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &326535057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11365,7 +11412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 544008111948341227, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.044002533
+      value: -0.044006348
       objectReference: {fileID: 0}
     - target: {fileID: 544008111948341227, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11493,35 +11540,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.441
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.99444354
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.328
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.8661479
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.9999466
+      value: 68.00006
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.1000061
+      value: -110
       objectReference: {fileID: 0}
     - target: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.1000061
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8020575913657707231, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       propertyPath: m_UiScaleMode
@@ -11545,7 +11592,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8011947549973081875, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
       insertIndex: 0
       addedObject: {fileID: 785951331}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5842865936835876531, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1040243959}
   m_SourcePrefab: {fileID: 100100000, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
 --- !u!114 &588124217 stripped
 MonoBehaviour:
@@ -14845,6 +14895,10 @@ MonoBehaviour:
   - {fileID: 425142382}
   levelScorePanel: {fileID: 325063672}
   inGameScorePanel: {fileID: 1599945178}
+  levelPanelDisplayPosition: {x: 0, y: 0}
+  levelPanelHidePosition: {x: 1000, y: 0}
+  inGameScorePanellDisplayPosition: {x: 30, y: 250}
+  inGameScorePanelHidePosition: {x: 30, y: 320}
 --- !u!4 &1019220977
 Transform:
   m_ObjectHideFlags: 0
@@ -14900,6 +14954,43 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5842865936835876531, guid: 004724d75aab0ee47a463d89501decd0, type: 3}
   m_PrefabInstance: {fileID: 588124216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1040243959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040243958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0503074f45841b41b7545a75605ac53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIPanelMove
+  moveDuration: 0.5
+  moveTrajectory:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1057148116
 GameObject:
   m_ObjectHideFlags: 0
@@ -18251,6 +18342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599945179}
   - component: {fileID: 1599945180}
+  - component: {fileID: 1599945181}
   m_Layer: 5
   m_Name: Score slider
   m_TagString: Untagged
@@ -18277,7 +18369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.659428, y: 255.6}
+  m_AnchoredPosition: {x: 30, y: 320}
   m_SizeDelta: {x: 215.7077, y: 35.2224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599945180
@@ -18331,6 +18423,43 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1599945181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599945178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0503074f45841b41b7545a75605ac53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIPanelMove
+  moveDuration: 0.2
+  moveTrajectory:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1614798693
 GameObject:
   m_ObjectHideFlags: 0
@@ -19882,6 +20011,8 @@ MonoBehaviour:
   - {fileID: 1576143278}
   - {fileID: 1636095753}
   timerPanel: {fileID: 1040243958}
+  timerPanellDisplayPosition: {x: -110, y: 220}
+  timerPanelHidePosition: {x: -110, y: 300}
 --- !u!4 &1791828903
 Transform:
   m_ObjectHideFlags: 0
@@ -21241,6 +21372,10 @@ PrefabInstance:
       propertyPath: holeSpawn
       value: 
       objectReference: {fileID: 11400000, guid: a2eda6d4b451f7f41b61f09082ca5e38, type: 2}
+    - target: {fileID: 3010675783707619923, guid: faf64a4ab77d1344f96e66592708af05, type: 3}
+      propertyPath: panelMove
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c81ee73cbc999e4f8d3082a48486e25, type: 2}
     - target: {fileID: 3010675783707619923, guid: faf64a4ab77d1344f96e66592708af05, type: 3}
       propertyPath: titleMusic
       value: 
