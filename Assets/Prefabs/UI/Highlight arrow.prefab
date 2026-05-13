@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4707240204331840225}
   - component: {fileID: 2476327221539938862}
   - component: {fileID: 4169619752251342642}
-  - component: {fileID: 8792655589094625552}
   m_Layer: 5
   m_Name: Highlight arrow
   m_TagString: Untagged
@@ -99,15 +98,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8792655589094625552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7201312632470543206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e6a4a801f404eb48bdd7fbc8a0b9e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HighlightArrow

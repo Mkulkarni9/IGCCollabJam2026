@@ -7,6 +7,7 @@ public class PointerGrabber : MonoBehaviour
 {
 
     public static event Action<bool> OnGrabbedSheep;
+    [SerializeField] Sprite hoverOverSheepSprite;
     [SerializeField] Sprite pickupSprite;
     [SerializeField] Sprite hammerSprite;
 
@@ -41,6 +42,8 @@ public class PointerGrabber : MonoBehaviour
     CinemachineImpulseSource cinemachineImpulseSource;
 
 
+    int WOLFSTUN_HASH = Animator.StringToHash("StunWolf");
+
     private void Awake()
     {
         mainCam = Camera.main;
@@ -48,7 +51,7 @@ public class PointerGrabber : MonoBehaviour
         playerController =GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         pointerCollider = GetComponent<CircleCollider2D>();
-        pointerOffset = pointerCollider.offset;
+        pointerOffset = pointerCollider.offset - new Vector2(0f,0.5f);
         animalManager = FindAnyObjectByType<AnimalManager>();
         animator = GetComponent<Animator>();
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
@@ -91,9 +94,10 @@ public class PointerGrabber : MonoBehaviour
             {
                 canGrabAnimal = true;
                 grabbableAnimal = animal;
-                spriteRenderer.sprite = pickupSprite;
+                spriteRenderer.sprite = hoverOverSheepSprite;
                 spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
                 grabbableAnimal.SpeedUpAnimal();
+
 
                 //Cursor.SetCursor(pickupTexture, new Vector2(16f,16f) , CursorMode.Auto);
 
@@ -139,7 +143,9 @@ public class PointerGrabber : MonoBehaviour
             spriteRenderer.sprite = null;
             //spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
 
-            if(grabbableAnimal!=null)
+
+
+            if (grabbableAnimal!=null)
             {
                 grabbableAnimal.ResetSpeedUpStatus();
                 
@@ -181,11 +187,11 @@ public class PointerGrabber : MonoBehaviour
         if(canGrabAnimal && !grabbableAnimal.IsInCage)
         {            
             Rigidbody2D rb = grabbableAnimal.GetComponent<Rigidbody2D>();
-            //Debug.Log("Rigid body of grabbed animal: "+ grabbableAnimal.AnimalSO.animalType + " = " + rb);
             if (rb != null)
             {
-                // Grab the object by making it a child of the pointer
-                //rb.is= true; // Make it kinematic to prevent physics interference
+
+                spriteRenderer.sprite = pickupSprite;
+
                 rb.transform.SetParent(transform);
                 rb.transform.position = transform.position + pointerOffset;
                 grabbedAnimal = grabbableAnimal;
@@ -215,6 +221,7 @@ public class PointerGrabber : MonoBehaviour
         if (canHitWolf && hittableWolf.CanBeStunned)
         {
             hittableWolf.StunWolf();
+            animator.Play(WOLFSTUN_HASH, 0,0f);
             cinemachineImpulseSource.GenerateImpulse(0.8f);
 
         }

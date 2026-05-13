@@ -19,7 +19,6 @@ public class UIPanelMove : MonoBehaviour
 
         rectTransform.anchoredPosition = this.rectTransform.anchoredPosition;
 
-        Debug.Log("Startin position : " + rectTransform.anchoredPosition);
     }
 
 
@@ -39,7 +38,6 @@ public class UIPanelMove : MonoBehaviour
     {
         OnMoveUIPanel?.Invoke();
 
-        Debug.Log(this.gameObject+ " Moving to position : " + endPosition);
 
         Vector2 start = rectTransform.anchoredPosition;
         float timePassed = 0f;

@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Image currentCountDownImage;
     [SerializeField] List<Sprite> countDownSprites;
     [SerializeField] List<Button> levelButtons;
-    [SerializeField] GameObject levelPointerHighlight;
+    [SerializeField] List<Image> highlightArrows;
     [SerializeField] GameObject timerPanel;
 
     [SerializeField] Material buttonHighlightMaterial;
@@ -183,7 +183,34 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        
+        for (int i = 0; i < levelButtons.Count; i++)
+        {
+            if(i < levelButtons.Count-1)
+            {
+                if (levelButtons[i].interactable && !levelButtons[i+1].interactable)
+                {
+                    highlightArrows[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    highlightArrows[i].gameObject.SetActive(false);
+
+                }
+            }
+            else
+            {
+                if (levelButtons[i].interactable)
+                {
+                    highlightArrows[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    highlightArrows[i].gameObject.SetActive(false);
+                }
+            }
+        }
+
+
 
     }
 
