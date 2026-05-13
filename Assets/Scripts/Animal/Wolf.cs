@@ -26,6 +26,8 @@ public class Wolf : NPC
     CinemachineImpulseSource cinemachineImpulseSource;
 
     Coroutine wolfStunRoutine;
+
+    Animator animator;
     private void Awake()
     {
         canMove = true;
@@ -33,6 +35,7 @@ public class Wolf : NPC
 
         animalManager = FindAnyObjectByType<AnimalManager>();
         cinemachineImpulseSource =GetComponent<CinemachineImpulseSource>();
+        animator = GetComponent<Animator>();
 
         lastPosition = transform.position;
     }
@@ -214,6 +217,7 @@ public class Wolf : NPC
         CanBeStunned = false;
         canMove = false;
         IsStunned = true;
+        animator.SetBool("IsStunned", IsStunned);
         //Debug.Log("Wolf stunned: canMove is "+canMove);
         OnWolfStunned?.Invoke();
 
@@ -223,6 +227,9 @@ public class Wolf : NPC
         canMove = true;
         CanBeStunned = true;
         IsStunned = false;
+
+        animator.SetBool("IsStunned", IsStunned);
+
     }
 
 

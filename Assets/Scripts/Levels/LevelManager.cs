@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -39,14 +40,19 @@ public class LevelManager : MonoBehaviour
     Coroutine levelRoutine;
     Coroutine countDownRoutine;
 
+
+    private void Awake()
+    {
+    }
+
     private void OnEnable()
     {
         GameManager.OnStartGame += HideTitleScreen;
         //GameManager.OnStartGame += LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap += EndCurrentLevel;
         OnLevelComplete += UnlockLevelButtons;
-        OnNewLevelStart += DisplayInGameUI;
-        OnLevelComplete += HideInGameUI;
+        //OnNewLevelStart += DisplayInGameUI;
+        //OnLevelComplete += HideInGameUI;
             
     }
 
@@ -56,8 +62,8 @@ public class LevelManager : MonoBehaviour
         //GameManager.OnStartGame -= LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap -= EndCurrentLevel;
         OnLevelComplete -= UnlockLevelButtons;
-        OnNewLevelStart -= DisplayInGameUI;
-        OnLevelComplete -= HideInGameUI;
+        //OnNewLevelStart -= DisplayInGameUI;
+        //OnLevelComplete -= HideInGameUI;
 
     }
 
@@ -215,7 +221,18 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    void HideInGameUI(int levelIndex)
+    void BlurBackground()
+    {
+        
+    }
+
+
+    void UnBlurBackground()
+    {
+
+    }
+
+    /*void HideInGameUI(int levelIndex)
     {
         timerPanel.GetComponent<UIPanelMove>().MoveImageTo(timerPanelHidePosition);
     }
@@ -224,6 +241,6 @@ public class LevelManager : MonoBehaviour
     {
         timerPanel.GetComponent<UIPanelMove>().MoveImageTo(timerPanellDisplayPosition);
 
-    }
+    }*/
 
 }

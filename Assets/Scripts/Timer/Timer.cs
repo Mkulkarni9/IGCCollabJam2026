@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     }
 
     [SerializeField] TimerType timerType;
-    [SerializeField] TextMeshProUGUI timerText;
+    //[SerializeField] TextMeshProUGUI timerText;
     [SerializeField] Image timerImage;
     float timerDurationInSec;
 
@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
         if(timerStarted && !timerPaused && !timerEnded)
         {
             UpdateTimer();
-            UpdateTimerText();
+            //UpdateTimerText();
             UpdateTimerImage();
         }
         
@@ -86,7 +86,7 @@ public class Timer : MonoBehaviour
 
         }
 
-        UpdateTimerText();
+        //UpdateTimerText();
         UpdateTimerImage();
     }
     
@@ -177,7 +177,7 @@ public class Timer : MonoBehaviour
         timeMin = Mathf.Max(Mathf.Floor(currentTime / 60), 0);
         timeSec = Mathf.Max(Mathf.Floor(currentTime % 60), 0);
 
-        timerText.text = timeMin.ToString("00") + ":" + timeSec.ToString("00");
+        //timerText.text = timeMin.ToString("00") + ":" + timeSec.ToString("00");
 
     }
 

@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
         LevelManager.OnLevelCountDownStart += ResetLevelScore;
         //LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
-        LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
+        //LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
 
         Cage.OnAnimalCapturedInCorrectCage += UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage += UpdateScoreAfterAnimalCapture;
@@ -49,8 +49,8 @@ public class ScoreManager : MonoBehaviour
         LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart -= ResetLevelScore;
         //LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
-        LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
+        //LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
 
         Cage.OnAnimalCapturedInCorrectCage -= UpdateScoreAfterAnimalCapture;
         Cage.OnAnimalCapturedInWrongCage -= UpdateScoreAfterAnimalCapture;
@@ -129,16 +129,16 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    void HideInGameScoreUI()
+    /*void HideInGameScoreUI()
     {
         inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanelHidePosition);
-    }
+    }*/
 
-    void DisplayInGameScoreUI(int levelIndex)
+    /*void DisplayInGameScoreUI(int levelIndex)
     {
-        inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanellDisplayPosition);
+        //inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanellDisplayPosition);
         UpdateScoreUI();
-    }
+    }*/
 
     #endregion
 
