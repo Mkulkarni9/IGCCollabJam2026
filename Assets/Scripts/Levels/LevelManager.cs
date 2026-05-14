@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnStartGame += HideTitleScreen;
+        TutorialManager.OnTutorialEnd += HideTitleScreen;
         //GameManager.OnStartGame += LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap += EndCurrentLevel;
         OnLevelComplete += UnlockLevelButtons;
@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.OnStartGame -= HideTitleScreen;
+        TutorialManager.OnTutorialEnd -= HideTitleScreen;
         //GameManager.OnStartGame -= LevelStartCountDown;
         AnimalManager.OnZeroSheepOnMap -= EndCurrentLevel;
         OnLevelComplete -= UnlockLevelButtons;
@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    void HideTitleScreen()
+    void HideTitleScreen(int levelIndex)
     {
         titleScreen.gameObject.SetActive(false);
     }
@@ -221,16 +221,6 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    void BlurBackground()
-    {
-        
-    }
-
-
-    void UnBlurBackground()
-    {
-
-    }
 
     /*void HideInGameUI(int levelIndex)
     {

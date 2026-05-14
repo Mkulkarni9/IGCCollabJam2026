@@ -79,7 +79,15 @@ public class ObjectPoolingManager : Singleton<ObjectPoolingManager>
     }
     void OnDestroyPooledObject(GameObject pooledObject)
     {
-        Destroy(pooledObject);
+        if(Application.isPlaying)
+        {
+            Destroy(pooledObject);
+        }
+        else
+        {
+            DestroyImmediate(pooledObject);
+        }
+        
     }
 
 

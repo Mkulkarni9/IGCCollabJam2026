@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [Header("UI Clips")]
     [SerializeField] AudioSO buttonHover;
     [SerializeField] AudioSO panelMove;
+    [SerializeField]  List<AudioSO> sheepNoisesHoverOnSheep;
 
 
     [Header("SFX Clips")]
@@ -19,7 +20,6 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSO holeSpawn;
     [SerializeField] AudioSO hoverOnSheep;
-    //[SerializeField]  List<AudioSO> sheepNoisesHoverOnSheep;
 
     [SerializeField] AudioSO grabSheep;
     [SerializeField] List<AudioSO> sheepNoisesGrabSheep;
@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated += GetAudioPool;
 
+        SheepTitleScreenButton.OnPointerEnterSheepTitleScreenButton += PlayGeneralSheepSFX;
         UIPanelMove.OnMoveUIPanel += PlayPanelMoveSFX;
         ButtonHoverAnimations.OnHoverEnter += PlayButtonHoverSFX;
 
@@ -86,6 +87,7 @@ public class AudioManager : MonoBehaviour
     {
         ObjectPoolingManager.OnObjectPoolManagerCreated -= GetAudioPool;
 
+        SheepTitleScreenButton.OnPointerEnterSheepTitleScreenButton -= PlayGeneralSheepSFX;
         UIPanelMove.OnMoveUIPanel -= PlayPanelMoveSFX;
         ButtonHoverAnimations.OnHoverEnter -= PlayButtonHoverSFX;
 
@@ -165,6 +167,13 @@ public class AudioManager : MonoBehaviour
 
     #region Play UI clips
 
+    public void PlayGeneralSheepSFX()
+    {
+        int randomIndex = Random.Range(0, sheepNoisesHoverOnSheep.Count);
+
+        PlaySound(sheepNoisesHoverOnSheep[randomIndex]);
+
+    }
     public void PlayPanelMoveSFX()
     {
         PlaySound(panelMove);
@@ -210,9 +219,7 @@ public class AudioManager : MonoBehaviour
         PlaySound(hoverOnSheep);
 
 
-        /*int randomIndex = Random.Range(0,sheepNoisesHoverOnSheep.Count);
-
-        PlaySound(sheepNoisesHoverOnSheep[randomIndex]);*/
+        
     }
 
     public void PlayGrabSheepSFX(bool status)
