@@ -69,6 +69,12 @@ public class WolfSpawner : MonoBehaviour
 
     }
 
+    public void RaiseWolfSpawnedEvent()
+    {
+        OnWolfSpawned?.Invoke();
+
+    }
+
 
     public void AssignPathfindingGrid(Grid<PathNode> pathFindingGrid, Pathfinding pathfinding)
     {

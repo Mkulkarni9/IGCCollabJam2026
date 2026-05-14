@@ -55,7 +55,11 @@ public class Wolf : NPC
     protected override void Start()
     {
         StartCoroutine(FindClosestSheepRoutine());
-        
+
+
+        if (pathfindingNPC == null) return;
+
+
         PathNode startNode = pathfindingNPC.grid.GetGridObject(this.transform.position);
         PathNode endNode = pathfindingNPC.grid.GetGridObject(closestSheep.transform.position);
 

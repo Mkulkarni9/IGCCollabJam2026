@@ -131,6 +131,9 @@ public class Cage : MonoBehaviour
 
     }
 
+
+   
+
     public void DestroyCage()
     {
         Destroy(this.gameObject);

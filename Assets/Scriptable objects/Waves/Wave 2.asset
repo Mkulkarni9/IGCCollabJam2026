@@ -21,6 +21,6 @@ MonoBehaviour:
   - {fileID: 673616528075109529, guid: 8500cf99028ee834f8274dccc7ce456d, type: 3}
   - {fileID: 673616528075109529, guid: a3f99bee3593b8849ba3d85c4b1787bc, type: 3}
   animalTypes: 0200000001000000000000000000000001000000
-  intervalBetweenAnimalSpawns: 1.7
+  intervalBetweenAnimalSpawns: 1.3
   intervalBetweenCageSpawns: 0.1
   totalWaveDuration: 30

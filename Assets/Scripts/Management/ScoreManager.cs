@@ -1,5 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
@@ -18,20 +22,45 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] List<Image> levelWiseEmojiScores;
     [SerializeField] Image levelScorePanel;
     [SerializeField] GameObject inGameScorePanel;
+    [SerializeField] GameObject topPanel;
 
     [SerializeField] Vector2 levelPanelDisplayPosition;
     [SerializeField] Vector2 levelPanelHidePosition;
 
+    [SerializeField] Vector2 topPanellDisplayPosition;
     [SerializeField] Vector2 inGameScorePanellDisplayPosition;
     [SerializeField] Vector2 inGameScorePanelHidePosition;
 
     public int TotalLevelScore { get; private set; }
 
     int maxLevelScore;
+
+    public Volume volume;
+    private DepthOfField dof;
+    private Vignette vignette;
+
+
+    private void Awake()
+    {
+        if (!volume.profile.TryGet<DepthOfField>(out dof))
+        {
+            Debug.Log("No DOF");
+        }
+
+        if (!volume.profile.TryGet<Vignette>(out vignette))
+        {
+            Debug.Log("No Vignette");
+        }
+    }
     private void OnEnable()
     {
+        TutorialManager.OnTutorialEnd += DisplayLevelScorePanel;
+        TutorialManager.OnTutorialEnd += RemoveVignette;
+        TutorialManager.OnTutorialEnd += DisplayTopPanel;
+
         LevelManager.OnLevelCountDownStart += HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart += ResetLevelScore;
+        LevelManager.OnLevelCountDownStart += UnBlurBackground;
         //LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
         //LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
@@ -42,12 +71,19 @@ public class ScoreManager : MonoBehaviour
 
         LevelManager.OnLevelComplete += DisplayLevelScorePanel;
         LevelManager.OnLevelComplete += UpdateLevelScoreEmojis;
+        LevelManager.OnLevelComplete += BlurBackground;
     }
 
     private void OnDisable()
     {
+        TutorialManager.OnTutorialEnd -= DisplayLevelScorePanel;
+        TutorialManager.OnTutorialEnd -= RemoveVignette;
+        TutorialManager.OnTutorialEnd -= DisplayTopPanel;
+
+
         LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart -= ResetLevelScore;
+        LevelManager.OnLevelCountDownStart -= UnBlurBackground;
         //LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
         //LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
@@ -58,6 +94,7 @@ public class ScoreManager : MonoBehaviour
 
         LevelManager.OnLevelComplete -= DisplayLevelScorePanel;
         LevelManager.OnLevelComplete -= UpdateLevelScoreEmojis;
+        LevelManager.OnLevelComplete -= BlurBackground;
 
     }
 
@@ -140,6 +177,11 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }*/
 
+    void DisplayTopPanel(int levelIndex)
+    {
+        topPanel.gameObject.SetActive(true);
+    }
+
     #endregion
 
 
@@ -185,5 +227,45 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Score emoji : " + scoreEmoji.sprite);
     }
 
+
+
+    #region post processing effects
+
+    void RemoveVignette(int levelIndex)
+    {
+        StartCoroutine(RemoveVignetteRoutine());
+    }
+
+    IEnumerator RemoveVignetteRoutine()
+    {
+        float timePassed = 0f;
+        float startVignetteIntensity = vignette.intensity.value;
+
+        while(timePassed<1f)
+        {
+            timePassed += Time.deltaTime;
+            float t = Mathf.Clamp01(timePassed / 1f);
+            vignette.intensity.value = Mathf.Lerp(startVignetteIntensity, 0f, t);
+
+            yield return null;
+        }
+
+        vignette.intensity.value = 0f;
+    }
+
+
+    void BlurBackground(int levelIndex)
+    {
+        dof.active = true;
+        
+    }
+
+    void UnBlurBackground()
+    {
+        dof.active = false;
+    }
+
+
+    #endregion
 
 }

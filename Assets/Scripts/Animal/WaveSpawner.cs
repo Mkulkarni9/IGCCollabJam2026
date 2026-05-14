@@ -189,5 +189,10 @@ public class WaveSpawner : MonoBehaviour
 
         return null;
     }
+
+    public void RaiseEntitySpawnedEvent(GameObject entitySpawned)
+    {
+        OnEntitySpawned?.Invoke(entitySpawned);
+    }
     
 }
