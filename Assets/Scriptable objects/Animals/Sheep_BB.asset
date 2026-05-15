@@ -16,4 +16,4 @@ MonoBehaviour:
   speed: 1.2
   boostSpeedProportion: 4
   boostDuration: 0.2
-  chanceToBoostSpeed: 0.75
+  chanceToBoostSpeed: 0.4

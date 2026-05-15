@@ -240,9 +240,9 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound(dropSheepInCorrectHole);
 
-        /*int randomIndex = Random.Range(0, sheepNoisesDropSheepInCorrectHole.Count);
+        int randomIndex = Random.Range(0, sheepNoisesDropSheepInCorrectHole.Count);
 
-        PlaySound(sheepNoisesDropSheepInCorrectHole[randomIndex]);*/
+        PlaySound(sheepNoisesDropSheepInCorrectHole[randomIndex]);
     }
 
     public void PlayDropSheepInWrongHoleSFX(Animal animal, Cage cage)

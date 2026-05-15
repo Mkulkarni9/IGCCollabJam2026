@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903450df3a59c2242bfa27b830605fb9, type: 3}
   m_Name: sheepNoisesDropSheepCorrectHole 1
   m_EditorClassIdentifier: 
-  AudioClip: {fileID: 8300000, guid: 32e957ebb2b092a4c874480f0ee96d5b, type: 3}
+  AudioClip: {fileID: 8300000, guid: 60274229f909c1c48b75b602f9f2cb85, type: 3}
   ChangePitch: 0
   mixer: {fileID: 4358370052523021591, guid: 3bc690b2bffad31448e7570028f2ffc0, type: 2}
   loop: 0
-  volume: 0.7
+  volume: 1.3
   pitchRangeMin: 0
   pitchRangeMax: 0

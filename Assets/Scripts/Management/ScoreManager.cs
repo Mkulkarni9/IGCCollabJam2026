@@ -23,6 +23,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Image levelScorePanel;
     [SerializeField] GameObject inGameScorePanel;
     [SerializeField] GameObject topPanel;
+    [SerializeField] GameObject sidePanel;
 
     [SerializeField] Vector2 levelPanelDisplayPosition;
     [SerializeField] Vector2 levelPanelHidePosition;
@@ -56,13 +57,14 @@ public class ScoreManager : MonoBehaviour
     {
         TutorialManager.OnTutorialEnd += DisplayLevelScorePanel;
         TutorialManager.OnTutorialEnd += RemoveVignette;
-        TutorialManager.OnTutorialEnd += DisplayTopPanel;
+
 
         LevelManager.OnLevelCountDownStart += HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart += ResetLevelScore;
         LevelManager.OnLevelCountDownStart += UnBlurBackground;
-        //LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
+        LevelManager.OnLevelCountDownStart += DisplayPanels;
+        //LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
         //LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
 
         Cage.OnAnimalCapturedInCorrectCage += UpdateScoreAfterAnimalCapture;
@@ -78,14 +80,14 @@ public class ScoreManager : MonoBehaviour
     {
         TutorialManager.OnTutorialEnd -= DisplayLevelScorePanel;
         TutorialManager.OnTutorialEnd -= RemoveVignette;
-        TutorialManager.OnTutorialEnd -= DisplayTopPanel;
 
 
         LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
         LevelManager.OnLevelCountDownStart -= ResetLevelScore;
         LevelManager.OnLevelCountDownStart -= UnBlurBackground;
-        //LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
+        LevelManager.OnLevelCountDownStart -= DisplayPanels;
+        //LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
         //LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
 
         Cage.OnAnimalCapturedInCorrectCage -= UpdateScoreAfterAnimalCapture;
@@ -157,12 +159,13 @@ public class ScoreManager : MonoBehaviour
         levelWiseEmojiScores[levelIndex].sprite = scoreEmoji.sprite;
     }
 
-    
 
+    
     void ResetLevelScore()
     {
         Debug.Log("Total level score: " + TotalLevelScore);
         TotalLevelScore = 0;
+
 
     }
 
@@ -177,9 +180,10 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }*/
 
-    void DisplayTopPanel(int levelIndex)
+    void DisplayPanels()
     {
         topPanel.gameObject.SetActive(true);
+        sidePanel.gameObject.SetActive(true);
     }
 
     #endregion

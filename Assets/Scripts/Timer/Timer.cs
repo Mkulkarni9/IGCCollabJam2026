@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TimerType timerType;
     //[SerializeField] TextMeshProUGUI timerText;
     [SerializeField] Image timerImage;
+    [SerializeField] SunMovement sunMovement;
     float timerDurationInSec;
 
     bool timerStarted;
@@ -29,6 +30,10 @@ public class Timer : MonoBehaviour
     float timerFraction;
 
 
+    
+
+
+    
     private void OnEnable()
     {
         LevelManager.OnNewLevelTimerUpdate += UpdateTimerDuration;
@@ -94,6 +99,8 @@ public class Timer : MonoBehaviour
     {
         timerStarted = true;
         timerPaused = false;
+
+        sunMovement.StartSunMovement();
     }
 
 
@@ -168,6 +175,7 @@ public class Timer : MonoBehaviour
     public void StopTimer(int levelIndex)
     {
         timerEnded = true;
+        sunMovement.StopMovement();
     }
 
 
@@ -192,6 +200,9 @@ public class Timer : MonoBehaviour
         timerDurationInSec = duration;
 
         ResetTimer();
+        sunMovement.SetSunSpeed(timerDurationInSec);
     }
+
+    
 
 }

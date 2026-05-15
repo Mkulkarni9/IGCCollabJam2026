@@ -25,10 +25,12 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] List<Transform> sheepSpawnPoint;
     [SerializeField] List<Transform> holeSpawnPoint;
+    [SerializeField] Transform fenceSpawnPoint;
     [SerializeField] Transform wolfSpawnPoint;
 
     [SerializeField] List<GameObject> sheepTutorial;
     [SerializeField] List<GameObject> holeTutorial;
+    [SerializeField] GameObject fenceTutorial;
     [SerializeField] GameObject wolfTutorial;
 
 
@@ -60,7 +62,7 @@ public class TutorialManager : MonoBehaviour
         GameManager.OnStartGame -= ZoomInCamera;
 
         GameManager.OnStartGame -= PlayTutorial;
-        Cage.OnAnimalCapturedInCorrectCage += AdvanceTutorial;
+        Cage.OnAnimalCapturedInCorrectCage -= AdvanceTutorial;
         Wolf.OnWolfStunned -= EndTutorial;
 
     }
@@ -80,6 +82,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 1:
                 SpawnSheep(tutorialIndex);
+                SpawnFence(tutorialIndex);
                 SpawnHole(tutorialIndex);
                 break;
             case 2:
@@ -103,10 +106,15 @@ public class TutorialManager : MonoBehaviour
         Debug.Log("Tutorial index: "+ tutorialIndex);
         tutorialAnimations[tutorialIndex].gameObject.SetActive(false);
 
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
 
         tutorialIndex++;
 
-        if(tutorialIndex >= numberOfTutorials)
+        if (tutorialIndex >= numberOfTutorials)
         {
             EndTutorial();
         }
@@ -142,6 +150,17 @@ public class TutorialManager : MonoBehaviour
         waveSpawner.RaiseEntitySpawnedEvent(entitySpawned);
     }
 
+    void SpawnFence(int tutorialIndex)
+    {
+
+        GameObject entityToBeSpawned = fenceTutorial;
+
+        GameObject entitySpawned = Instantiate(entityToBeSpawned, fenceSpawnPoint.position, Quaternion.identity);
+        entitySpawned.transform.SetParent(this.transform);
+
+
+    }
+
 
     void SpawnWolf()
     {
@@ -171,6 +190,7 @@ public class TutorialManager : MonoBehaviour
         IsTutorialComplete = true;
         OnTutorialEnd?.Invoke(0);
 
+        Debug.Log("Setting tutorial manager false");
         this.gameObject.SetActive(false);
     }
 

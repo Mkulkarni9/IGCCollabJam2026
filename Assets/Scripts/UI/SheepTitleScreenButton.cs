@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,7 +9,16 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
     public static event Action OnPointerEnterSheepTitleScreenButton;
 
     [SerializeField] Vector2 movePosition;
+    [SerializeField] float delayBeforeMove;
 
+    Image buttonImage;
+    UIPanelMove uIPanelMove;
+
+    private void Awake()
+    {
+        buttonImage = GetComponent<Image>();
+        uIPanelMove = this.GetComponent<UIPanelMove>();
+    }
     private void OnEnable()
     {
         GameManager.OnStartGame += DeactivateButton;
@@ -22,7 +32,11 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
 
     }
 
+    private void Start()
+    {
+        buttonImage.alphaHitTestMinimumThreshold = 0.1f;
 
+    }
 
 
 
@@ -43,12 +57,18 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
 
 
     void MoveSheep()
-    {
-        UIPanelMove uIPanelMove = this.GetComponent<UIPanelMove>();
+    { 
 
         if(uIPanelMove!=null)
         {
-            uIPanelMove.MoveImageTo(movePosition);
+            StartCoroutine(MoveSheepRoutine());
         }
+    }
+
+    IEnumerator MoveSheepRoutine()
+    {
+        yield return new WaitForSeconds(delayBeforeMove);
+
+        uIPanelMove.MoveImageTo(movePosition);
     }
 }
