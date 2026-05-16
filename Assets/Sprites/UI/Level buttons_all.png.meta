@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: 268fad8d5dd0f5745ba4b9e39ccbd28c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2723394668003773029
+    second: Level buttons_all_0
+  - first:
+      213: -3801919486533321051
+    second: Level buttons_all_1
+  - first:
+      213: -2551345829909853616
+    second: Level buttons_all_2
+  - first:
+      213: -1085963074063631912
+    second: Level buttons_all_3
+  - first:
+      213: -1561390956663246741
+    second: Level buttons_all_4
+  - first:
+      213: 4589201482862218197
+    second: Level buttons_all_5
+  - first:
+      213: -7020927433933060011
+    second: Level buttons_all_6
+  - first:
+      213: -7630739396539790408
+    second: Level buttons_all_7
+  - first:
+      213: -2061760660099131947
+    second: Level buttons_all_8
+  - first:
+      213: -1768743424062707687
+    second: Level buttons_all_9
+  - first:
+      213: -1752255391157401703
+    second: Level buttons_all_10
+  - first:
+      213: -4711423993907041129
+    second: Level buttons_all_11
+  - first:
+      213: 8096144965906215300
+    second: Level buttons_all_12
+  - first:
+      213: 6831746904474762838
+    second: Level buttons_all_13
+  - first:
+      213: -5420185798508425639
+    second: Level buttons_all_14
+  - first:
+      213: 457298477241142865
+    second: Level buttons_all_15
+  - first:
+      213: -2338359639816956664
+    second: Level buttons_all_16
+  - first:
+      213: 5785771037767518456
+    second: Level buttons_all_17
+  - first:
+      213: -7536311795135166978
+    second: Level buttons_all_18
+  - first:
+      213: -8319989836589919182
+    second: Level buttons_all_19
+  - first:
+      213: -7368661011828542693
+    second: Level buttons_all_20
+  - first:
+      213: 1971378270665576505
+    second: Level buttons_all_21
+  - first:
+      213: -2706018852825428713
+    second: Level buttons_all_22
+  - first:
+      213: 6936417010087298610
+    second: Level buttons_all_23
+  - first:
+      213: -2875645659982095272
+    second: Level buttons_all_24
+  - first:
+      213: -2370689267376440665
+    second: Level buttons_all_25
+  - first:
+      213: 6800574615509702347
+    second: Level buttons_all_26
+  - first:
+      213: 8254627164831974122
+    second: Level buttons_all_27
+  - first:
+      213: 534929701064220218
+    second: Level buttons_all_28
+  - first:
+      213: 6480563106171596429
+    second: Level buttons_all_29
+  - first:
+      213: -768581772483536033
+    second: Level buttons_all_30
+  - first:
+      213: -1129786366819680966
+    second: Level buttons_all_31
+  - first:
+      213: -6207659235466626268
+    second: Level buttons_all_32
+  - first:
+      213: -8691536088496640853
+    second: Level buttons_all_33
+  - first:
+      213: 6244255871027861533
+    second: Level buttons_all_34
+  - first:
+      213: 4112548736222157136
+    second: Level buttons_all_35
+  - first:
+      213: 713393256030392173
+    second: Level buttons_all_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level buttons_all_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ace8975017bc520800000000000000
+      internalID: 2723394668003773029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aebb84de5edc3bc0800000000000000
+      internalID: -3801919486533321051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a8c0d3c7cc79cd0800000000000000
+      internalID: -2551345829909853616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9fe3b7652ede0f0800000000000000
+      internalID: -1085963074063631912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6074909233d45ae0800000000000000
+      internalID: -1561390956663246741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dbc2bc1f6e10bf30800000000000000
+      internalID: 4589201482862218197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55800a282b7a09e90800000000000000
+      internalID: -7020927433933060011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 212
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bbcaafb2fa2a1690800000000000000
+      internalID: -7630739396539790408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d59ae27a972363e0800000000000000
+      internalID: -2061760660099131947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9182fed1a392477e0800000000000000
+      internalID: -1768743424062707687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997cc4e610dbea7e0800000000000000
+      internalID: -1752255391157401703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c2be8f6d8ad9eb0800000000000000
+      internalID: -4711423993907041129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48138e683f84b5070800000000000000
+      internalID: 8096144965906215300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_13
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65eb79c0d9d3fce50800000000000000
+      internalID: 6831746904474762838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ec94fcbb1a7c4b0800000000000000
+      internalID: -5420185798508425639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_15
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 181
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e094cca86a85600800000000000000
+      internalID: 457298477241142865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_16
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8059997fb4a7c8fd0800000000000000
+      internalID: -2338359639816956664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f840e1ca103b4050800000000000000
+      internalID: 5785771037767518456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_18
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5c166f954a96790800000000000000
+      internalID: -7536311795135166978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23492372355798c80800000000000000
+      internalID: -8319989836589919182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1370bfb9d14db990800000000000000
+      internalID: -7368661011828542693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_21
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93012f4a71ebb5b10800000000000000
+      internalID: 1971378270665576505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_22
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 147
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d84d1c03a427ad0800000000000000
+      internalID: -2706018852825428713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_23
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 147
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2360b3c158a134060800000000000000
+      internalID: 6936417010087298610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c9fd01287a718d0800000000000000
+      internalID: -2875645659982095272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_25
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa3239fbae991fd0800000000000000
+      internalID: -2370689267376440665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_26
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc69ef1f49e706e50800000000000000
+      internalID: 6800574615509702347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_27
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae28919eba35e8270800000000000000
+      internalID: 8254627164831974122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_28
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e1dbb9ab37c6700800000000000000
+      internalID: 534929701064220218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_29
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e2cdf3fc59fe950800000000000000
+      internalID: 6480563106171596429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_30
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b574633f27555f0800000000000000
+      internalID: -768581772483536033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_31
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 116
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d32a509413250f0800000000000000
+      internalID: -1129786366819680966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_32
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 84
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42bb65f90d6f9d9a0800000000000000
+      internalID: -6207659235466626268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_33
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 89
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bac6bac2af5716780800000000000000
+      internalID: -8691536088496640853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_34
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 74
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18534791ad08a650800000000000000
+      internalID: 6244255871027861533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_35
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 73
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 059d0005945b21930800000000000000
+      internalID: 4112548736222157136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level buttons_all_36
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 58
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6fc9daf26b76e900800000000000000
+      internalID: 713393256030392173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7565ae7a822a43248a5a79d9c2e537c4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level buttons_all_0: 2723394668003773029
+      Level buttons_all_1: -3801919486533321051
+      Level buttons_all_10: -1752255391157401703
+      Level buttons_all_11: -4711423993907041129
+      Level buttons_all_12: 8096144965906215300
+      Level buttons_all_13: 6831746904474762838
+      Level buttons_all_14: -5420185798508425639
+      Level buttons_all_15: 457298477241142865
+      Level buttons_all_16: -2338359639816956664
+      Level buttons_all_17: 5785771037767518456
+      Level buttons_all_18: -7536311795135166978
+      Level buttons_all_19: -8319989836589919182
+      Level buttons_all_2: -2551345829909853616
+      Level buttons_all_20: -7368661011828542693
+      Level buttons_all_21: 1971378270665576505
+      Level buttons_all_22: -2706018852825428713
+      Level buttons_all_23: 6936417010087298610
+      Level buttons_all_24: -2875645659982095272
+      Level buttons_all_25: -2370689267376440665
+      Level buttons_all_26: 6800574615509702347
+      Level buttons_all_27: 8254627164831974122
+      Level buttons_all_28: 534929701064220218
+      Level buttons_all_29: 6480563106171596429
+      Level buttons_all_3: -1085963074063631912
+      Level buttons_all_30: -768581772483536033
+      Level buttons_all_31: -1129786366819680966
+      Level buttons_all_32: -6207659235466626268
+      Level buttons_all_33: -8691536088496640853
+      Level buttons_all_34: 6244255871027861533
+      Level buttons_all_35: 4112548736222157136
+      Level buttons_all_36: 713393256030392173
+      Level buttons_all_4: -1561390956663246741
+      Level buttons_all_5: 4589201482862218197
+      Level buttons_all_6: -7020927433933060011
+      Level buttons_all_7: -7630739396539790408
+      Level buttons_all_8: -2061760660099131947
+      Level buttons_all_9: -1768743424062707687
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
