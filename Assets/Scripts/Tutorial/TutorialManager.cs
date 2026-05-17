@@ -5,6 +5,7 @@ using Unity.Cinemachine;
 using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] CinemachineCamera mainCamera;
 
+    [SerializeField] Button skipTutorialButton;
+
     int tutorialIndex = 0;
 
     bool IsTutorialComplete;
@@ -52,6 +55,7 @@ public class TutorialManager : MonoBehaviour
         GameManager.OnStartGame += ZoomInCamera;
 
         GameManager.OnStartGame += PlayTutorial;
+        GameManager.OnStartGame += EnableSkipTutorialButton;
         Cage.OnAnimalCapturedInCorrectCage += AdvanceTutorial;
         Wolf.OnWolfStunned += EndTutorial;
 
@@ -62,6 +66,7 @@ public class TutorialManager : MonoBehaviour
         GameManager.OnStartGame -= ZoomInCamera;
 
         GameManager.OnStartGame -= PlayTutorial;
+        GameManager.OnStartGame -= EnableSkipTutorialButton;
         Cage.OnAnimalCapturedInCorrectCage -= AdvanceTutorial;
         Wolf.OnWolfStunned -= EndTutorial;
 
@@ -92,7 +97,7 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Tutorial index: " + tutorialIndex);
+        //Debug.Log("Tutorial index: " + tutorialIndex);
         tutorialAnimations[tutorialIndex].gameObject.SetActive(true);
 
 
@@ -100,10 +105,17 @@ public class TutorialManager : MonoBehaviour
 
     void AdvanceTutorial(Animal animal, Cage cage)
     {
-
         if (IsTutorialComplete) return;
 
-        Debug.Log("Tutorial index: "+ tutorialIndex);
+        StartCoroutine(DelayBeforeNextTutorialRoutine());
+    }
+
+    IEnumerator DelayBeforeNextTutorialRoutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+
+        //Debug.Log("Tutorial index: "+ tutorialIndex);
         tutorialAnimations[tutorialIndex].gameObject.SetActive(false);
 
         for (int i = 0; i < this.transform.childCount; i++)
@@ -118,8 +130,6 @@ public class TutorialManager : MonoBehaviour
         {
             EndTutorial();
         }
-
-
         PlayTutorial();
     }
 
@@ -185,14 +195,20 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator DelayBeforeTutorialEndRoutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
+        SkipTutorial();
+    }
+
+    public void SkipTutorial()
+    {
         IsTutorialComplete = true;
         OnTutorialEnd?.Invoke(0);
 
-        Debug.Log("Setting tutorial manager false");
+        //Debug.Log("Setting tutorial manager false");
         this.gameObject.SetActive(false);
     }
+
 
     #endregion
 
@@ -233,6 +249,12 @@ public class TutorialManager : MonoBehaviour
 
 
     #endregion
+
+
+    void EnableSkipTutorialButton()
+    {
+        skipTutorialButton.gameObject.SetActive(true);
+    }
 
 
 }

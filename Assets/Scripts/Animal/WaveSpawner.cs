@@ -84,7 +84,7 @@ public class WaveSpawner : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Starting wave: " + currentWaveIndex);
+        //Debug.Log("Starting wave: " + currentWaveIndex);
 
 
         waveSpawnRoutine = StartCoroutine(SpawnEntitiesRoutine(levelIndex));
@@ -150,7 +150,7 @@ public class WaveSpawner : MonoBehaviour
                 return UnityEngine.Random.Range(0, entitySpawnPoints.Count);
 
             default:
-                Debug.LogError("Invalid spawn mode selected.");
+                //Debug.LogError("Invalid spawn mode selected.");
                 return 0;
         }
     }
@@ -179,7 +179,7 @@ public class WaveSpawner : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("No matching entity");
+                //Debug.Log("No matching entity");
                 break;
         }
 

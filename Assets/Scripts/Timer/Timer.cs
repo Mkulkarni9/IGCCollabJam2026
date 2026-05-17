@@ -30,10 +30,10 @@ public class Timer : MonoBehaviour
     float timerFraction;
 
 
-    
+    bool isTimerWarningTriggered;
 
 
-    
+
     private void OnEnable()
     {
         LevelManager.OnNewLevelTimerUpdate += UpdateTimerDuration;
@@ -136,9 +136,18 @@ public class Timer : MonoBehaviour
                 break;
 
         }
+
+        TimerWarning();
     }
 
-    
+    void TimerWarning()
+    {
+        if (currentTime <= 10f && !isTimerWarningTriggered)
+        {
+            isTimerWarningTriggered = true;
+            sunMovement.FlashSun();
+        }
+    }
 
     public void TogglePauseTimer()
     {
@@ -196,11 +205,12 @@ public class Timer : MonoBehaviour
 
     public void UpdateTimerDuration(float duration)
     {
-        Debug.Log("Updating timer duration to: "+ duration);
+        //Debug.Log("Updating timer duration to: "+ duration);
         timerDurationInSec = duration;
 
         ResetTimer();
         sunMovement.SetSunSpeed(timerDurationInSec);
+        isTimerWarningTriggered = false;
     }
 
     

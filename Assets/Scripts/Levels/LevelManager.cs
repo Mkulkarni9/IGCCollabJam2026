@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator LevelRoutine(int levelIndex)
     {
 
-        Debug.Log("Starting level: " + levelIndex);
+        //Debug.Log("Starting level: " + levelIndex);
         OnNewLevelTimerUpdate?.Invoke(levels[levelIndex].levelDuration);
         OnNewLevelStart?.Invoke(levelIndex);
         yield return new WaitForSeconds(levels[levelIndex].levelDuration);
@@ -105,7 +105,7 @@ public class LevelManager : MonoBehaviour
     {
         currentLevelIndex = levelIndex;
 
-        Debug.Log($"{currentLevelIndex} Level");
+        //Debug.Log($"{currentLevelIndex} Level");
         StartLevels(currentLevelIndex);
     }
 

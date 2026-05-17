@@ -110,7 +110,7 @@ public class AnimalManager : MonoBehaviour
     void ResetWalkableLayers(int levelIndex)
     {
 
-        Debug.Log("Resetting walkable layers");
+        //Debug.Log("Resetting walkable layers");
 
         for (int i = 0; i < pathFindingGrid.GetWidth(); i++)
         {
@@ -128,7 +128,7 @@ public class AnimalManager : MonoBehaviour
     void SetNumberOfAnimalsInLevel(int levelIndex)
     {
         maxAnimalsInLevel = GetComponent<WaveSpawner>().entityWaves[levelIndex].animalTypes.Count;
-        Debug.Log("Total sheep in current wave: "+ maxAnimalsInLevel);
+        //Debug.Log("Total sheep in current wave: "+ maxAnimalsInLevel);
         currentAnimalsInLevel = maxAnimalsInLevel;
     }
 
@@ -143,7 +143,7 @@ public class AnimalManager : MonoBehaviour
     {
         currentAnimalsInLevel--;
 
-        Debug.Log("Sheep count: "+ currentAnimalsInLevel);
+        //Debug.Log("Sheep count: "+ currentAnimalsInLevel);
 
         if(CheckIfAnimalCountIsZero())
         {

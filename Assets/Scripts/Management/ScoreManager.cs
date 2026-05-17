@@ -1,6 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static event Action OnScoreUpdated;
 
     [SerializeField] List<int> maxLevelScores;
     [SerializeField] List<Sprite> scoreEmojis;
@@ -29,6 +31,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Vector2 levelPanelHidePosition;
 
     [SerializeField] Vector2 topPanellDisplayPosition;
+    [SerializeField] Vector2 sidePanelDisplayPosition;
+    [SerializeField] Vector2 sidePanelHidePosition;
     [SerializeField] Vector2 inGameScorePanellDisplayPosition;
     [SerializeField] Vector2 inGameScorePanelHidePosition;
 
@@ -59,11 +63,13 @@ public class ScoreManager : MonoBehaviour
         TutorialManager.OnTutorialEnd += RemoveVignette;
 
 
+        LevelManager.OnLevelCountDownStart += DisplayPanels;
         LevelManager.OnLevelCountDownStart += HideLevelScorePanel;
-        LevelManager.OnLevelCountDownStart += ResetLevelScore;
         LevelManager.OnLevelCountDownStart += UnBlurBackground;
         LevelManager.OnNewLevelStart += SetMaxLevelScore;
-        LevelManager.OnLevelCountDownStart += DisplayPanels;
+        LevelManager.OnNewLevelStart += ResetLevelScore;
+        LevelManager.OnNewLevelStart += DisplaySidePanel;
+        ;
         //LevelManager.OnLevelCountDownStart += HideInGameScoreUI;
         //LevelManager.OnNewLevelStart += DisplayInGameScoreUI;
 
@@ -72,6 +78,7 @@ public class ScoreManager : MonoBehaviour
         Animal.OnEatenByWolf += UpdateScoreAfterWolfEat;
 
         LevelManager.OnLevelComplete += DisplayLevelScorePanel;
+        LevelManager.OnLevelComplete += HidePanels;
         LevelManager.OnLevelComplete += UpdateLevelScoreEmojis;
         LevelManager.OnLevelComplete += BlurBackground;
     }
@@ -82,11 +89,12 @@ public class ScoreManager : MonoBehaviour
         TutorialManager.OnTutorialEnd -= RemoveVignette;
 
 
+        LevelManager.OnLevelCountDownStart -= DisplayPanels;
         LevelManager.OnLevelCountDownStart -= HideLevelScorePanel;
-        LevelManager.OnLevelCountDownStart -= ResetLevelScore;
         LevelManager.OnLevelCountDownStart -= UnBlurBackground;
         LevelManager.OnNewLevelStart -= SetMaxLevelScore;
-        LevelManager.OnLevelCountDownStart -= DisplayPanels;
+        LevelManager.OnNewLevelStart -= ResetLevelScore;
+        LevelManager.OnNewLevelStart -= DisplaySidePanel;
         //LevelManager.OnLevelCountDownStart -= HideInGameScoreUI;
         //LevelManager.OnNewLevelStart -= DisplayInGameScoreUI;
 
@@ -95,6 +103,7 @@ public class ScoreManager : MonoBehaviour
         Animal.OnEatenByWolf -= UpdateScoreAfterWolfEat;
 
         LevelManager.OnLevelComplete -= DisplayLevelScorePanel;
+        LevelManager.OnLevelComplete -= HidePanels;
         LevelManager.OnLevelComplete -= UpdateLevelScoreEmojis;
         LevelManager.OnLevelComplete -= BlurBackground;
 
@@ -106,6 +115,7 @@ public class ScoreManager : MonoBehaviour
         if (animal.AnimalSO.animalType == cage.CageSO.animalCageType)
         {
             TotalLevelScore += pointsOnCorrectCapture;
+            OnScoreUpdated?.Invoke();
         }
         else
         {
@@ -132,7 +142,7 @@ public class ScoreManager : MonoBehaviour
 
         scoreSlider.value = fillAmount;
 
-        Debug.Log("Total level score:" + TotalLevelScore + " / " + "max level score: " + maxLevelScore);
+        //Debug.Log("Total level score:" + TotalLevelScore + " / " + "max level score: " + maxLevelScore);
 
         SelectScoreEmoji(fillAmount);
     }
@@ -154,36 +164,37 @@ public class ScoreManager : MonoBehaviour
     void UpdateLevelScoreEmojis(int levelIndex)
     {
         UpdateScoreUI();
-        Debug.Log("Score emoji: " + scoreEmoji.sprite);
+        //Debug.Log("Score emoji: " + scoreEmoji.sprite);
         levelWiseEmojiScores[levelIndex].gameObject.SetActive(true);
         levelWiseEmojiScores[levelIndex].sprite = scoreEmoji.sprite;
     }
 
 
     
-    void ResetLevelScore()
+    void ResetLevelScore(int levelIndex)
     {
-        Debug.Log("Total level score: " + TotalLevelScore);
+        //Debug.Log("Total level score: " + TotalLevelScore);
         TotalLevelScore = 0;
 
-
+        UpdateScoreUI();
     }
 
-    /*void HideInGameScoreUI()
-    {
-        inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanelHidePosition);
-    }*/
-
-    /*void DisplayInGameScoreUI(int levelIndex)
-    {
-        //inGameScorePanel.GetComponent<UIPanelMove>().MoveImageTo(inGameScorePanellDisplayPosition);
-        UpdateScoreUI();
-    }*/
+    
 
     void DisplayPanels()
     {
         topPanel.gameObject.SetActive(true);
-        sidePanel.gameObject.SetActive(true);
+    }
+
+    void HidePanels(int levelIndex)
+    {
+        sidePanel.gameObject.GetComponent<UIPanelMove>().MoveImageTo(sidePanelHidePosition);
+    }
+
+
+    void DisplaySidePanel(int levelIndex)
+    {
+        sidePanel.gameObject.GetComponent<UIPanelMove>().MoveImageTo(sidePanelDisplayPosition);
     }
 
     #endregion
@@ -197,27 +208,27 @@ public class ScoreManager : MonoBehaviour
             maxLevelScore = maxLevelScores[levelIndex];
         }
 
-        UpdateScoreUI();
+        //UpdateScoreUI();
 
     }
 
     void SelectScoreEmoji(float proportionOfTotal)
     {
-        if (proportionOfTotal > 0.8f)
+        if (proportionOfTotal > 0.95f)
         {
             scoreEmoji.sprite = scoreEmojis[4];
         }
-        else if (proportionOfTotal > 0.2f)
+        else if (proportionOfTotal > 0.6f)
         {
             scoreEmoji.sprite = scoreEmojis[3];
 
         }
-        else if (proportionOfTotal > -0.2f)
+        else if (proportionOfTotal > 0.4f)
         {
             scoreEmoji.sprite = scoreEmojis[2];
 
         }
-        else if (proportionOfTotal > -0.6f)
+        else if (proportionOfTotal > 0.2f)
         {
             scoreEmoji.sprite = scoreEmojis[1];
 
@@ -228,7 +239,7 @@ public class ScoreManager : MonoBehaviour
 
         }
 
-        Debug.Log("Score emoji : " + scoreEmoji.sprite);
+        //Debug.Log("Score emoji : " + scoreEmoji.sprite);
     }
 
 

@@ -16,6 +16,9 @@ public class Wolf : NPC
     [SerializeField] float timeIntervalToSearchClosestSheep;
 
     [SerializeField] ParticleSystem wolfStunVFX;
+    [SerializeField] ParticleSystem wolfStunStarsVFX;
+    [SerializeField] Material hitFlashMaterial;
+    [SerializeField] float numberOfFlashes;
 
     public bool CanBeStunned { get; private set; } = true;
     public bool IsStunned { get; private set; } = false;
@@ -24,6 +27,8 @@ public class Wolf : NPC
 
     AnimalManager animalManager;
     CinemachineImpulseSource cinemachineImpulseSource;
+    SpriteRenderer spriteRenderer;
+    Material baseMaterial;
 
     Coroutine wolfStunRoutine;
 
@@ -36,6 +41,8 @@ public class Wolf : NPC
         animalManager = FindAnyObjectByType<AnimalManager>();
         cinemachineImpulseSource =GetComponent<CinemachineImpulseSource>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        baseMaterial = spriteRenderer.material;
 
         lastPosition = transform.position;
     }
@@ -198,7 +205,7 @@ public class Wolf : NPC
         {
             if(!animal.IsGrabbed && !IsStunned)
             {
-                Debug.Log("Eating sheep");
+                //Debug.Log("Eating sheep");
                 cinemachineImpulseSource.GenerateImpulse(0.5f);
                 animal.GetEatenByWolf();
             }
@@ -226,6 +233,10 @@ public class Wolf : NPC
         OnWolfStunned?.Invoke();
 
         wolfStunVFX.Play();
+        wolfStunStarsVFX.Play();
+        cinemachineImpulseSource.GenerateImpulse(0.3f);
+
+        StartCoroutine(HitFlashRoutine());
         yield return new WaitForSeconds(wolfStunDuration);
         
         canMove = true;
@@ -233,6 +244,21 @@ public class Wolf : NPC
         IsStunned = false;
 
         animator.SetBool("IsStunned", IsStunned);
+
+    }
+
+
+    IEnumerator HitFlashRoutine()
+    {
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            spriteRenderer.material = hitFlashMaterial;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.material = baseMaterial;
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        spriteRenderer.material = baseMaterial;
 
     }
 

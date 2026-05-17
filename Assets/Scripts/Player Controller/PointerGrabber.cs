@@ -51,7 +51,7 @@ public class PointerGrabber : MonoBehaviour
         playerController =GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         pointerCollider = GetComponent<CircleCollider2D>();
-        pointerOffset = pointerCollider.offset - new Vector2(0f,0.5f);
+        pointerOffset = pointerCollider.offset - new Vector2(0f,0.3f);
         animalManager = FindAnyObjectByType<AnimalManager>();
         animator = GetComponent<Animator>();
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();

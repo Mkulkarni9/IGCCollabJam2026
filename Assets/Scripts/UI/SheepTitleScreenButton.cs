@@ -10,6 +10,9 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
 
     [SerializeField] Vector2 movePosition;
     [SerializeField] float delayBeforeMove;
+    [SerializeField] float transparencyAfterBlur;
+    float blurTime = 1f;
+
 
     Image buttonImage;
     UIPanelMove uIPanelMove;
@@ -23,12 +26,15 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
     {
         GameManager.OnStartGame += DeactivateButton;
         GameManager.OnStartGame += MoveSheep;
+        GameManager.OnStartGame += BlurSheep;
     }
 
     private void OnDisable()
     {
         GameManager.OnStartGame -= DeactivateButton;
         GameManager.OnStartGame -= MoveSheep;
+        GameManager.OnStartGame -= BlurSheep;
+
 
     }
 
@@ -47,7 +53,11 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        OnPointerEnterSheepTitleScreenButton?.Invoke();
+        if(this.GetComponent<Button>().interactable)
+        {
+            OnPointerEnterSheepTitleScreenButton?.Invoke();
+        }
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -70,5 +80,33 @@ public class SheepTitleScreenButton : MonoBehaviour, IPointerEnterHandler, IPoin
         yield return new WaitForSeconds(delayBeforeMove);
 
         uIPanelMove.MoveImageTo(movePosition);
+    }
+
+
+    void BlurSheep()
+    {
+
+        StartCoroutine(BlurSheepRoutine());
+    }
+
+    IEnumerator BlurSheepRoutine()
+    {
+
+        float timePassed = 0f;
+
+        while (timePassed < blurTime)
+        {
+            float t = Mathf.Clamp01(timePassed / blurTime);
+
+            buttonImage.color =  Color.Lerp(new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 1f), new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, transparencyAfterBlur), t);
+
+            timePassed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, transparencyAfterBlur);
+
+
     }
 }
