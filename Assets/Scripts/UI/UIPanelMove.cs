@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class UIPanelMove : MonoBehaviour
 {
-    public static event Action OnMoveUIPanel;
+    public static event Action<bool> OnMoveUIPanel;
 
     [SerializeField] float moveDuration;
     [SerializeField] AnimationCurve moveTrajectory;
+    [SerializeField] bool playMoveSoundEffect;
 
 
     Coroutine moveRoutine;
@@ -36,7 +37,8 @@ public class UIPanelMove : MonoBehaviour
 
     IEnumerator MoveImageRoutine(Vector2 endPosition)
     {
-        OnMoveUIPanel?.Invoke();
+        OnMoveUIPanel?.Invoke(playMoveSoundEffect);
+
 
 
         Vector2 start = rectTransform.anchoredPosition;

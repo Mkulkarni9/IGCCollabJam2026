@@ -16,6 +16,6 @@ MonoBehaviour:
   ChangePitch: 0
   mixer: {fileID: 3417914542669543409, guid: 3bc690b2bffad31448e7570028f2ffc0, type: 2}
   loop: 0
-  volume: 0.4
+  volume: 0.7
   pitchRangeMin: 0
   pitchRangeMax: 0

@@ -3851,6 +3851,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &180941147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,9 +4320,9 @@ RectTransform:
   m_Father: {fileID: 325063675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.045, y: 0}
-  m_AnchorMax: {x: 0.95500004, y: 0.5233409}
-  m_AnchoredPosition: {x: -0.1762085, y: 45}
-  m_SizeDelta: {x: -0.0186, y: -3.5899963}
+  m_AnchorMax: {x: 0.95500004, y: 0.817811}
+  m_AnchoredPosition: {x: -0.1762085, y: 31.5}
+  m_SizeDelta: {x: -0.0186, y: -60.589996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &190549501
 PrefabInstance:
@@ -5461,6 +5462,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &247408123
 GameObject:
   m_ObjectHideFlags: 0
@@ -13746,6 +13748,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &299399430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14720,7 +14723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0503074f45841b41b7545a75605ac53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIPanelMove
-  moveDuration: 0.5
+  moveDuration: 0.7
   moveTrajectory:
     serializedVersion: 2
     m_Curve:
@@ -14734,8 +14737,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.13114646
-      value: 0.011149709
+      time: 0.12939933
+      value: 0.016459767
       inSlope: 1.933165
       outSlope: 1.933165
       tangentMode: 0
@@ -14754,6 +14757,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 1
 --- !u!1001 &331335587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15252,6 +15256,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &378632174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18634,6 +18639,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &499946958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20391,6 +20397,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &612172244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21826,6 +21833,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &691924184
 GameObject:
   m_ObjectHideFlags: 0
@@ -22994,6 +23002,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &775166653
 GameObject:
   m_ObjectHideFlags: 0
@@ -25462,6 +25471,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &913241927
 GameObject:
   m_ObjectHideFlags: 0
@@ -25624,10 +25634,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2037252057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.75112575, y: 0.12755424}
-  m_AnchorMax: {x: 0.85300004, y: 0.24444577}
-  m_AnchoredPosition: {x: -1.0799866, y: 0.5339966}
-  m_SizeDelta: {x: -0.7888794, y: -0.91700745}
+  m_AnchorMin: {x: 0.86300004, y: 0.029337348}
+  m_AnchorMax: {x: 0.9760001, y: 0.1591486}
+  m_AnchoredPosition: {x: -0.76361084, y: 0.98547363}
+  m_SizeDelta: {x: 0.7118988, y: -2.467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923280867
 MonoBehaviour:
@@ -25705,7 +25715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fca7ed8b26db649489d122dc79e8ee24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e34618dc4cd071f4f9ff78743885f913, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25714,7 +25724,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.64
 --- !u!222 &923280869
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25735,7 +25745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507b3a8a476464074adac33e811e57cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverAnimations
-  animationDuration: 0.5
+  animationDuration: 0.1
   changeScale: 1
   targetScale: {x: 1.2, y: 1.2}
   scaleAnimationCurve:
@@ -25743,16 +25753,16 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 0.07092536
+      outSlope: 0.07092536
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.089005224
     - serializedVersion: 3
       time: 1
-      value: 1.2
+      value: 1
       inSlope: 0.65428674
       outSlope: 0.65428674
       tangentMode: 0
@@ -25771,7 +25781,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   changeImage: 1
-  targetButtonImage: {fileID: 21300000, guid: 4367c4b55705de440b97183affdff1be, type: 3}
+  targetButtonImage: {fileID: 21300000, guid: 634985d7e28a53b47a0ceba9019bce7a, type: 3}
   addIndicator: 0
   indicatorPrefab: {fileID: 0}
   indicatorOffset: {x: 0, y: 0, z: 0}
@@ -26328,6 +26338,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &957282438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27417,6 +27428,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &1049508815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31311,6 +31323,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &1181457893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31411,10 +31424,10 @@ RectTransform:
   - {fileID: 425142381}
   m_Father: {fileID: 325063675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.045, y: 0.45140857}
-  m_AnchorMax: {x: 0.95500004, y: 0.7346037}
-  m_AnchoredPosition: {x: -0.8999939, y: -0.44680023}
-  m_SizeDelta: {x: 0.05, y: 0.4606018}
+  m_AnchorMin: {x: 0.045, y: 0.39939636}
+  m_AnchorMax: {x: 0.95500004, y: 0.817811}
+  m_AnchoredPosition: {x: -0.8999939, y: 11.553207}
+  m_SizeDelta: {x: 0.05, y: -25.539398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1187753185
 GameObject:
@@ -36038,6 +36051,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &1479423497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36381,6 +36395,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &1487399937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38690,6 +38705,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &1576143276
 GameObject:
   m_ObjectHideFlags: 0
@@ -40591,6 +40607,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &1648364008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42220,6 +42237,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1001 &1693432799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44812,6 +44830,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &1827282772
 GameObject:
   m_ObjectHideFlags: 0
@@ -48104,9 +48123,9 @@ RectTransform:
   m_Father: {fileID: 325063675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.045, y: 0}
-  m_AnchorMax: {x: 0.95500004, y: 0.3266592}
-  m_AnchoredPosition: {x: -0.1762085, y: 0}
-  m_SizeDelta: {x: -0.018616, y: 0.0000076294}
+  m_AnchorMax: {x: 0.95500004, y: 0.39939636}
+  m_AnchoredPosition: {x: -0.1762085, y: 8.000008}
+  m_SizeDelta: {x: -0.018616, y: -13.999992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1995360925
 PrefabInstance:
@@ -49673,6 +49692,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 0
 --- !u!1 &2059532157
 GameObject:
   m_ObjectHideFlags: 0
@@ -50177,6 +50197,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  playMoveSoundEffect: 1
 --- !u!1 &2087413711
 GameObject:
   m_ObjectHideFlags: 0

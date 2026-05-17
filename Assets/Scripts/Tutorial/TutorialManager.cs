@@ -57,6 +57,7 @@ public class TutorialManager : MonoBehaviour
         GameManager.OnStartGame += PlayTutorial;
         GameManager.OnStartGame += EnableSkipTutorialButton;
         Cage.OnAnimalCapturedInCorrectCage += AdvanceTutorial;
+        Wolf.OnWolfStunned += PauseWolfBonkTutorial;
         Wolf.OnWolfStunned += EndTutorial;
 
     }
@@ -68,6 +69,7 @@ public class TutorialManager : MonoBehaviour
         GameManager.OnStartGame -= PlayTutorial;
         GameManager.OnStartGame -= EnableSkipTutorialButton;
         Cage.OnAnimalCapturedInCorrectCage -= AdvanceTutorial;
+        Wolf.OnWolfStunned -= PauseWolfBonkTutorial;
         Wolf.OnWolfStunned -= EndTutorial;
 
     }
@@ -187,6 +189,11 @@ public class TutorialManager : MonoBehaviour
 
     }
 
+    void PauseWolfBonkTutorial()
+    {
+        tutorialAnimations[tutorialIndex].gameObject.SetActive(false);
+    }
+
 
     void EndTutorial()
     {
@@ -195,7 +202,7 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator DelayBeforeTutorialEndRoutine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         SkipTutorial();
     }

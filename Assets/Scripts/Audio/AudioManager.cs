@@ -174,9 +174,12 @@ public class AudioManager : MonoBehaviour
         PlaySound(sheepNoisesHoverOnSheep[randomIndex]);
 
     }
-    public void PlayPanelMoveSFX()
+    public void PlayPanelMoveSFX(bool status)
     {
-        PlaySound(panelMove);
+        if(status)
+        {
+            PlaySound(panelMove);
+        }
 
     }
 
